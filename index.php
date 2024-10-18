@@ -153,29 +153,44 @@ footer .footer-links a:hover {
 }
 
 /* boody */
+body {
+    font-family: 'Poppins', sans-serif; /* Tipografía moderna */
+}
+
 .container {
     background-color: #f1f1f1; /* Fondo claro */
     border-radius: 10px; /* Bordes redondeados */
-    padding: 20px; /* Espaciado interno */
+    padding: 30px; /* Espaciado interno */
     margin-top: 20px; /* Espaciado superior */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 .container h3 {
     color: #2A66A1; /* Color del título */
-    font-size: 2rem; /* Tamaño del título */
+    font-size: 2.5rem; /* Tamaño del título */
     margin-bottom: 15px; /* Espaciado inferior */
 }
 
+.container h4 {
+    color: #2A66A1; /* Color de subtítulos */
+    font-size: 1.8rem; /* Tamaño de subtítulos */
+    margin-top: 15px; /* Espaciado superior */
+}
+
 .container p {
-    font-size: 1.1rem; /* Tamaño de fuente del párrafo */
+    font-size: 1.3rem; /* Tamaño de fuente del párrafo */
     line-height: 1.6; /* Espaciado entre líneas */
     color: #333; /* Color del texto */
 }
 
+.container ul {
+    text-align: left; /* Alinear lista a la izquierda */
+    font-size: 1.2rem; /* Tamaño de fuente para la lista */
+}
+
 .alert {
     color: red; /* Color de alerta */
-    font-size: 1rem; /* Tamaño del texto de alerta */
+    font-size: 1.2rem; /* Tamaño del texto de alerta */
     margin-bottom: 20px; /* Espaciado inferior */
     font-weight: bold; /* Negrita */
 }
@@ -184,6 +199,7 @@ hr {
     border: 1px solid #2A66A1; /* Línea horizontal */
     margin: 20px 0; /* Espaciado vertical */
 }
+
     </style>
 
   <script type="text/JavaScript">
@@ -391,6 +407,7 @@ hr {
     <hr>
     <h3><?=$institucionNombre?></h3>
 </div>
+
 
 
 <br>
