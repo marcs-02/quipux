@@ -153,7 +153,31 @@ footer .footer-links a:hover {
 }
 
 /* boody */
+.container {
+    background-color: #f8f9fa; /* Fondo claro */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 40px; /* Espaciado interno */
+    margin-top: 30px; /* Espaciado superior */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
 
+.row {
+    margin-bottom: 20px; /* Espaciado entre filas */
+}
+.container h4 {
+    color: #2A66A1; /* Color de subtítulos */
+    font-size: 2.5rem; /* Tamaño de subtítulos */
+}
+
+.container p {
+    font-size: 1.5rem; /* Tamaño de fuente del párrafo */
+    line-height: 1.8; /* Espaciado entre líneas */
+    color: #333; /* Color del texto */
+}
+hr {
+    border: 2px solid #2A66A1; /* Línea horizontal */
+    margin: 30px 0; /* Espaciado vertical */
+}
     </style>
 
   <script type="text/JavaScript">
