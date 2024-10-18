@@ -153,51 +153,54 @@ footer .footer-links a:hover {
 }
 
 /* boody */
-body {
-    font-family: 'Poppins', sans-serif; /* Tipografía moderna */
+.container {
+    background-color: #f8f9fa; /* Fondo claro */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 40px; /* Espaciado interno */
+    margin-top: 30px; /* Espaciado superior */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
-.container {
-    background-color: #f1f1f1; /* Fondo claro */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 30px; /* Espaciado interno */
-    margin-top: 20px; /* Espaciado superior */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+.row {
+    margin-bottom: 20px; /* Espaciado entre filas */
 }
 
 .container h3 {
     color: #2A66A1; /* Color del título */
-    font-size: 2.5rem; /* Tamaño del título */
-    margin-bottom: 15px; /* Espaciado inferior */
+    font-size: 4rem; /* Tamaño del título */
+    margin-bottom: 10px; /* Espaciado inferior */
 }
 
 .container h4 {
     color: #2A66A1; /* Color de subtítulos */
-    font-size: 1.8rem; /* Tamaño de subtítulos */
-    margin-top: 15px; /* Espaciado superior */
+    font-size: 2.5rem; /* Tamaño de subtítulos */
 }
 
 .container p {
-    font-size: 1.3rem; /* Tamaño de fuente del párrafo */
-    line-height: 1.6; /* Espaciado entre líneas */
+    font-size: 1.5rem; /* Tamaño de fuente del párrafo */
+    line-height: 1.8; /* Espaciado entre líneas */
     color: #333; /* Color del texto */
 }
 
 .container ul {
     text-align: left; /* Alinear lista a la izquierda */
-    font-size: 1.2rem; /* Tamaño de fuente para la lista */
+    font-size: 1.4rem; /* Tamaño de fuente para la lista */
 }
 
 .alert {
     color: red; /* Color de alerta */
-    font-size: 1.2rem; /* Tamaño del texto de alerta */
+    font-size: 1.5rem; /* Tamaño del texto de alerta */
     margin-bottom: 20px; /* Espaciado inferior */
     font-weight: bold; /* Negrita */
 }
 
 hr {
-    border: 1px solid #2A66A1; /* Línea horizontal */
-    margin: 20px 0; /* Espaciado vertical */
+    border: 2px solid #2A66A1; /* Línea horizontal */
+    margin: 30px 0; /* Espaciado vertical */
+}
+
+.columna {
+    margin-bottom: 20px; /* Espaciado entre columnas */
 }
 
     </style>
@@ -353,7 +356,7 @@ hr {
 
 </div>
 
-<hr>
+<br>
 
 </div>
 
@@ -372,41 +375,47 @@ hr {
 
     <h3>RESUMEN</h3>
     <p>
-        El Instituto Superior Tecnológico Particular "Bolívar Madero Vargas" ha implementado el sistema Quipux con el objetivo de optimizar su gestión documental. Esta herramienta de digitalización permite un manejo más eficiente de los documentos, facilitando su organización y acceso en formato electrónico. 
-    </p>
-    
-    <h3>OBJETIVOS</h3>
-    <h4>Objetivo General:</h4>
-    <p>
-        Optimizar la gestión documental en el Instituto mediante la implementación del sistema Quipux.
+        El Instituto ha implementado Quipux para optimizar su gestión documental, facilitando la organización y acceso a documentos en formato electrónico.
     </p>
 
-    <h4>Objetivos Específicos:</h4>
-    <ul>
-        <li>Automatizar el manejo y organización de los documentos institucionales.</li>
-        <li>Garantizar la seguridad y confidencialidad de la información.</li>
-        <li>Aumentar la eficiencia administrativa.</li>
-    </ul>
+    <h3>OBJETIVOS</h3>
+    <div class="row">
+        <div class="columna col-sm-6">
+            <h4>Objetivo General:</h4>
+            <p>
+                Optimizar la gestión documental mediante Quipux.
+            </p>
+        </div>
+        <div class="columna col-sm-6">
+            <h4>Objetivos Específicos:</h4>
+            <ul>
+                <li>Automatizar la organización de documentos.</li>
+                <li>Garantizar la seguridad de la información.</li>
+                <li>Aumentar la eficiencia administrativa.</li>
+            </ul>
+        </div>
+    </div>
 
     <h3>ACTIVIDADES</h3>
-    <h4>1. Análisis y Planificación</h4>
-    <p>
-        Realizar reuniones con directivos y personal administrativo para definir las necesidades del sistema.
-    </p>
-    
-    <h4>2. Instalación y Configuración del Sistema</h4>
-    <p>
-        Preparar el entorno de trabajo e instalar el sistema Quipux Comunitario.
-    </p>
-    
-    <h4>3. Capacitación del Personal</h4>
-    <p>
-        Desarrollar manuales y realizar talleres de formación con el personal administrativo.
-    </p>
+    <div class="row">
+        <div class="columna col-sm-4">
+            <h4>1. Análisis y Planificación</h4>
+            <p>Reuniones para definir necesidades del sistema.</p>
+        </div>
+        <div class="columna col-sm-4">
+            <h4>2. Instalación y Configuración</h4>
+            <p>Preparar el entorno de trabajo e instalar Quipux.</p>
+        </div>
+        <div class="columna col-sm-4">
+            <h4>3. Capacitación del Personal</h4>
+            <p>Desarrollar manuales y realizar talleres de formación.</p>
+        </div>
+    </div>
 
     <hr>
     <h3><?=$institucionNombre?></h3>
 </div>
+
 
 
 
