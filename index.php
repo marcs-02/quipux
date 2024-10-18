@@ -284,7 +284,7 @@ hr {
 
             <!-- Descripción de la Aplicación -->
             <div class="description">
-                <h3>Descripción de la Aplicación</h3>
+                <h4>Descripción de la Aplicación</h4>
                 <p>
                     El sistema Quipux es una innovadora herramienta diseñada para optimizar la gestión documental del Instituto Superior Tecnológico Particular "Bolívar Madero Vargas". Permite un manejo eficiente de los documentos, asegurando una organización y acceso fácil a la información. Con características que incluyen seguridad de datos y seguimiento de trámites administrativos, Quipux se convierte en un aliado fundamental para la modernización y transparencia en los procesos institucionales.
                 </p>
