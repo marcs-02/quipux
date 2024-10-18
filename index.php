@@ -242,118 +242,75 @@ hr {
                 <span class="glyphicon glyphicon-log-in"></span> Ingresar al Sistema
             </a>
         </div>
-    </header>
-
+</header>
 
 <div class="container">
+    <br><br>
+    <div class="row">
+        <div class="col-sm-8">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                </ol>
 
-<br>
-<br>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="<?=$banner1?>" alt="Image" class="banner-image">
+                        <div class="carousel-caption">
+                            <p><a href="<?=$linkBanner1?>"><?=$nombreLinkBanner1?></a></p>
+                        </div>      
+                    </div>
+                    <div class="item">
+                        <img src="<?=$banner2?>" alt="Image" class="banner-image">
+                        <div class="carousel-caption">
+                            <p><a href="<?=$linkBanner2?>"><?=$nombreLinkBanner2?></a></p>
+                        </div>      
+                    </div>
+                </div>
 
-<div class="row">
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
 
-  <div class="col-sm-8">
-
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
-      <!-- Indicators -->
-
-      <ol class="carousel-indicators">
-
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-
-      </ol>
-
-
-      <!-- Wrapper for slides -->
-
-      <div class="carousel-inner" role="listbox">
-
-        <div class="item active">
-
-          <img src="<?=$banner1?>" alt="Image" class="banner-image">
-
-          <div class="carousel-caption">
-
-            
-            <p><a src=<?=$linkBanner1?>><?=$nombreLinkBanner1?></a></p>
-
-          </div>      
-
+            <!-- Descripción de la Aplicación -->
+            <div class="description">
+                <h3>Descripción de la Aplicación</h3>
+                <p>
+                    El sistema Quipux es una innovadora herramienta diseñada para optimizar la gestión documental del Instituto Superior Tecnológico Particular "Bolívar Madero Vargas". Permite un manejo eficiente de los documentos, asegurando una organización y acceso fácil a la información. Con características que incluyen seguridad de datos y seguimiento de trámites administrativos, Quipux se convierte en un aliado fundamental para la modernización y transparencia en los procesos institucionales.
+                </p>
+            </div>
         </div>
 
+        <div class="col-sm-4">
+            <div class="well">
+                <h4>Quipux</h4>
+                <p>Sistema de gestión documental del Instituto Bolivar Madero Vargas, desarrollado por estudiantes para optimizar procesos.</p>
+            </div>
 
-        <div class="item">
+            <div class="well">
+                <h4>Próximos Eventos</h4>
+                <p>¡Participa en nuestros talleres y charlas para enriquecer tu experiencia educativa!</p>
+            </div>
 
-          <img src="<?=$banner2?>" alt="Image" class="banner-image">
-
-          <div class="carousel-caption">
-
-            
-          <p><a src=<?=$linkBanner2?>><?=$nombreLinkBanner2?></a></p>
-
-          </div>      
-
+            <div class="well">
+                <h4>Visita Nuestro Blog</h4>
+                <p>Entérate de las últimas noticias y recursos útiles para la comunidad del IBMV.</p>
+            </div>
         </div>
-
-      </div>
-
-
-      <!-- Left and right controls -->
-
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-
-        <span class="sr-only">Previous</span>
-
-      </a>
-
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-
-        <span class="sr-only">Next</span>
-
-      </a>
-
     </div>
-
-  </div>
-
-  <div class="description">
-            <h3>Descripción de la Aplicación</h3>
-            <p>
-                El sistema Quipux es una innovadora herramienta diseñada para optimizar la gestión documental del Instituto Superior Tecnológico Particular "Bolívar Madero Vargas". Permite un manejo eficiente de los documentos, asegurando una organización y acceso fácil a la información. Con características que incluyen seguridad de datos y seguimiento de trámites administrativos, Quipux se convierte en un aliado fundamental para la modernización y transparencia en los procesos institucionales.
-            </p>
-        </div>
-
-  <div class="col-sm-4">
-    <div class="well">
-        <h4>Quipux</h4>
-        <p>Sistema de gestión documental del Instituto Bolivar Madero Vargas, desarrollado por estudiantes para optimizar procesos.</p>
-    </div>
-
-    <div class="well">
-        <h4>Próximos Eventos</h4>
-        <p>¡Participa en nuestros talleres y charlas para enriquecer tu experiencia educativa!</p>
-    </div>
-
-    <div class="well">
-        <h4>Visita Nuestro Blog</h4>
-        <p>Entérate de las últimas noticias y recursos útiles para la comunidad del IBMV.</p>
-    </div>
+    <br>
 </div>
 
-
-
-</div>
-
-<br>
-
-</div>
 
 
 <div class="container text-center">
