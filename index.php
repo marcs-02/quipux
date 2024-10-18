@@ -223,26 +223,22 @@ include_once "$ruta_raiz/config_title.php";
   </div>
 
   <div class="col-sm-4">
-
     <div class="well">
-
-      <p>Some text..</p>
-
+        <h4>Some Text</h4>
+        <p>Contenido relevante aquí..</p>
     </div>
 
     <div class="well">
-
-       <p>Upcoming Events..</p>
-
+        <h4>Upcoming Events</h4>
+        <p>Descripción de los eventos..</p>
     </div>
 
     <div class="well">
-
-       <p>Visit Our Blog</p>
-
+        <h4>Visit Our Blog</h4>
+        <p>Resumen de los artículos del blog..</p>
     </div>
+</div>
 
-  </div>
 
 </div>
 
