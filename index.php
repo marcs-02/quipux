@@ -85,7 +85,7 @@ include_once "$ruta_raiz/config_title.php";
         }
 
         .banner-image {
-        width: 100px; /* Ancho deseado */
+        width: 10px; /* Ancho deseado */
         height: auto; /* Mantener la proporción */
         /* También puedes especificar una altura fija si lo prefieres */
         /* height: 100px; */
@@ -172,7 +172,7 @@ include_once "$ruta_raiz/config_title.php";
 
         <div class="item active">
 
-          <img src="<?=$banner1?>" alt="Image" class="banner-link">
+          <img src="<?=$banner1?>" alt="Image" class="banner-image">
 
           <div class="carousel-caption">
 
@@ -186,7 +186,7 @@ include_once "$ruta_raiz/config_title.php";
 
         <div class="item">
 
-          <img src="<?=$banner2?>" alt="Image" class="banner-link">
+          <img src="<?=$banner2?>" alt="Image" class="banner-image">
 
           <div class="carousel-caption">
 
