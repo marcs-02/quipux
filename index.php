@@ -34,7 +34,7 @@ include_once "$ruta_raiz/config_title.php";
     <style>
         .banner {
             background-color: #2A66A1;
-            height: 250px;
+            height: 150px;
             color: white;
             display: flex;
             align-items: center;
