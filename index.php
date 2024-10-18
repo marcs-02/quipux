@@ -151,6 +151,39 @@ footer .footer-links a {
 footer .footer-links a:hover {
     text-decoration: underline; /* Subrayado al pasar el ratón */
 }
+
+/* boody */
+.container {
+    background-color: #f1f1f1; /* Fondo claro */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    margin-top: 20px; /* Espaciado superior */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.container h3 {
+    color: #2A66A1; /* Color del título */
+    font-size: 2rem; /* Tamaño del título */
+    margin-bottom: 15px; /* Espaciado inferior */
+}
+
+.container p {
+    font-size: 1.1rem; /* Tamaño de fuente del párrafo */
+    line-height: 1.6; /* Espaciado entre líneas */
+    color: #333; /* Color del texto */
+}
+
+.alert {
+    color: red; /* Color de alerta */
+    font-size: 1rem; /* Tamaño del texto de alerta */
+    margin-bottom: 20px; /* Espaciado inferior */
+    font-weight: bold; /* Negrita */
+}
+
+hr {
+    border: 1px solid #2A66A1; /* Línea horizontal */
+    margin: 20px 0; /* Espaciado vertical */
+}
     </style>
 
   <script type="text/JavaScript">
@@ -309,25 +342,54 @@ footer .footer-links a:hover {
 </div>
 
 
-<div class="container text-center">    
+<div class="container text-center">
+    <?php if ($institucionNombre == "institucionNombre") : ?>
+        <div class="alert">
+            Reemplace el archivo example.config_title.php por config_title.php y configure los nombres de su institución.
+        </div>
+    <?php endif; ?>
 
-	<?php 
+    <h3>PROYECTO</h3>
+    <p>
+        "TRANSFORMACIÓN DIGITAL Y OPTIMIZACIÓN DE LA GESTIÓN DOCUMENTAL INSTITUCIONAL A TRAVÉS DE QUIPUX EN EL INSTITUTO SUPERIOR TECNOLÓGICO PARTICULAR 'BOLÍVAR MADERO VARGAS'"
+    </p>
 
-	if ($institucionNombre == "institucionNombre" ){
+    <h3>RESUMEN</h3>
+    <p>
+        El Instituto Superior Tecnológico Particular "Bolívar Madero Vargas" ha implementado el sistema Quipux con el objetivo de optimizar su gestión documental. Esta herramienta de digitalización permite un manejo más eficiente de los documentos, facilitando su organización y acceso en formato electrónico. 
+    </p>
+    
+    <h3>OBJETIVOS</h3>
+    <h4>Objetivo General:</h4>
+    <p>
+        Optimizar la gestión documental en el Instituto mediante la implementación del sistema Quipux.
+    </p>
 
-		echo "<font color='red' size='3'>Reemplace el archivo example.config_title.php por config_title.php y configure los nombres de su institución</font>";
+    <h4>Objetivos Específicos:</h4>
+    <ul>
+        <li>Automatizar el manejo y organización de los documentos institucionales.</li>
+        <li>Garantizar la seguridad y confidencialidad de la información.</li>
+        <li>Aumentar la eficiencia administrativa.</li>
+    </ul>
 
-	} 
+    <h3>ACTIVIDADES</h3>
+    <h4>1. Análisis y Planificación</h4>
+    <p>
+        Realizar reuniones con directivos y personal administrativo para definir las necesidades del sistema.
+    </p>
+    
+    <h4>2. Instalación y Configuración del Sistema</h4>
+    <p>
+        Preparar el entorno de trabajo e instalar el sistema Quipux Comunitario.
+    </p>
+    
+    <h4>3. Capacitación del Personal</h4>
+    <p>
+        Desarrollar manuales y realizar talleres de formación con el personal administrativo.
+    </p>
 
-	?>
-
-  <h3><?=$institucionNombre?></h3>
-
-  <br>
-
-
-  <hr>
-
+    <hr>
+    <h3><?=$institucionNombre?></h3>
 </div>
 
 
