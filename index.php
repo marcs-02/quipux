@@ -91,30 +91,34 @@ include_once "$ruta_raiz/config_title.php";
         margin: 0 auto;
         }
 
-        .well {
-        background-color: #f8f9fa; /* Color de fondo suave */
+        body {
+        font-family: 'Poppins', sans-serif; /* Tipografía moderna */
+    }
+
+    .well {
+        background-color: #f8f9fa; /* Color de fondo */
         border: 1px solid #ddd; /* Borde claro */
-        border-radius: 8px; /* Bordes redondeados */
+        border-radius: 10px; /* Bordes redondeados */
         padding: 20px; /* Espaciado interno */
         margin-bottom: 20px; /* Espaciado entre secciones */
-        transition: box-shadow 0.3s; /* Transición suave al pasar el ratón */
-        height: 150px; /* Altura fija para un tamaño consistente */
-        }
+        transition: box-shadow 0.3s; /* Sombra al pasar el ratón */
+        height: 130px; /* Altura fija */
+    }
 
-        .well:hover {
+    .well:hover {
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón */
-        }
+    }
 
-        .well h4 {
-        margin-bottom: 15px; /* Espaciado debajo del encabezado */
-        font-size: 1.5rem; /* Tamaño de fuente del encabezado */
+    .well h4 {
+        margin-bottom: 10px; /* Espaciado debajo del encabezado */
+        font-size: 1.5rem; /* Tamaño del encabezado */
         color: #2A66A1; /* Color del texto */
-        }
+    }
 
-        .well p {
-        font-size: 1.2rem; /* Tamaño de fuente del párrafo */
-        line-height: 1.5; /* Espaciado entre líneas */
-        }
+    .well p {
+        font-size: 1.1rem; /* Tamaño de fuente del párrafo */
+        line-height: 1.4; /* Espaciado entre líneas */
+    }
 
     </style>
 
@@ -250,18 +254,18 @@ include_once "$ruta_raiz/config_title.php";
 
   <div class="col-sm-4">
     <div class="well">
-        <h4>Quipux: Gestor Documental</h4>
-        <p>Quipux es un sistema diseñado para facilitar la gestión documental en el Instituto Bolivar Madero Vargas (IBMV). Este software, desarrollado por estudiantes del instituto, busca mejorar la eficiencia en el manejo de documentos y procesos administrativos.</p>
+        <h4>Quipux</h4>
+        <p>Sistema de gestión documental del Instituto Bolivar Madero Vargas, desarrollado por estudiantes para optimizar procesos.</p>
     </div>
 
     <div class="well">
-        <h4>Eventos Próximos</h4>
-        <p>¡No te pierdas nuestras próximas actividades! Estaremos organizando talleres, charlas y eventos académicos para mejorar la experiencia educativa de nuestros estudiantes.</p>
+        <h4>Próximos Eventos</h4>
+        <p>¡Participa en nuestros talleres y charlas para enriquecer tu experiencia educativa!</p>
     </div>
 
     <div class="well">
         <h4>Visita Nuestro Blog</h4>
-        <p>Consulta nuestro blog para estar al tanto de las últimas noticias, artículos y recursos útiles para todos los miembros de la comunidad educativa del IBMV.</p>
+        <p>Entérate de las últimas noticias y recursos útiles para la comunidad del IBMV.</p>
     </div>
 </div>
 
