@@ -179,15 +179,15 @@ hr {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
-.description h3 {
-    font-size: 2rem; /* Tamaño del encabezado */
+.description h4 {
+    font-size: 2.5rem; /* Tamaño del encabezado */
     color: #2A66A1; /* Color del texto */
     margin-bottom: 15px; /* Espaciado inferior */
 }
 
 .description p {
-    font-size: 1.2rem; /* Tamaño de fuente del párrafo */
-    line-height: 1.5; /* Espaciado entre líneas */
+    font-size: 1.5rem; /* Tamaño de fuente del párrafo */
+    line-height: 1.8; /* Espaciado entre líneas */
     color: #333; /* Color del texto */
 }
 
