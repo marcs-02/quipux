@@ -71,34 +71,45 @@ $mensaje .= "<br><br>Para ir a la pantalla de ingreso, haga click&nbsp<a href=\"
 <html>
     <?php echo html_head(); ?>
     <style type="text/css">
-        a:link, a:visited, a:hover { color: blue; }
+        a:link, a:visited, a:hover { color: #2A66A1; text-decoration: none; } /* Color de enlace */
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f9f9f9; /* Fondo suave */
+            background-color: #f0f4f8; /* Fondo suave */
             color: #333; /* Color de texto */
+            margin: 0; /* Sin márgenes */
+            padding: 0; /* Sin relleno */
         }
         #wrapper {
-            max-width: 800px; /* Ancho máximo del contenido */
-            margin: 0 auto; /* Centrar */
-            padding: 20px; /* Espaciado interno */
+            max-width: 600px; /* Ancho máximo del contenido */
+            margin: 50px auto; /* Centrar y espacio superior */
+            padding: 30px; /* Espaciado interno */
             background-color: white; /* Fondo blanco */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
-            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Sombra más suave */
+            border-radius: 10px; /* Bordes redondeados */
         }
-        h1, h2 {
+        h1 {
             text-align: center; /* Centrar encabezados */
-            font-size: 2rem; /* Tamaño de letra grande */
+            font-size: 2.5rem; /* Tamaño de letra grande */
             margin-bottom: 20px; /* Espaciado inferior */
+            color: #2A66A1; /* Color del encabezado */
+        }
+        h2 {
+            text-align: center; /* Centrar encabezados */
+            font-size: 1.5rem; /* Tamaño de letra */
+            margin-bottom: 20px; /* Espaciado inferior */
+            color: #555; /* Color del texto */
         }
         .tex_area {
             width: 100%; /* Ancho completo */
-            padding: 10px; /* Espaciado interno */
+            padding: 12px; /* Espaciado interno */
             font-size: 1.2rem; /* Tamaño de letra */
             border: 1px solid #ccc; /* Borde claro */
             border-radius: 5px; /* Bordes redondeados */
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna */
+            margin-bottom: 20px; /* Espacio inferior */
         }
         .botones {
-            padding: 10px 20px; /* Espaciado interno */
+            padding: 12px 25px; /* Espaciado interno */
             font-size: 1.2rem; /* Tamaño de letra */
             border: none; /* Sin borde */
             border-radius: 5px; /* Bordes redondeados */
@@ -111,11 +122,16 @@ $mensaje .= "<br><br>Para ir a la pantalla de ingreso, haga click&nbsp<a href=\"
             background-color: #1e4e7a; /* Color más oscuro al pasar */
         }
         footer {
-            margin-top: 20px; /* Espacio superior */
+            margin-top: 30px; /* Espacio superior */
             padding: 20px; /* Espaciado interno */
             background-color: #2A66A1; /* Color de fondo */
             color: white; /* Color del texto */
             text-align: center; /* Centrar texto */
+            border-radius: 0 0 10px 10px; /* Bordes redondeados inferiores */
+        }
+        .footer-links a {
+            color: white; /* Color de enlace en el pie de página */
+            margin: 0 10px; /* Espaciado entre enlaces */
         }
     </style>
 
@@ -129,11 +145,11 @@ $mensaje .= "<br><br>Para ir a la pantalla de ingreso, haga click&nbsp<a href=\"
                     <table width="100%" cellpadding="5" cellspacing="5" align="center">
                         <tr>
                             <td align="right">Cédula:</td>
-                            <td><input type="text" id='krd' name="krd" class="tex_area"></td>
+                            <td><input type="text" id='krd' name="krd" class="tex_area" required></td>
                         </tr>
                         <tr>
                             <td align="right">Contraseña:</td>
-                            <td><input type="password" name="drd" id="drd" class="tex_area"></td>
+                            <td><input type="password" name="drd" id="drd" class="tex_area" required></td>
                         </tr>
                         <tr>
                             <td colspan="2" align="center">
@@ -152,9 +168,9 @@ $mensaje .= "<br><br>Para ir a la pantalla de ingreso, haga click&nbsp<a href=\"
             <footer>
                 <p>&copy; 2024 Instituto Superior Tecnológico Particular "Bolívar Madero Vargas". Todos los derechos reservados.</p>
                 <div class="footer-links">
-                    <a href="#" style="color: white;">Política de Privacidad</a> |
-                    <a href="#" style="color: white;">Términos de Uso</a> |
-                    <a href="#" style="color: white;">Contacto</a>
+                    <a href="#">Política de Privacidad</a> |
+                    <a href="#">Términos de Uso</a> |
+                    <a href="#">Contacto</a>
                 </div>
             </footer>
         </div>
