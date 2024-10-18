@@ -98,29 +98,29 @@ include_once "$ruta_raiz/config_title.php";
     }
 
     .well {
-        background-color: #f8f9fa; /* Color de fondo */
-        border: 1px solid #ddd; /* Borde claro */
-        border-radius: 10px; /* Bordes redondeados */
-        padding: 20px; /* Espaciado interno */
-        margin-bottom: 20px; /* Espaciado entre secciones */
-        transition: box-shadow 0.3s; /* Sombra al pasar el ratón */
-        height: 130px; /* Altura fija */
-    }
+    background-color: #f8f9fa; /* Color de fondo */
+    border: 1px solid #ddd; /* Borde claro */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    margin-bottom: 20px; /* Espaciado entre secciones */
+    transition: box-shadow 0.3s; /* Sombra al pasar el ratón */
+    /* height: 130px; */ /* Eliminar esta línea */
+}
 
-    .well:hover {
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón */
-    }
+.well:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón */
+}
 
-    .well h3 {
-        margin-bottom: 10px; /* Espaciado debajo del encabezado */
-        font-size: 1.5rem; /* Tamaño del encabezado */
-        color: #2A66A1; /* Color del texto */
-    }
+.well h3 {
+    margin-bottom: 10px; /* Espaciado debajo del encabezado */
+    font-size: 1.5rem; /* Tamaño del encabezado */
+    color: #2A66A1; /* Color del texto */
+}
 
-    .well p {
-        font-size: 1.1rem; /* Tamaño de fuente del párrafo */
-        line-height: 1.4; /* Espaciado entre líneas */
-    }
+.well p {
+    font-size: 1.1rem; /* Tamaño de fuente del párrafo */
+    line-height: 1.4; /* Espaciado entre líneas */
+}
 
     /* footer conf */
 
@@ -153,14 +153,6 @@ footer .footer-links a:hover {
 }
 
 /* boody */
-.container {
-    background-color: #f8f9fa; /* Fondo claro */
-    border-radius: 15px; /* Bordes redondeados */
-    padding: 40px; /* Espaciado interno */
-    margin-top: 30px; /* Espaciado superior */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
-}
-
 .row {
     margin-bottom: 20px; /* Espaciado entre filas */
 }
