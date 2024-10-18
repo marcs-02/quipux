@@ -34,7 +34,7 @@ include_once "$ruta_raiz/config_title.php";
     <style>
         .banner {
             background-color: #2A66A1;
-            height: 211px;
+            height: 250px;
             color: white;
             display: flex;
             align-items: center;
@@ -123,7 +123,7 @@ include_once "$ruta_raiz/config_title.php";
 
 <header class="banner">
         <div>
-            <img src="imagenes/logolisto.png" alt="Logo de la Institución" width="100" height="50">
+            <img src="imagenes/logolisto.png" alt="Logo de la Institución">
         </div>
         <div class="banner-text">
             <h2>INSTITUTO SUPERIOR TECNOLÓGICO PARTICULAR</h2>
