@@ -45,12 +45,12 @@ include_once "$ruta_raiz/config_title.php";
         .banner img {
             height: 160px;
             width: auto;
-            margin-right: 20px;
+            margin-right: 40px;
         }
         .banner-text {
-            text-align: center;
+            text-align: left;
             margin-left: auto;
-            padding-right: 20px;
+            padding-right: 40px;
         }
         .banner h2 {
             font-family: 'Poppins', sans-serif;
