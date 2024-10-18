@@ -38,8 +38,8 @@ include_once "$ruta_raiz/config_title.php";
             color: white;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            padding: 0 50px;
+            justify-content: center;
+            padding: 0 30px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
         .banner img {
