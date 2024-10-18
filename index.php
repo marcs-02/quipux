@@ -335,50 +335,6 @@ hr {
         </div>
     <?php endif; ?>
 
-    <h3>PROYECTO</h3>
-    <p>
-        "TRANSFORMACIÓN DIGITAL Y OPTIMIZACIÓN DE LA GESTIÓN DOCUMENTAL INSTITUCIONAL A TRAVÉS DE QUIPUX EN EL INSTITUTO SUPERIOR TECNOLÓGICO PARTICULAR 'BOLÍVAR MADERO VARGAS'"
-    </p>
-
-    <h3>RESUMEN</h3>
-    <p>
-        El Instituto ha implementado Quipux para optimizar su gestión documental, facilitando la organización y acceso a documentos en formato electrónico.
-    </p>
-
-    <h3>OBJETIVOS</h3>
-    <div class="row">
-        <div class="columna col-sm-6">
-            <h4>Objetivo General:</h4>
-            <p>
-                Optimizar la gestión documental mediante Quipux.
-            </p>
-        </div>
-        <div class="columna col-sm-6">
-            <h4>Objetivos Específicos:</h4>
-            <ul>
-                <li>Automatizar la organización de documentos.</li>
-                <li>Garantizar la seguridad de la información.</li>
-                <li>Aumentar la eficiencia administrativa.</li>
-            </ul>
-        </div>
-    </div>
-
-    <h3>ACTIVIDADES</h3>
-    <div class="row">
-        <div class="columna col-sm-4">
-            <h4>1. Análisis y Planificación</h4>
-            <p>Reuniones para definir necesidades del sistema.</p>
-        </div>
-        <div class="columna col-sm-4">
-            <h4>2. Instalación y Configuración</h4>
-            <p>Preparar el entorno de trabajo e instalar Quipux.</p>
-        </div>
-        <div class="columna col-sm-4">
-            <h4>3. Capacitación del Personal</h4>
-            <p>Desarrollar manuales y realizar talleres de formación.</p>
-        </div>
-    </div>
-
     <hr>
     <h3><?=$institucionNombre?></h3>
 </div>
