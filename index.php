@@ -50,7 +50,7 @@ include_once "$ruta_raiz/config_title.php";
         .banner-text {
             text-align: center;
             margin-left: auto;
-            padding-right: 10px;
+            padding-right: 40px;
         }
         .banner h2 {
             font-family: 'Poppins', sans-serif;
@@ -91,7 +91,7 @@ include_once "$ruta_raiz/config_title.php";
 
                 try{
 
-                var x = screen.width - 40;
+                var x = screen.width - 20;
 
                 var y = screen.height - 80;
 
@@ -123,7 +123,7 @@ include_once "$ruta_raiz/config_title.php";
 
 <header class="banner">
         <div>
-            <img src="imagenes/logolisto.png" alt="Logo de la Institución" >
+            <img src="imagenes/logolisto.png" alt="Logo de la Institución" width="100" height="50">
         </div>
         <div class="banner-text">
             <h2>INSTITUTO SUPERIOR TECNOLÓGICO PARTICULAR</h2>
