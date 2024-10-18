@@ -1,11 +1,11 @@
 <?php
 $institucionSigla="institucionSigla";
 $institucionNombre="institucionNombre";
-$banner1 = "imagenes/index/banner_fijo_index.png";
-$banner2 = "imagenes/index/banner_fijo_index.png";
-$linkBanner1 = "";
-$nombreLinkBanner1 = "";
-$linkBanner2 = "";
-$nombreLinkBanner2 = "";
+$banner1 = "imagenes/logolisto.jpg";
+$banner2 = "imagenes/logolisto.jpg";
+$linkBanner1 = "imagenes/logolisto.jpg";
+$nombreLinkBanner1 = "imagenes/logolisto.jpg";
+$linkBanner2 = "imagenes/logolisto.jpg";
+$nombreLinkBanner2 = "imagenes/logolisto.jpg";
 $footerText = "footerText";
 ?>
