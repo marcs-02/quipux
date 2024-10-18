@@ -39,13 +39,15 @@ include_once "$ruta_raiz/config_title.php";
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20 20px;
+            padding: 0 30px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
         .banner img {
             height: 160px;
             width: auto;
-            margin-right:0;
+            display: block; /* Hace que el <img> se comporte como un bloque */
+            margin: 0 auto;
+            text-align: center;
         }
         .banner-text {
             text-align: center;
