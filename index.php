@@ -34,7 +34,7 @@ include_once "$ruta_raiz/config_title.php";
     <style>
         .banner {
             background-color: #2A66A1;
-            height: 150px;
+            height: 160px;
             color: white;
             display: flex;
             align-items: center;
@@ -83,6 +83,20 @@ include_once "$ruta_raiz/config_title.php";
             color: #30659a;
             box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
         }
+
+        .banner-link {
+        display: inline-block; /* Permite aplicar dimensiones */
+        padding: 10px 15px; /* Espaciado interno */
+        background-color: #ffffff; /* Fondo blanco */
+        color: #2A66A1; /* Color del texto */
+        border-radius: 5px; /* Esquinas redondeadas */
+        text-decoration: none; /* Sin subrayado */
+        transition: background-color 0.3s; /* Transición suave al pasar el ratón */
+    }
+
+    .banner-link:hover {
+        background-color: #f0f0f0; /* Fondo al pasar el ratón */
+    }
     </style>
 
   <script type="text/JavaScript">
@@ -170,7 +184,7 @@ include_once "$ruta_raiz/config_title.php";
           <div class="carousel-caption">
 
             
-            <p><a src=<?=$linkBanner1?>><?=$nombreLinkBanner1?></a></p>
+            <p><a src=<?=$linkBanner1?> class="banner-link" ><?=$nombreLinkBanner1?></a></p>
 
           </div>      
 
