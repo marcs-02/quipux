@@ -87,8 +87,8 @@ include_once "$ruta_raiz/config_title.php";
         .banner-image {
         width: 300px; /* Ancho deseado */
         height: auto; /* Mantener la proporción */
-        /* También puedes especificar una altura fija si lo prefieres */
-        /* height: 100px; */
+        display: block; /* Hace que el <img> se comporte como un bloque */
+        margin: 0 auto;
         }
     </style>
 
