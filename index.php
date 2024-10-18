@@ -122,6 +122,35 @@ include_once "$ruta_raiz/config_title.php";
         line-height: 1.4; /* Espaciado entre líneas */
     }
 
+    /* footer conf */
+
+    footer {
+    background-color: #2A66A1; /* Color de fondo del footer */
+    color: white; /* Color del texto */
+    padding: 20px; /* Espaciado interno */
+    margin-top: 20px; /* Espacio superior */
+    position: relative; /* Para poder usar el efecto de sombra */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2); /* Sombra superior */
+}
+
+footer p {
+    margin: 0; /* Sin márgenes */
+    font-size: 1rem; /* Tamaño del texto */
+}
+
+footer .footer-links {
+    margin-top: 10px; /* Espacio superior entre el texto y los enlaces */
+}
+
+footer .footer-links a {
+    color: white; /* Color de los enlaces */
+    margin: 0 10px; /* Espaciado entre enlaces */
+    text-decoration: none; /* Sin subrayado */
+}
+
+footer .footer-links a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
     </style>
 
   <script type="text/JavaScript">
@@ -306,10 +335,14 @@ include_once "$ruta_raiz/config_title.php";
 
 
 <footer class="container-fluid text-center">
-
-  <p><?=$footerText?></p>
-
+    <p>&copy; 2024 Instituto Superior Tecnológico Particular "Bolívar Madero Vargas". Todos los derechos reservados.</p>
+    <div class="footer-links">
+        <a href="#">Política de Privacidad</a> |
+        <a href="#">Términos de Uso</a> |
+        <a href="#">Contacto</a>
+    </div>
 </footer>
+
 
 
 </body>
