@@ -50,7 +50,7 @@ include_once "$ruta_raiz/config_title.php";
         .banner-text {
             text-align: center;
             margin-left: auto;
-            padding-right: 40px;
+            padding-right: 20px;
         }
         .banner h2 {
             font-family: 'Poppins', sans-serif;
