@@ -109,7 +109,7 @@ include_once "$ruta_raiz/config_title.php";
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón */
     }
 
-    .well h4 {
+    .well h3 {
         margin-bottom: 10px; /* Espaciado debajo del encabezado */
         font-size: 1.5rem; /* Tamaño del encabezado */
         color: #2A66A1; /* Color del texto */
