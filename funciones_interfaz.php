@@ -26,7 +26,7 @@ function html_head ($flag_estilos=true, $flag_index=false) {
     global $ruta_raiz;
     $texto = "<head>
             <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
-            <title>.:: Quipux IBMV - Sistema de Gesti&oacute;n Documental ::.</title>
+            <title>.:: Quipux - Sistema de Gesti&oacute;n Documental ::.</title>
             <link href='$ruta_raiz/estilos/orfeo.css' rel='stylesheet' type='text/css'>
             ";
     if ($flag_estilos) {
@@ -115,8 +115,8 @@ function html_encabezado () {
     $texto = "<div id='header'><div class='shad-r'><div class='shad-l'><div class='moduletable'>
                 <table width='100%' cellpadding='0' cellspacing='0' >
                     <tr>
-                        <td width='18%'><img alt='Escudo' src='$ruta_raiz/imagenes/logolisto.png' height='80' width='150'></td>
-                        <td width='52%'><h2>INSTITUTO SUPERIOR TECNOLOGICO "BOLIVAR MADERO VARGAS"</h2></td>
+                        <td width='18%'><img alt='Escudo' src='$ruta_raiz/imagenes/logo_ing2.png' height='80' width='150'></td>
+                        <td width='52%'><h2>Gobierno Nacional de la Rep&uacute;blica del Ecuador</h2></td>
                         <td  width='30%'><div id='nav-big'>
                            <ul><table align='right'>
                                 <tr><td><li class='active_menu'><a href='' class='b6' onclick='ver_ayuda()'></a></li></td></tr>
