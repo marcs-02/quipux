@@ -170,6 +170,27 @@ hr {
     border: 2px solid #2A66A1; /* Línea horizontal */
     margin: 30px 0; /* Espaciado vertical */
 }
+
+.description {
+    background-color: #f0f8ff; /* Color de fondo suave */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    margin-top: 20px; /* Espaciado superior */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.description h3 {
+    font-size: 2rem; /* Tamaño del encabezado */
+    color: #2A66A1; /* Color del texto */
+    margin-bottom: 15px; /* Espaciado inferior */
+}
+
+.description p {
+    font-size: 1.2rem; /* Tamaño de fuente del párrafo */
+    line-height: 1.5; /* Espaciado entre líneas */
+    color: #333; /* Color del texto */
+}
+
     </style>
 
   <script type="text/JavaScript">
@@ -280,10 +301,34 @@ hr {
       </div>
 
 
+      <!-- Left and right controls -->
+
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+
+        <span class="sr-only">Previous</span>
+
+      </a>
+
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+
+        <span class="sr-only">Next</span>
+
+      </a>
 
     </div>
 
   </div>
+
+  <div class="description">
+            <h3>Descripción de la Aplicación</h3>
+            <p>
+                El sistema Quipux es una innovadora herramienta diseñada para optimizar la gestión documental del Instituto Superior Tecnológico Particular "Bolívar Madero Vargas". Permite un manejo eficiente de los documentos, asegurando una organización y acceso fácil a la información. Con características que incluyen seguridad de datos y seguimiento de trámites administrativos, Quipux se convierte en un aliado fundamental para la modernización y transparencia en los procesos institucionales.
+            </p>
+        </div>
 
   <div class="col-sm-4">
     <div class="well">
