@@ -46,10 +46,12 @@ include_once "$ruta_raiz/config_title.php";
             width: auto;
             display: block; 
             text-align: center;
+            padding: 15px 10px;
         }
         .banner-text {
             text-align: center;
             padding-right: 40px;
+            padding: 15px 10px;
         }
         .banner h2 {
             font-family: 'Poppins', sans-serif;
