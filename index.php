@@ -39,7 +39,7 @@ include_once "$ruta_raiz/config_title.php";
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 0 80px;
+            padding: 20 20px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
         .banner img {
