@@ -1,11 +1,11 @@
 <?php
-$institucionSigla="institucionSigla";
-$institucionNombre="institucionNombre";
+$institucionSigla="QUIPUX IBMV";
+$institucionNombre="QUIPUX IBMV";
 $banner1 = "imagenes/logolisto.jpg";
 $banner2 = "imagenes/logolisto.jpg";
 $linkBanner1 = "imagenes/logolisto.jpg";
-$nombreLinkBanner1 = "imagenes/logolisto.jpg";
+$nombreLinkBanner1 = "";
 $linkBanner2 = "imagenes/logolisto.jpg";
-$nombreLinkBanner2 = "imagenes/logolisto.jpg";
-$footerText = "footerText";
+$nombreLinkBanner2 = "";
+$footerText = "";
 ?>
