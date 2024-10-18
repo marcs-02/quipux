@@ -45,10 +45,10 @@ include_once "$ruta_raiz/config_title.php";
         .banner img {
             height: 160px;
             width: auto;
-            margin-right: 40px;
+            margin-right:0;
         }
         .banner-text {
-            text-align: left;
+            text-align: center;
             margin-left: auto;
             padding-right: 40px;
         }
@@ -89,6 +89,7 @@ include_once "$ruta_raiz/config_title.php";
         height: auto; /* Mantener la proporción */
         display: block; /* Hace que el <img> se comporte como un bloque */
         margin: 0 auto;
+        text-align: center;
         }
 
         body {
