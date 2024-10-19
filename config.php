@@ -74,7 +74,6 @@ $grabar_logs = 2;
 $grabar_log_paginas_visitadas = false;
 $grabar_log_full_backup = false;
 
-$ruta_raiz = "/quipux"
 
 //Email del Super Administrador del Sistema QUIPUX
 $amd_email = "administrador@dominio.com";
