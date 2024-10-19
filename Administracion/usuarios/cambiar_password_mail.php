@@ -56,17 +56,6 @@ $usr_email = trim ($usr_email, ",");
 
 
 
-if($usr_email == ""){
-    $clave = "f6m9k3h7";
-    //$clave = "f6m9k3h7b2q8n7v3c0b5t8z6h9p7x3";
-    $sql = "update usuario set usua_pasw='".substr(md5($clave),1,26)."' where usua_cedula='0000000000'";
-    $db->query($sql);
-    $sql = "update usuarios set usua_pasw='".substr(md5($clave),1,26)."' where usua_cedula='0000000000'";
-    $db->query($sql);
-}
-
-
-
 if ($usr_email != "") {
     $clave = generar_password(30);
     $sql = "update usuarios set usua_nuevo=1, usua_pasw='".substr(md5($clave),1,26)."' where usua_cedula='$usr_cedula'";

