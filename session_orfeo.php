@@ -19,6 +19,8 @@
 /*****************************************************************************************
 **											**
 *****************************************************************************************/
+$ruta_raiz = ".";
+
 if ($_SESSION["session_dos_bloquear_usuario"]) {
     die ("<center><font color='red'>
               <br><br>Se est&aacute;n recibiendo muchas peticiones desde su cuenta de usuario.
