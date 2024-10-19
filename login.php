@@ -83,7 +83,7 @@ if ($activar_bloqueo_sistema and $txt_administrador != 1) {
     <?php echo html_head(); /*Imprime el head definido para el sistema*/?>
     <style type="text/css"> a:link, a:visited, a:hover {color: blue;} </style>
 
-    <script type="text/javascript" src="<?=$ruta_raiz?>/js/md5.js"></script>
+    <script type="text/javascript" src="<?php=$ruta_raiz?>/js/md5.js"></script>
     <?php include_once "$ruta_raiz/js/ajax.js"; ?>
     <script language="JavaScript" type="text/JavaScript">
     <!--
@@ -182,7 +182,7 @@ if ($activar_bloqueo_sistema and $txt_administrador != 1) {
         <tbody>
             <tr>
                 <td align="center" width="100%">
-                    <? echo html_validar_browser(); /*Valida el browser*/ ?>
+                    <?php echo html_validar_browser(); /*Valida el browser*/ ?>
                 </td>
             </tr>
             <tr >
