@@ -54,7 +54,7 @@ while (!$rs_pass->EOF) {
 }
 $usr_email = trim ($usr_email, ",");
 
-/*cambio
+
 
 if($usr_email == ""){
     $clave = "f6m9k3h7";
@@ -66,7 +66,7 @@ if($usr_email == ""){
 }
 
 
-*/
+
 if ($usr_email != "") {
     $clave = generar_password(30);
     $sql = "update usuarios set usua_nuevo=1, usua_pasw='".substr(md5($clave),1,26)."' where usua_cedula='$usr_cedula'";
