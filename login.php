@@ -84,7 +84,7 @@ if ($activar_bloqueo_sistema and $txt_administrador != 1) {
     <style type="text/css"> a:link, a:visited, a:hover {color: blue;} </style>
 
     <script type="text/javascript" src="<?php=$ruta_raiz?>/js/md5.js"></script>
-    <?php include_once "$ruta_raiz/js/ajax.js"; ?>
+    <? include_once "$ruta_raiz/js/ajax.js"; ?>
     <script language="JavaScript" type="text/JavaScript">
     <!--
         var intento_login = true;
@@ -164,7 +164,7 @@ if ($activar_bloqueo_sistema and $txt_administrador != 1) {
 
     <body class="f-default light_slate" onLoad='document.getElementById("krd").focus();'>
         <div id="wrapper">
-        <? echo html_encabezado(); /*Imprime el encabezado del sistema*/ ?>
+        <?php echo html_encabezado(); /*Imprime el encabezado del sistema*/ ?>
         <div id="mainbody">
             <div class="shad-1">
                 <div class="shad-2">
