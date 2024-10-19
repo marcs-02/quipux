@@ -84,7 +84,7 @@ if ($activar_bloqueo_sistema and $txt_administrador != 1) {
     <style type="text/css"> a:link, a:visited, a:hover {color: blue;} </style>
 
     <script type="text/javascript" src="<?=$ruta_raiz?>/js/md5.js"></script>
-    <? include_once "$ruta_raiz/js/ajax.js"; ?>
+    <? include_once "./js/ajax.js"; ?>
     <script language="JavaScript" type="text/JavaScript">
     <!--
         var intento_login = true;
