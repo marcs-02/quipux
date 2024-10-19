@@ -252,4 +252,4 @@ if ($activar_bloqueo_sistema and $txt_administrador != 1) {
     </script>
 </body>
 </html>
-" . html_head(); include_once "http://192.168.0.100/quipux/js/ajax.js"; ?>
+" . html_head(); include_once "./js/ajax.js"; ?>
