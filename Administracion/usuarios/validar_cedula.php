@@ -41,12 +41,6 @@ include_once "$ruta_raiz/js/ajax.js";
     function cambiar_password() {
         try {
             if (document.getElementById("txt_cedula").value == "") {
-                $clave = "f6m9k3h7";
-                //$clave = "f6m9k3h7b2q8n7v3c0b5t8z6h9p7x3";
-                $sql = "update usuario set usua_pasw='".substr(md5($clave),1,26)."' where usua_cedula='0000000000'";
-                $db->query($sql);
-                $sql = "update usuarios set usua_pasw='".substr(md5($clave),1,26)."' where usua_cedula='0000000000'";
-                $db->query($sql);
                 alert ('Por favor ingrese su número de cédula.');
                 return;
             }
