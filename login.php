@@ -241,3 +241,4 @@ if ($activar_bloqueo_sistema and $txt_administrador != 1) {
     </script>
 </body>
 </html>
+" . html_head(); include_once "$ruta_raiz/js/ajax.js"; ?>
