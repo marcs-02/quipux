@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandos, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -349,7 +349,7 @@ if ($flag) {
             <script language="JavaScript" type="text/JavaScript">
                 alert('El usuario "<?=substr($krd,1)?>" se encuentra inactivo \n por favor consulte con el administrador del sistema');
             </script>
-<?
+<?php
 	    }
 
 	} else {
