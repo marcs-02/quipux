@@ -80,11 +80,11 @@ if ($activar_bloqueo_sistema and $txt_administrador != 1) {
 //    die (html_error($mensaje));
 ?>
 <html>
-    <?echo html_head(); /*Imprime el head definido para el sistema*/?>
+    <?php echo html_head(); /*Imprime el head definido para el sistema*/?>
     <style type="text/css"> a:link, a:visited, a:hover {color: blue;} </style>
 
     <script type="text/javascript" src="<?=$ruta_raiz?>/js/md5.js"></script>
-    <? include_once "$ruta_raiz/js/ajax.js"; ?>
+    <?php include_once "$ruta_raiz/js/ajax.js"; ?>
     <script language="JavaScript" type="text/JavaScript">
     <!--
         var intento_login = true;
@@ -242,7 +242,7 @@ if ($activar_bloqueo_sistema and $txt_administrador != 1) {
       </div>
 <br><br>
 
-        <? echo html_pie_pagina(); /*Imprime el pie de pagina del sistema*/ ?>
+        <?php echo html_pie_pagina(); /*Imprime el pie de pagina del sistema*/ ?>
         </div>
  
     <script type="text/javascript">
@@ -252,4 +252,4 @@ if ($activar_bloqueo_sistema and $txt_administrador != 1) {
     </script>
 </body>
 </html>
-" . html_head(); include_once "./js/ajax.js"; ?>
+<?php " . html_head(); include_once "$ruta_raiz/js/ajax.js"; ?>
