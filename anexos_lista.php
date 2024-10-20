@@ -53,7 +53,7 @@ $SinAnexos="<span class='listado1'><b><br>El documento actual no tiene archivos 
             <td width='24%' class="titulos2">ACCI&Oacute;N</td>
         </tr>
 
-<?
+<?php
 $flag=false;
 if ($fl==1)
     $flag=true;
@@ -102,7 +102,7 @@ if($radi_temp) {	/////////////	SI YA EXISTIAN DOCUMENTOS	////////////////////
 	    <td><font size=1> <?=$usuario?></font></td>
 	    <td><font size=1> <?if($fisico==0) echo "Electr&oacute;nico"; else echo "F&iacute;sico"?></font></td>
 	    <td align="center"><font size=1>
-	<? 	$espacios = "&nbsp;&nbsp;&nbsp;&nbsp;";
+	<?php 	$espacios = "&nbsp;&nbsp;&nbsp;&nbsp;";
 		if ($flag) {
 		    if ($fisico==0)
 		    	echo "<a class=vinculos href=\"javascript:;\" onclick=\"acciones('$coddocu',3)\"
@@ -122,7 +122,7 @@ if($radi_temp) {	/////////////	SI YA EXISTIAN DOCUMENTOS	////////////////////
 	    </font></td>
 	</tr>
 
-<?
+<?php
 	$rs->MoveNext();
     }	//fin del while
 }	//fin del if
