@@ -43,7 +43,7 @@ echo "<html>".html_head();
   <body>
     <br/>
     <center>
-<?
+<?php
     echo "<font color='red' face='Arial' size='3'>".$firma["mensaje"]."</font><br/><br/>";
 
     if ($firma["flag"]==1) { 
@@ -54,10 +54,10 @@ echo "<html>".html_head();
         <a onClick="javascript:window.open('<?=$path_descarga?>','_self','');" href="javascript:;" class='vinculos'>Descargar Archivo Firmado</a>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <a onClick="javascript:window.open('<?=str_replace('.p7m','',$path_descarga)?>','_self','');" href="javascript:;" class='vinculos'>Ver Documento</a>
-<? } else { ?>
+<?php } else { ?>
         <a onClick="javascript:window.open('<?=$path_descarga?>','_self','');"  href="javascript:;" class='vinculos'>Descargar Archivo Firmado</a>
         <br><br>
-<? } ?>
+<?php } ?>
       <br/><br/><br/>
       <input type='button' onClick='window.close();' name='cerrar' value="CERRAR VENTANA" class="botones_largo">
     </center>
