@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -15,7 +15,6 @@
 *    You should have received a copy of the GNU Affero General Public License
 *    along with this program.  If not, see http://www.gnu.org/licenses. 
 *------------------------------------------------------------------------------
-
 **************************************************************************************
 ** Respalda uno por uno los documentos de los usuarios                              **
 ** Busca los documentos que se deberán respaldar y los respalda uno por uno         **
@@ -104,6 +103,5 @@ include_once "$ruta_raiz/js/ajax.js";
 
 </body>
 </html>
-<?
-
+<?php
 ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -256,22 +256,22 @@ function copiar_datos_registro_civil(campo_rc, campo_usr) {
         ?>
     <table width="100%" border="1"  align="center"  name="usr_datos" id="usr_datos">
         
-<? if ($accion != 1) { ?>
+<?php if ($accion != 1) { ?>
 	<tr>
 	    <td class="titulos2"> Usuario: </td>
 	    <td class="listado2"><?=$ciu_cedula?></td>
-	    <? if ($_SESSION["admin_institucion"]==1) { ?>               
+	    <?php if ($_SESSION["admin_institucion"]==1) { ?>               
                 <td class="titulos2">Ciudadano: 
                 <td class="listado2">&nbsp;                
                     <input class="tex_area" type="checkbox" name="ciu_desactiva" id="ciu_desactiva" value="1" <?=$ciu_desactiva?> onclick="desactivarCiudadano();">Ciudadano Activo
                     <input type="hidden" value="1" id="desactivar" name="desactivar">
            </td> 
-           <?}else{?>
+           <?php }else{?>
                 <td class="titulos2">&nbsp;</td>
                 <td class="listado2">&nbsp;</td>
-           <?}?>
+           <?php}?>
 	</tr>
-<? } ?>
+<?php } ?>
     <tr>
             
 	    <td class="titulos2" width="15%">* C&eacute;dula/RUC: </td>

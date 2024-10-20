@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -80,13 +80,13 @@ else
 <form method="post" action="adm_solicitud_validar.php">
 <table border=0 width=100% align="center" class="borde_tab" cellspacing="0">
 
-    <?if($apellidosnombres != $datos_rc['nombre']) {?>
+    <?php if($apellidosnombres != $datos_rc['nombre']) {?>
 
     <tr align="center" 	class="titulos2">
         <td class="titulos2"><font color="Maroon">Existen inconsistencias en los datos(Apellido, Nombre)</font></td>
     </tr>
 
-    <?}?>
+    <?php }?>
 
     <tr align="center" class="titulos2">
 	<td class="titulos2">DATOS DEL CIUDADANO</td>

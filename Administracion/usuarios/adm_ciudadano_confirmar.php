@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -33,7 +33,7 @@ include_once "$ruta_raiz/rec_session.php";
 ?>
 
 <html>
-<?
+<?php
     echo html_head(); /*Imprime el head definido para el sistema*/
     require_once "$ruta_raiz/js/ajax.js";
 ?>
@@ -192,7 +192,7 @@ include_once "$ruta_raiz/rec_session.php";
     <body>
         <form name='frm_confirmar' action="grabar_usuario_ext.php?accion=2" method="post">
             <input type='hidden' name='pagina_anterior' id='pagina_anterior' value='confirmar'>
-<?
+<?php
             function caja_hidden($campo) {
                echo "<input type='hidden' name='$campo' id='$campo' value=''>";
                 return;

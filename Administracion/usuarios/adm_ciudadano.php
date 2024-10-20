@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
  *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
  *    Quipux    www.gestiondocumental.gov.ec
@@ -163,9 +163,9 @@ require_once "$ruta_raiz/js/ajax.js"; // teya 20110421
             <div id="div_datos_registro_civil" style="width: 100%;"></div>
             <div id="div_datos_usuario_multiple" style="width: 100%;"></div>
 
-            <!--<div id="div_validar_email" style="display: none;" ><? if (validar_mail($ciu_email)) echo "OK"; ?></div>-->
+            <!--<div id="div_validar_email" style="display: none;" ><?php if (validar_mail($ciu_email)) echo "OK"; ?></div>-->
             <table width="100%" border="1" align="center" class="borde_tab">
-                <?
+                <?php
 
                 function dibujar_campo($campo, $label, $tamano, $opciones="") {
                     global $$campo;
@@ -209,7 +209,7 @@ require_once "$ruta_raiz/js/ajax.js"; // teya 20110421
                 <td class="listado3">
                 <div id='usr_ciu'><?=$usr_ciudad?></div>
                 </td>
-                <?
+                <?php
                  echo "</tr>";
                 ?>
                 <tr>

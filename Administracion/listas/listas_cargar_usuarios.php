@@ -49,7 +49,7 @@ $lista_orden = 0 + $_POST["txt_lista_orden"];
     </tr>
 
 
-<?
+<?php
 if ($lista_orden == 1) {
     $lista_usr = explode("-",$usuarios_lista);
     for($i=0 ; $i<=count($lista_usr)+1 ; $i++) {
@@ -75,7 +75,7 @@ if ($lista_orden == 1) {
 ?>
 </table>
 
-<?
+<?php
 function mostrar_usuario() {
     global $rs;
 ?>
@@ -92,7 +92,7 @@ function mostrar_usuario() {
                 <input class='botones_azul' title='Quitar usuario de la lista' type='button' value='Borrar' onClick="borrar_usuario_lista('<?=$rs->fields["USUA_CODI"]?>');"></font>
             </td>
         </tr>
-<?
+<?php
     return;
 }
 ?>

@@ -19,7 +19,7 @@
 /*****************************************************************************
 **  Muestra las alertas programadas por el administrador del sistema        **
 **  Programar para que se ejecute cada 5 minutos                            **
-******************************************************************************/
+******************************************************************************/ 
 
 $ruta_raiz = "../..";
 include_once "$ruta_raiz/config.php";

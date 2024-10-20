@@ -71,7 +71,7 @@ if ($lista_codi != 0) {
         <input type="hidden" name="txt_lista_estado" id="txt_lista_estado" value="<?=$lista_estado?>"/>
         <td class="titulos2" width="15%">* Seleccione la lista</td>
         <td class="listado2" colspan="3">
-<?
+<?php
 if ($usrPermisoAdm==1){//tiene permisos de administracion de listas
      $sql = "select lista_nombre, lista_codi from lista where inst_codi=".$_SESSION["inst_codi"];
      $sql.=" and lista_estado = 1 order by lista_nombre asc";

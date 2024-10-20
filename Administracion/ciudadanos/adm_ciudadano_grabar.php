@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -113,7 +113,7 @@ if($ok1)
             </td>
             </tr>
             <tr><td width="100%" height="30" align="center" class="listado2">
-                    <?
+                    <?php
                     if ($_SESSION["tipo_usuario"]==1) {                        
                         if($_GET['buscar'] == 'S' and $_GET['cerrar']=='No')
                             echo "<input type='button' value='Aceptar' class='botones' name='btn_aceptar' onClick=redireccionar();>";

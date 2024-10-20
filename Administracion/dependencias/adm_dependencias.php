@@ -164,7 +164,7 @@ function valida_extension()
   <br/>
 </form>
 
-<? if ($accion==1 or $slc_dependencia!=0) { ?>
+<?php if ($accion==1 or $slc_dependencia!=0) { ?>
 <form name="form2" id="form2" ENCTYPE="multipart/form-data" method="post" action="<?='adm_dependencias_grabar.php?accion='.$accion?>">
   <input type="hidden" name="txt_ok" id="txt_ok" value="" >
   <input type="hidden" name="txt_depe_codi" id="txt_depe_codi" value="<?=$txt_depe_codi?>" >
