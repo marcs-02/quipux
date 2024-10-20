@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -21,7 +21,7 @@
  * Principales funciones de Quipux
 ***************************************************************************************/
 
-
+$ruta_raiz = "../..";
 include_once($ruta_raiz."/include/tx/Historico.php");
 class Tx extends Historico
 {

@@ -33,6 +33,7 @@
 
 //Por David Gamboa, los cambios que se realiza, es agregar filtros en los casos 12 y 13, respectivamente
 //los filtros, son leidos, no leidos y todos.
+$ruta_raiz = "../..";
 switch($db->driver) {
     case 'postgres':
     $datos_usuarios = "(select usua_codi, usua_nomb||' '||usua_apellido as \"usua_nombre\", depe_codi, inst_codi from usuarios

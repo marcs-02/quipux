@@ -1,4 +1,5 @@
 <?php
+$ruta_raiz = "../../";
 include_once "$ruta_raiz/funciones.php";
 
 include_once "$ruta_raiz/Administracion/ciudadanos/util_ciudadano.php";

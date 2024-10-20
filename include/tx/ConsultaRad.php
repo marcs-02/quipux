@@ -16,7 +16,7 @@
 *    along with this program.  If not, see http://www.gnu.org/licenses. 
 *------------------------------------------------------------------------------
 **/
-
+$ruta_raiz = "../..";
 require_once("$ruta_raiz/include/db/ConnectionHandler.php");
 require_once("$ruta_raiz/class_control/TipoDocumento.php");
  

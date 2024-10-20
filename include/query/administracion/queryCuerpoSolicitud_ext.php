@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -35,7 +35,7 @@
 * esperados.
 **/
 
-
+$ruta_raiz = "../../";
 include_once "$ruta_raiz/funciones.php";
 include_once "$ruta_raiz/Administracion/ciudadanos/util_ciudadano.php";
 $ciud = New Ciudadano($db);

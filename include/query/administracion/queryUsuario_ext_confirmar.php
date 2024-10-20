@@ -4,7 +4,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
+$ruta_raiz = "../../";
 include_once "$ruta_raiz/funciones.php";
 include_once "$ruta_raiz/Administracion/ciudadanos/util_ciudadano.php";
 $ciud = New Ciudadano($db);

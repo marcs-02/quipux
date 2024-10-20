@@ -28,7 +28,7 @@
 // - adodb/adodb-lib.inc.php    - function _adodb_getcount()
 // - adodb/drivers/adodb-postgres7.inc.php  - function SelectLimit()
 
- 
+$ruta_raiz = "../..";
 switch($db->driver) {
     case 'postgres':
     $datos_usuarios = "(select usua_codi, usua_nomb||' '||usua_apellido as \"usua_nombre\", depe_codi, inst_codi from usuarios

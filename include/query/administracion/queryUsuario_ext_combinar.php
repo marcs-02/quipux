@@ -1,4 +1,5 @@
 <?php
+$ruta_raiz = "../../";
 include_once "$ruta_raiz/funciones.php";
     switch($db->driver)	{
 	case 'postgres': 

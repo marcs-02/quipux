@@ -27,7 +27,7 @@
 //    mensaje     : en caso de error
 //    archivo     : path del archivo destino
 //    flag        : bandera que contiene 1 o 0 dependiendo si se realizó la verificación o existieron errores
-
+$ruta_raiz = "../..";
     function verificaFirma($path_archivo, $ruta_raiz=".") {
         include "$ruta_raiz/config.php";
         $wsdl = "$servidor_firma/wsFirma.php?wsdl";;
