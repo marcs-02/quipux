@@ -204,16 +204,16 @@ echo "<html>".html_head();
 
 <style>a:link, a:visited, a:hover {color: blue;}</style>
 <body >
-  <form method="post" name="frmMetadatos" action="<? echo $ruta_raiz;?>/metadatos/metadatos_radi_grabar.php">
-      <input type="hidden" id="txtMetRadiCodi" name=txtMetRadiCodi value="<? echo $datos["met_radi_codi"];?>">
-      <input type="hidden" id="txtRadiCodi" name=txtRadiCodi value="<? echo $radi_nume;?>">
-      <input type="hidden" id="txtMetCodigo" name=txtMetCodigo value="<? echo $datos["met_codi"];?>">      
-      <input type="hidden" id="txtListaMetadatos" name=txtListaMetadatos value="<? echo $datos["metadato"];?>">
-      <input type="hidden" id="txtListaCodMetadatos" name=txtListaCodMetadatos value="<? echo $datos["metadato_codi"];?>">
+  <form method="post" name="frmMetadatos" action="<?php echo $ruta_raiz;?>/metadatos/metadatos_radi_grabar.php">
+      <input type="hidden" id="txtMetRadiCodi" name=txtMetRadiCodi value="<?php echo $datos["met_radi_codi"];?>">
+      <input type="hidden" id="txtRadiCodi" name=txtRadiCodi value="<?php echo $radi_nume;?>">
+      <input type="hidden" id="txtMetCodigo" name=txtMetCodigo value="<?php echo $datos["met_codi"];?>">      
+      <input type="hidden" id="txtListaMetadatos" name=txtListaMetadatos value="<?php echo $datos["metadato"];?>">
+      <input type="hidden" id="txtListaCodMetadatos" name=txtListaCodMetadatos value="<?php echo $datos["metadato_codi"];?>">
       <input type="hidden" id="txtAccion" name=txtAccion value="">
     <center>
     <br>
-    <?
+    <?php
     //Si hay algun error, se muestra mensaje donde se indica que no se puede archivar el(los) radicado(s)
     if ($mensaje_error != "" )
         echo ("<table class='borde_tab' width='100%' cellspacing=0>
@@ -222,7 +222,7 @@ echo "<html>".html_head();
                </table></center>");
     else{ ?>
     <table width="100%" border="0" cellpadding="0" cellspacing="5" class="borde_tab"> 
-       <tr class='titulos4' align="left"><td>Definición de Metadatos del Documento No.: <? echo $radi_nume_text; ?></td></tr>
+       <tr class='titulos4' align="left"><td>Definición de Metadatos del Documento No.: <?php echo $radi_nume_text; ?></td></tr>
        <tr><td>       
         <table width='100%' border='0' cellspacing='1' class='borde_tab_blanco'> 
             <br>
@@ -235,7 +235,7 @@ echo "<html>".html_head();
                         </tr>                    
                         <tr><td  colspan="4">
                             <table width="100%">
-                                <?         
+                                <?php    
                                     //Consulta por área actual
                                     $depe_actu=$_SESSION["depe_codi"];
                                     $lista = ConsultarMetadatos($db, $depe_actu, 1);
@@ -260,7 +260,7 @@ echo "<html>".html_head();
                             <td class="titulos2">Texto adicional para metadato:</td> 
                         </tr>
                             <td>                           
-                                <textarea id="txtTexto" name=txtTexto cols=60 rows=4 class=ecajasfecha onkeyup="SeleccionarTextoMET();" maxlength="250"><? echo $datos["texto"];?></textarea>   
+                                <textarea id="txtTexto" name=txtTexto cols=60 rows=4 class=ecajasfecha onkeyup="SeleccionarTextoMET();" maxlength="250"><?php echo $datos["texto"];?></textarea>   
                             </td>                          
                         </tr>
                         <tr>
@@ -268,7 +268,7 @@ echo "<html>".html_head();
                         </tr>
                         <tr >
                             <td  align="right">
-                                <textarea id="txtMetadatosTexto" name=txtMetadatosTexto cols=60 rows=7 class=ecajasfecha readonly style="background-color: lightgray;"><? echo $datos["metadato_texto"];?></textarea>   
+                                <textarea id="txtMetadatosTexto" name=txtMetadatosTexto cols=60 rows=7 class=ecajasfecha readonly style="background-color: lightgray;"><?php echo $datos["metadato_texto"];?></textarea>   
                                 <input type='button' value='Borrar texto' onClick='BorrarTexto();' name='btnBorrar' class='botones' id='Borrar'>                                
                             </td>
                         </tr>
@@ -280,10 +280,10 @@ echo "<html>".html_head();
                             <input type='button' value='Regresar' onClick='metodoCerrar();' name='btnRegresar' class='botones' id='Cancelar'>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             
-                            <? if($datos["met_radi_codi"]!=""){ ?>
+                            <?php if($datos["met_radi_codi"]!=""){ ?>
                             <input type='button' value='Eliminar' onClick="MetodoGuardar(2);" name='btnEliminar' class='botones' id='Eliminar'>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <? } ?>
+                            <?php } ?>
                             </td>
                         </tr>
                     </table>
@@ -293,7 +293,7 @@ echo "<html>".html_head();
         </td>
        </tr>      
     </table>
-    <? } ?>
+    <?php } ?>
     </center>
   </form>
   </body>

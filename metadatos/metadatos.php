@@ -49,7 +49,7 @@ echo "<html>".html_head();
     	<tr>
 	    <td width="25%" align="left" class="titulos2"><b>&nbsp;Seleccione Institución/<?=$descDependencia?>:</b></td>
 	    <td width="75%" class="listado2">
-<?      
+<?php
         if ($_SESSION["usua_codi"] != 0)
             $depe_codi_admin = obtenerAreasAdmin($_SESSION["usua_codi"],$_SESSION["inst_codi"],$_SESSION["usua_admin_sistema"],$db);
         $sql="select depe_nomb, depe_codi from dependencia where depe_estado=1 and inst_codi=".$_SESSION["inst_codi"];
@@ -106,7 +106,7 @@ echo "<html>".html_head();
                     <td class="listado5" colspan="4" width="85%">&nbsp;</td>
                     <td class="listado5" colspan="2" align="center" width="15%"><a href="#" class="vinculos" onClick="CrearItem(0,-1,'')">Crear</a></td>
                 </tr>
-                <?                        
+                <?php
                 $lista = ConsultarMetadatos($db, $depe_actu, 0);
                 ArmarArbolMetadatos($lista, 0, "..","S", "", "Editar");
                 ?>
@@ -115,7 +115,7 @@ echo "<html>".html_head();
     </table>
     <br>
 
-<?
+<?php
 ////////////////////////	BOTONES 	/////////////////////////
 ?>
     <table  width="80%" cellspacing="5">

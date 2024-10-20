@@ -40,7 +40,7 @@ echo "<html>".html_head();
 <body bgcolor="#FFFFFF" topmargin="0">
     <center>
 
-<?
+<?php
     $boton = "";
         if ($nivel_seguridad_documento > 3)
             $boton = "<input type='button' onClick='DefinirMetadato();' name='Submit1' value='Definir Metadatos' ".
@@ -52,7 +52,7 @@ echo "<html>".html_head();
             <tr>
                 <th><?=$descDependencia?></th><th>Metadato</th>
             </tr>
-<?
+<?php
         $met_codi = 0;
         $nombre_completo = "Este documento no tiene metadato definido.";
         while ($rs && !$rs->EOF) {
@@ -70,7 +70,7 @@ echo "<html>".html_head();
 ?>
         </table>
 
-<?
+<?php
     echo "<br><center>$boton</center><br>";
 ?>
 </body>

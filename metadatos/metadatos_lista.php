@@ -47,7 +47,7 @@ echo "<html>".html_head();
   <form method="post" name="formulario" action="">
     <center>
     <br>
-<?
+<?php
 ////////////////////////	COMBO DE AREAS  	/////////////////////////
 if ($flag_botones) {
 ?>
@@ -57,7 +57,7 @@ if ($flag_botones) {
     	<tr>
 	    <td width="25%" align="left" class="titulos2"><b>&nbsp;Seleccione Institución/<?=$descDependencia?>:</b></td>
 	    <td width="75%" class="listado2">
-<?
+<?php
     if ($_SESSION["usua_codi"] != 0)
           $depe_codi_admin= obtenerAreasAdmin($_SESSION["usua_codi"],$_SESSION["inst_codi"],$_SESSION["usua_admin_sistema"],$db);
 
@@ -73,7 +73,7 @@ if ($flag_botones) {
     </tr>
     </table>
     <br>
-<? } //Combo areas?>
+<?php } //Combo areas?>
     
     <table class="borde_tab" width="<?=$tamano_tabla?>">
         <tr><td class="titulos2" width="85%">Nombre de Metadato</td>
@@ -82,7 +82,7 @@ if ($flag_botones) {
         </tr>
         <tr><td  colspan="4">
             <table width="100%">
-                <?                            
+                <?php                           
                     $lista = ConsultarMetadatos($db, $depe_actu, 1);
                     ArmarArbolMetadatos($lista, 0, "..","S", "", "Consultar");
                 ?>
@@ -91,7 +91,7 @@ if ($flag_botones) {
     </table>
     <br>
 
-<?
+<?php
 ////////////////////////	BOTONES 	/////////////////////////
 if ($flag_botones) {
 ?>
@@ -105,7 +105,7 @@ if ($flag_botones) {
     	    </center></td>
 	</tr>
     </table>
-<? } ?>
+<?php } ?>
     <script type="text/javascript">
     function MostrarFila(fila, ruta_raiz){
         var elemento=document.getElementsByName(fila);
