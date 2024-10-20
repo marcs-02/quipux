@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -58,7 +58,7 @@ if ($rs->fields["USUA_NUEVO"] != 0) {
 ?>
 
 <html>
-    <?echo html_head(); /*Imprime el head definido para el sistema*/?>
+    <?php echo html_head(); /*Imprime el head definido para el sistema*/?>
     <script type="text/javascript">
         function login_olvido_contraseña() {
             windowprops = "top=50,left=50,location=no,status=no, menubar=no,scrollbars=yes, resizable=yes,width=750,height=550";
@@ -70,7 +70,7 @@ if ($rs->fields["USUA_NUEVO"] != 0) {
     </script>
     <body  id="page-bg" class="f-default light_slate">
         <div id="wrapper">
-        <? echo html_encabezado(); /*Imprime el encabezado del sistema*/ ?>
+        <?php echo html_encabezado(); /*Imprime el encabezado del sistema*/ ?>
 
         <div id="mainbody">
 		<div class="shad-1">
@@ -85,7 +85,7 @@ if ($rs->fields["USUA_NUEVO"] != 0) {
             <table align="center"  cellpadding="0" cellspacing="0" class="mainbody" border=0>
                 <tr>
                     <td align="center">
-<?
+<?php
         $usr_nombre = $rs->fields["USUA_ABR_TITULO"] . " " . $rs->fields["USUA_NOMBRE"];
         $usr_email = $rs->fields["USUA_EMAIL"];
         $usr_tipo = $rs->fields["TIPO_USUARIO"];
@@ -149,7 +149,7 @@ if ($rs->fields["USUA_NUEVO"] != 0) {
         </div>
         </div>
 
-        <? echo html_pie_pagina(); /*Imprime el pie de pagina del sistema*/ ?>
+        <?php echo html_pie_pagina(); /*Imprime el pie de pagina del sistema*/ ?>
 
         </div>
 
