@@ -208,7 +208,7 @@ function vista_previa2(ruta,numrad,textrad) {
     <tr>
         <td class="titulos2" align="right">Informaci&oacute;n de Firma:&nbsp;&nbsp;</td>
         <td class="listado2" colspan="3">
-<?
+<?php
             $tmp = $datosrad["usua_firma"];
             $tmp = preg_replace(':<tr><th.*?tr>:is', '', $tmp);
             $tmp = str_replace("<table>", "<table width='100%'>", $tmp);
@@ -271,20 +271,20 @@ if ($_SESSION["tipo_usuario"]==1) { // Si no es ciudadano
                 <option value="0" <?if($datosrad["seguridad"]==0) echo "selected"?>>P&uacute;blico</option>
                 <option value="1" <?if($datosrad["seguridad"]==1) echo "selected"?>>Confidencial</option>
             </select>
-<?
+<?php
             if ($nivel_seguridad_documento >= 6)
                 echo '<script type="text/javascript">modificar_opcion_mostrar("nivel_seguridad", 1);</script>';
             else
                 echo '<script type="text/javascript">modificar_opcion_mostrar("nivel_seguridad", 0);</script>';
 ?>
 	</td>
-<?
+<?php
 // Si tiene permiso básicos no se muestra mas información
 if ($nivel_seguridad_documento <= 1 ) die('<td class="listado2" colspan="2"></td></tr></table>');
 ?>
 	<td class="titulos2" align="right"> <?=$descTRDpl?>:&nbsp;&nbsp; </td>
 	<td class="listado2" colspan="1">
-<?
+<?php
             echo MostrarTRD($verrad, $usr_actual["depe_codi"], $db);
             if($nivel_seguridad_documento > 3)
                 echo "&nbsp;&nbsp;<img src='$ruta_raiz/imagenes/internas/pencil_add.png' id='img_trd' border='0' title='Incluir el documento en una $descTRD' alt='editar' onClick='CambiarTRD();'>";
@@ -321,7 +321,7 @@ if ($nivel_seguridad_documento <= 1 ) die('<td class="listado2" colspan="2"></td
 ?>
         </td>
     </tr>
-<?
+<?php
 
     if (trim($datosrad["radi_resumen"])!="" or $nivel_seguridad_documento>=6 or ($datosrad["estado"]==6 and $datosrad["usua_actu"]==$_SESSION["usua_codi"])) {
 ?>
@@ -341,7 +341,7 @@ if ($nivel_seguridad_documento <= 1 ) die('<td class="listado2" colspan="2"></td
 ?>
         </td>
     </tr>
-<?
+<?php
     }
 } // IF si es ciudadano (oculta tipificacion, carpetas virtuales y categoria)
     if (substr($datosrad["radi_nume_temp"],-1)==2) {
@@ -352,7 +352,7 @@ if ($nivel_seguridad_documento <= 1 ) die('<td class="listado2" colspan="2"></td
 	<td class="titulos2" align="right"> Resumen:&nbsp;&nbsp;</td>
 	<td class="listado2" colspan="3"><?= stripcslashes($rs->fields["TEXT_TEXTO"])?> </td>
     </tr>    
-    <? } 
+    <?php } 
     // si es telefono movil, muestre el texto del documento
     if (substr($datosrad["radi_nume_temp"],-1)==0 and validar_telefono_movil() and $nivel_seguridad_documento>=3) {
         $sql = "select text_texto from radi_texto where text_codi=".$datosrad["radi_codi_texto"];
@@ -362,7 +362,7 @@ if ($nivel_seguridad_documento <= 1 ) die('<td class="listado2" colspan="2"></td
         <td class="titulos2" align="right" valign="top"> Texto del Documento:&nbsp;&nbsp;</td>
 	<td class="listado2" colspan="3"><?= stripcslashes($rs->fields["TEXT_TEXTO"])?> </td>
     </tr>
-    <? }
+    <?php }
     if(trim($datosrad["radi_desc_anexos"]) != '') { ?>
     <tr>
 	<td class="titulos2" align="right"> Descripci&oacute;n de anexos:&nbsp;&nbsp;</td>
@@ -372,7 +372,7 @@ if ($nivel_seguridad_documento <= 1 ) die('<td class="listado2" colspan="2"></td
     <tr>
 	<td class="titulos2" align="right"> Metadatos:&nbsp;&nbsp;</td>
 	<td class="listado2" colspan="3">        
-        <?
+        <?php
             echo MostrarMetadato($verrad, $usr_actual["depe_codi"], $db);
             if($nivel_seguridad_documento > 3)
                 echo "&nbsp;&nbsp;<img src='$ruta_raiz/imagenes/internas/pencil_add.png' id='img_trd' border='0' title='Agregar Metadatos' alt='editar' onClick='DefinirMetadato();'>";
