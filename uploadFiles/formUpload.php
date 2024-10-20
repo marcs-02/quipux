@@ -51,7 +51,7 @@ function return_bytes($val)
 
 
 <script type="text/javascript">
-<?/*
+<?php/*
 	$rs = $db->conn->query("select * from anexos_tipo where anex_tipo_estado=1");
 	$i=0;
 	echo "var tipo= new Array();";
@@ -194,7 +194,7 @@ function regresar(){
 	    </td>
 	</tr>
     </table>
-<?
+<?php
 	/*  GENERACION LISTADO DE RADICADOS
 	 *  Aqui utilizamos la clase adodb para generar el listado de los radicados
 	 *  Esta clase cuenta con una adaptacion a las clases utiilzadas de orfeo.
