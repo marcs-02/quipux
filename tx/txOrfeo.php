@@ -36,7 +36,7 @@ $ruta_raiz = ".";
     function envioTx()
     {       
        sw=0;
-       <?
+       <?php
        if(!$verrad) {
        ?>
         for(i=1;i<document.form1.elements.length;i++)
@@ -46,7 +46,7 @@ $ruta_raiz = ".";
             alert ("Debe seleccionar uno o mas registros");
             return;
         }
-        <?	}  ?>    
+        <?php	}  ?>    
         if (document.form1.codTx.value==12){
            if (document.getElementById('compResponder').value==1)
               document.form1.action="<?=$dirresponder.'&compResponder=1'?>";
@@ -65,7 +65,7 @@ $ruta_raiz = ".";
     function window_onload(numrad)
     {
        
-       mostrar_botones(<? if (trim($estado)=="") echo $carpeta; else echo $estado; ?>,'<?=$carpeta?>',numrad);
+       mostrar_botones(<?php if (trim($estado)=="") echo $carpeta; else echo $estado; ?>,'<?=$carpeta?>',numrad);
     }
     //mostrar documento
     function mostrar_documento(numdoc, txtdoc,carpeta)
@@ -75,7 +75,7 @@ $ruta_raiz = ".";
 	window.open(var_envio,numdoc,"height=650,width=900,scrollbars=yes,left=800,top=200");
     }
 
-<?
+<?php
 require_once("$ruta_raiz/pestanas.js");
 ?>
 

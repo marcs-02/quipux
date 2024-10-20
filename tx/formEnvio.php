@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -531,14 +531,14 @@ $usrPermiso = $_SESSION['usua_perm_email_all'];//= ObtenerPermisoUsuario($_SESSI
   <script type="text/javascript" src="../js/spiffyCal/spiffyCal_v2_1.js"></script>
   <script type="text/javascript" src="../Administracion/ciudadanos/jquerysubir/jquery-1.3.2.min.js"></script>
   <script type="text/javascript">
-    <?  if(!$fecha_doc) $fecha_doc = date("d-m-Y");  ?>
+    <?php if(!$fecha_doc) $fecha_doc = date("d-m-Y");  ?>
         var dateAvailable1 = new ctlSpiffyCalendarBox("dateAvailable1", "realizarTx", "fecha_doc","btnDate1","<?=$fecha_doc?>",scBTNMODE_CUSTOMBLUE);
   </script>
   <br/>
 
   <center>
 
-<?
+<?php
     //Si hay algun error, se muestra mensaje donde se indica que no se puede archivar el(los) radicado(s)
     if ($mensaje_error != "" )
         echo ("<table class='borde_tab' width='100%' cellspacing=0><tr class='listado2'><td width='30%'>&nbsp;</td><td width='40%'>$mensaje_error</td><td width='30%'>&nbsp;</td></tr></table></center>");
@@ -706,15 +706,15 @@ switch ($codTx)
         <input type='hidden' name="carpeta" value="<?=$carpeta?>">
         <input type='hidden' name="codTx" value="<?=$codTx?>">  
         <!-- <input type='hidden' name="optEstado" value="<?$_POST['optEstado']?>">-->
-        <?if($codTx != 9){?>  
+        <?php if($codTx != 9){?>  
             <input type="hidden" name="chk_reasigna_padre" id="chk_reasigna_padre" value="0" />
-        <?}?> 
+        <?php }?> 
             
         <table width="100%" border="0" cellpadding="0" cellspacing="5" class="borde_tab">
             <tr>
                 <td class="titulos4" colspan="4" width='100%' align='center'><?=$accion?></td>
             </tr>
-        <?if ($codTx==88){
+        <?php if ($codTx==88){
             
             echo '<input type="hidden" name="txt_check_carpeta" id="txt_check_carpeta" value="0" />';
             //  comento la funcionalidad de arbol y reemplazo por autocomplete
@@ -752,7 +752,7 @@ switch ($codTx)
         <?php }?>
 
 
-<?      if ($codTx==9) {        //Muestra la fecha maxima de tramite para reasignar documentos y firmar y enviar ?>
+<?php      if ($codTx==9) {        //Muestra la fecha maxima de tramite para reasignar documentos y firmar y enviar ?>
             <tr align="center">
                 <td colspan="2" align=center>
                     <br /><span ><b>Fecha M&aacute;xima de Tr&aacute;mite dd/mm/aaaa: </b></span>
@@ -763,7 +763,7 @@ switch ($codTx)
                     </script><br>
                 </td>
             </tr>
-<?	}
+<?php	}
 	if($_SESSION["firma_digital"]==1 and $codTx == 11) { //Solicita campos necesarios para firma digital
             if ($_SESSION["tipo_usuario"]==2) {
                 echo '<input type="hidden" name="chk_firma" id="chk_firma" value="1">';
@@ -776,7 +776,7 @@ switch ($codTx)
                         <span><b>&#191;Firmar digitalmente el documento?</b></span><br/>
                 </td>
             </tr>
-<?          }
+<?php          }
         }
 
 if ($codTx==9){
@@ -811,7 +811,7 @@ if ($codTx==9){
             if($contAcc > 1){
                 $menu_accion  = $rs_accion->GetMenu2("Accion[]", 0, false, false,25," id='Accion' class='select' size =10 onclick='selOperacion($final,$inicio);'");
             }?>
-    <? if($contAcc > 1){?>
+    <?php if($contAcc > 1){?>
         <table border="1" align="center" width="100%">
         <tr>
             <td WIDTH=5%>Operaciones:</td>
@@ -821,15 +821,15 @@ if ($codTx==9){
             <textarea id="observa" name=observa cols=70 rows=3 class=ecajasfecha onkeypress="return limita(event);"></textarea>            
             <span id="spn_numero_caracteres_disponibles"></span>
             <table >
-                <? if(sizeof($radiNumeAsociados) > 0){?>                
+                <?php if(sizeof($radiNumeAsociados) > 0){?>                
                 <tr>
                     <td align ="center">
                         <input type="checkbox" name="chk_reasigna_padre" id="chk_reasigna_padre" value="0" />¿Desea reasignar los documentos antecedentes?                        
                     </td>
                 </tr>     
-                 <?} else{?>  
+                 <?php } else{?>  
                     <input type="hidden" name="chk_reasigna_padre" id="chk_reasigna_padre" value="0" />
-                <?}?>     
+                <?php }?>     
                 <tr>&nbsp;</tr>
                 <tr>
                 <td>
@@ -844,7 +844,7 @@ if ($codTx==9){
             </td>
         </tr>
         </table>
-   <?}else{?>
+   <?php}else{?>
              <table border="1" align="center" width="100%">
             <tr>
             
@@ -853,15 +853,15 @@ if ($codTx==9){
             <textarea id="observa" name=observa cols=70 rows=3 class=ecajasfecha onkeypress="return limita(event);"></textarea>
             <span id="spn_numero_caracteres_disponibles"></span>
             <table >
-                <? if(sizeof($radiNumeAsociados) > 0){?>                
+                <?php if(sizeof($radiNumeAsociados) > 0){?>                
                 <tr>
                     <td align ="center">
                         <input type="checkbox" name="chk_reasigna_padre" id="chk_reasigna_padre" value="0" />¿Desea reasignar los documentos antecedentes?                        
                     </td>
                 </tr>     
-                 <?} else{?>  
+                 <?php } else{?>  
                     <input type="hidden" name="chk_reasigna_padre" id="chk_reasigna_padre" value="0" />
-                <?}?>     
+                <?php }?>     
                 <tr>&nbsp;</tr>
                 <tr>
                 <td>
@@ -877,7 +877,7 @@ if ($codTx==9){
         </tr>
         </table>
 
-      <?}
+      <?php }
    }
 
     if($_SESSION["perm_acti_accion"]!=1 && ($codTx!==9)){ ?>
@@ -890,31 +890,31 @@ if ($codTx==9){
                     <span id="spn_numero_caracteres_disponibles"></span>
                 </td>
             </tr>           
-                <? if(sizeof($radiNumeAsociados) > 0){?>                
+                <?php if(sizeof($radiNumeAsociados) > 0){?>                
                 <tr>
                      <td  colspan="2" align='center'>
                         <input type="checkbox" name="chk_reasigna_padre" id="chk_reasigna_padre" value="0" />¿Desea reasignar los documentos antecedentes?                        
                     </td>
                 </tr>     
-                 <?} else{?>  
+                 <?php } else{?>  
                  <tr>
                      <td  colspan="2" align='center'>
                         <input type="hidden" name="chk_reasigna_padre" id="chk_reasigna_padre" value="0" />
                      </td>
                 </tr>   
-                <?}?>     
+                <?php }?>     
                 <tr>&nbsp;</tr>
                  
             <tr>
                     <td  colspan="2" align='center'>
-<? if ($whereFiltro !=="0") { ?>
+<?php if ($whereFiltro !=="0") { ?>
                         <input type='button' value='Aceptar' onClick="okTx('<?=$ver?>','<?=$docExterno?>');" name='enviardoc' class='botones' id='REALIZAR'>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<? } ?>
+<?php } ?>
                         <input type='button' value='Regresar' onClick='history.back();' name='enviardoc' class='botones' id='Cancelar'>
                     </td>
             </tr>
-   <?}
+   <?php }
 
 }
 elseif ($codTx!=9){
@@ -952,12 +952,12 @@ elseif ($codTx!=9){
      }
     }?>
     <tr align="center">
-    <? if($contAcc > 1){?>   
+    <?php if($contAcc > 1){?>   
         <td width='80%' align='right' valign='middle'>
         <table border="0" align="center" width="100%">
         <tr>
             <td WIDTH=5%>Operaciones:</td>
-            <td WIDTH=15%> <b></b><?echo $menu_accion;?></td>
+            <td WIDTH=15%> <b></b><?php echo $menu_accion;?></td>
             <td width='10%' align='right' valign='middle'>
                 <br/>
                     <b>Comentario: &nbsp;</b>
@@ -969,7 +969,7 @@ elseif ($codTx!=9){
         </tr>
         </table>
         </td>
-    <? }else{ ?>    
+    <?php }else{ ?>    
         <tr>        
         <td align="center">
               <table border="0" align="center" width="100%">  
@@ -984,20 +984,20 @@ elseif ($codTx!=9){
                 </td>
         </table>
             </tr>
-            <? } ?>
+            <?php } ?>
             <tr>
                 <td  colspan="2" align='center'>
-<? if ($whereFiltro !=="0") { ?>
+<?php if ($whereFiltro !=="0") { ?>
                     <input type='button' value='Aceptar' onClick="okTx('<?=$ver?>','<?=$docExterno?>');" name='enviardoc' class='botones' id='REALIZAR'>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<? } ?>
+<?php } ?>
                     <input type='button' value='Regresar' onClick='history.back();' name='enviardoc' class='botones' id='Cancelar'>
                 </td>
             </tr>
-<? } ?>
+<?php } ?>
         </table>
     	<br />
-<?
+<?php
 	/*  GENERACION LISTADO DE RADICADOS
 	 *  Aqui utilizamos la clase adodb para generar el listado de los radicados
          *  Esta clase cuenta con una adaptacion a las clases utiilzadas de orfeo.

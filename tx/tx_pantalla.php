@@ -398,7 +398,7 @@ include_once "$ruta_raiz/obtenerdatos.php";
                         ?>
                     <b>Fecha M&aacute;xima de Tarea (aaaa-mm-dd): 
                     </b>
-                    <?  $fechavalida = str_replace("'", "", $fechaMaximaFinal);
+                    <?php  $fechavalida = str_replace("'", "", $fechaMaximaFinal);
 //                   
                     echo dibujar_calendario("tx_fecha_tramite", date('Y-m-d'), ".", "validar_fecha_maxima($fechaMaximaFinal);") ?>
                 </td>
@@ -408,7 +408,7 @@ include_once "$ruta_raiz/obtenerdatos.php";
                     <br>
                     <b>Avance de la tarea: </b>
                     <select name="txt_tx_avance_tarea" id ="txt_tx_avance_tarea" size="1" class="select" onchange="tx_validar_avance_tarea(this.value)">
-                        <? for ($i=0; $i<=100; $i+=10) echo "<option value=\"$i\" selected>$i %</option>"; ?>
+                        <?php for ($i=0; $i<=100; $i+=10) echo "<option value=\"$i\" selected>$i %</option>"; ?>
                     </select>
                 </td>
             </tr>

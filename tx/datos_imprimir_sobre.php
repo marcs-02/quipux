@@ -200,7 +200,7 @@ if(trim($_GET['nume_radi_temp'])!="" and $tipoUsuario==1)
                         </td>
                         <td class='listado1'>
                             <input id="usua_ciudad" class="text_transparente" type="text" value="<?=$ciudad?>" size="50" readonly onblur="deshabilitaObj('c');">
-                            <?               
+                            <?php
                             
                             $sqlCmbCiu = "select nombre, id from ciudad order by 1";                            
                             $rsCmbCiu = $db->conn->Execute($sqlCmbCiu);
