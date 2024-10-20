@@ -346,7 +346,7 @@ function llamaCuerpo(parametros){
 <body bgcolor="#FFFFFF" onLoad="fjs_popup_crear_divs(); window_onload(<?=$radi_tipo?>); <?=$path_archivo_embebido?>">
     <form name="form1" id="form1" action="<?=$ruta_raiz.'/tx/formEnvio.php?carpeta='.$carpeta?>" method="post">        
 
-<?
+<?php
         $dirresponder = "$ruta_raiz/radicacion/NEW.php?nurad=$verrad&radi_padre=$verrad&textrad=$textrad&carpeta=$carpeta&accion=Responder";
         $dirresponderTodos = "$ruta_raiz/radicacion/NEW.php?nurad=$verrad&radi_padre=$verrad&textrad=$textrad&carpeta=$carpeta&accion=ResponderTodos";
         $dirmodificar = "$ruta_raiz/radicacion/NEW.php?nurad=$verrad&textrad=$textrad&carpeta=$carpeta&accion=Editar";
@@ -398,7 +398,7 @@ function llamaCuerpo(parametros){
 <ul id="documento" class='elementoVisible'>
 <table border=0 align='center' cellpadding="0" cellspacing="0" width="100%" >
     <form action='verradicado.php?<?="verrad=$verrad&carpeta=$carpeta&textrad=$textrad&estadisticas=$estadisticas"?>' method=post name='form2'>
-   <?
+   <?php
 
     //Cambia la bandera indicando si el documento fue leido o no
 //    echo "<input type='hidden' name='fechah' value='$fechah'>";
@@ -423,7 +423,7 @@ function llamaCuerpo(parametros){
     <tr>
       <td height="99" rowspan="4" width="3%" valign="top" class="listado2">&nbsp;</td>
       <td height="8" width="94%" class="listado2">
-<?
+<?php
 	$datos1 = "";$datos2 = "";$datos3 = "";$datos4 = "";$datos5 = "";$datos6 = "";$datos7 = "";$datos8 = "";
 	${"datos".$menu_ver} = "_R";	//Pone la pestaña resaltada que el usuario eligio
 ?>
@@ -436,7 +436,7 @@ function llamaCuerpo(parametros){
                 $funcionjava = "llamaCuerpo($parametrosFuncion);";
                 ?>
                 <a onclick="<?php echo $funcionjava;?>" href='javascript:void(0);' ><img src='imagenes/infoGeneral<?=$datos3?>.gif' alt='' border=0 width="110" height="25"></a></td>
-<?  
+<?php
 
         if ($nivel_seguridad_documento>=2){
             $parametrosFuncion = "verradicado.php?$hdatos";
@@ -488,7 +488,7 @@ function llamaCuerpo(parametros){
     </tr>
     <tr >
         <td  bgcolor="" width="94%" height="100">
-<?
+<?php
             //error_reporting(7);
             
             switch ($menu_ver) {
