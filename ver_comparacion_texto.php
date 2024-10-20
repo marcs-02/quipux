@@ -220,7 +220,7 @@
 
             <br><br>
             <input type="button" name="btn_cancelar" value="Cerrar" class="botones_largo" onclick="fjs_popup_cerrar();">
-<? /*
+<?php /*
             <br><br><br>
             <textarea name="txt1" id="txt1" cols="150" rows="5"><?=$txt_anterior?></textarea>
                 <br>
