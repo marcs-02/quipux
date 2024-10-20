@@ -34,7 +34,6 @@ $config_numero_meses = 60;
 $numeroCaracteresTexto = 0;
 $config_bloquear_acceso_ciudadano = false;
 
-"asdada"
 
 // Configuracion de la conexion con la BDD
 $usuario = "postgres";
