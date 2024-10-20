@@ -75,7 +75,7 @@ echo "<html>".html_head();
 <br>
     <form name="form1" id="form1" action="./tx/formEnvio.php?<?=$encabezado?>" method="POST">
 
-<?
+<?php
     include "$ruta_raiz/tx/txOrfeo.php";
 
     //if ($txt_documento == "") $txt_documento = "NO BUSCAR NADA";
