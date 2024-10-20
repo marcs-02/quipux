@@ -199,8 +199,8 @@ $txt_fecha_hasta = date("Y-m-d");
             <br>
             <table width="100%" align="center" class="borde_tab" border="0">
               <tr>
-                  <td class="listado1" valign="top" width="50%"><div id="div_criterios"><? include "reportes_criterios.php"?></div></td>
-                  <td class="listado1" valign="top" width="50%"><div id="div_estructura"><? include "reportes_estructura.php"?></div></td>
+                  <td class="listado1" valign="top" width="50%"><div id="div_criterios"><?php include "reportes_criterios.php"?></div></td>
+                  <td class="listado1" valign="top" width="50%"><div id="div_estructura"><?php include "reportes_estructura.php"?></div></td>
               </tr>
             </table>
             <br>

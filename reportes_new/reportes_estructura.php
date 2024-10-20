@@ -33,7 +33,7 @@
     var columnas_selec_reporte = '';
     var num_grupo1 = 0;
     var num_grupo2 = 0;
-<?
+<?php
     $i = 0;
     $tipo = "G1";
     foreach ($columnas as $id => $desc) {
@@ -235,7 +235,7 @@
       <td width="40%" valign="middle">
         <center>
           <table width="90%" align="center" border="0" cellspacing="2" class="borde_tab">
-<?
+<?php
             //$i = 0;
             foreach ($columnas as $col => $desc) {
                 echo "<tr id='tr_columnas_disponibles_$col' class='listado2' onclick='reportes_estructura_seleccionar_columna(\"D\",\"$col\")'>

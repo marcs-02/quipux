@@ -100,7 +100,7 @@ $criterios = explode(",", $lista_criterios);
     <tr id="tr_txt_inst_codi" style="display: none;">
         <td class="titulos5" valign="middle">Instituci&oacute;n:</td>
         <td class="listado5" valign="middle">
-<?
+<?php
     $sql = "select inst_nombre, inst_codi from institucion where inst_estado=1 order by 1 asc";
     $rs = $db->conn->Execute($sql);
     echo $rs->GetMenu2("txt_inst_codi", "0", "0:&lt;&lt; Todas las instituciones &gt;&gt;", false,"",
@@ -114,7 +114,7 @@ $criterios = explode(",", $lista_criterios);
         <td class="titulos5" valign="middle">&Aacute;rea:</td>
         <td class="listado5" valign="middle">
             <div id="div_combo_areas">
-<?
+<?php
     $where_areas = "";
     if ($_SESSION["usua_perm_estadistica"] != 1) $where_areas = " and depe_codi=".$_SESSION["depe_codi"];
     $sql = "select depe_nomb, depe_codi from dependencia where depe_estado=1 $where_areas and inst_codi=".$_SESSION["inst_codi"]." order by 1 asc";
@@ -123,7 +123,7 @@ $criterios = explode(",", $lista_criterios);
                        "id='txt_depe_codi' class='select' onChange=\"reportes_criterios_cargar_combos('A')\"" );
 ?>
             </div>
-            <span style="display: <?if ($_SESSION["usua_perm_estadistica"] == 1) echo "block"; else echo "none";?>;">
+            <span style="display: <?php if ($_SESSION["usua_perm_estadistica"] == 1) echo "block"; else echo "none";?>;">
                 <input type="checkbox" name="chk_areas_dependientes" id="chk_areas_dependientes" value="1"> Consultar &aacute;reas dependientes
             </span>
         </td>
@@ -134,7 +134,7 @@ $criterios = explode(",", $lista_criterios);
         <td class="titulos5" valign="middle">Usuario:</td>
         <td class="listado5" valign="middle">
             <div id="div_combo_usuarios">
-<?
+<?php
     $sql = "select coalesce(usua_apellido,'')||' '||coalesce(usua_nomb,'')||case when usua_esta=0 then ' (Inactivo)' else '' end as usr_nombre, usua_codi
             from usuario where usua_codi>0 $where_areas and inst_codi=".$_SESSION["inst_codi"]." order by 1 asc";
     $rs = $db->conn->Execute($sql);
