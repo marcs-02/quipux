@@ -19,7 +19,7 @@
 						<div class="shad-5">
 
 <br><br><br>
-<?
+<?php
 if (session_id())
 	session_destroy();
 ?>
