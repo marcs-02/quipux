@@ -16,6 +16,8 @@
 *    along with this program.  If not, see http://www.gnu.org/licenses. 
 *------------------------------------------------------------------------------
 **/
+
+ $ruta_raiz = ".";
  $recOrfeo = "Seguridad";
  include "$ruta_raiz/session_orfeo.php";
  
