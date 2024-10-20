@@ -60,7 +60,7 @@ include_once "usuarios_lista_modificada.php";
 <body>
 
 <table  width="100%" border="0" cellpadding="0" cellspacing="0">
-    <? 
+    <?php
     
     /*echo "RADI: ".$radi_lista_nombre;
     $radi_lista_nombre='';
@@ -73,7 +73,7 @@ include_once "usuarios_lista_modificada.php";
         <input type="text" class="select" name="radi_lista_nombre" id="radi_lista_nombre" value="<?=$radi_lista_nombre?>" size="126" readonly>
     </td>
     </tr>
-    <? } ?>
+    <?php } ?>
     <tr align="center" > 
 	<td width='10%'></td>
         <td width='3%' CLASS=titulos2 >&nbsp;</td>
@@ -84,7 +84,7 @@ include_once "usuarios_lista_modificada.php";
         
     </tr>
 
-    <?
+    <?php
         for($j=0;$j<3;$j++) {
             if ($j==0) { 	$cca = explode("-",$documento_us1);	$nom="Para:";	$tip="D";	}
             if ($j==1) { 	$cca = explode("-",$documento_us2);	$nom="De:";	$tip="R";	}

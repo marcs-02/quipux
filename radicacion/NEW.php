@@ -112,7 +112,7 @@ echo "<html>".html_head();
 <script type="text/javascript" src="<?=$ruta_raiz?>/js/crea_combos_2.js"></script>
 <script type="text/javascript" src="<?=$ruta_raiz?>/js/funciones.js"></script>
 
-<? include_once "$ruta_raiz/js/ajax.js"; ?>
+<?php include_once "$ruta_raiz/js/ajax.js"; ?>
 <script type="text/javascript" src="<?=$ruta_raiz?>/js/ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="<?=$ruta_raiz?>/js/base64.js"></script>
 <script type="text/javascript" src="<?=$ruta_raiz?>/js/md5.js"></script>
@@ -348,9 +348,9 @@ function refrescar_pagina(origen,cod_impresion)
     function mostrar_botones (flag) {
         deshabilitar = true;
         if (flag) deshabilitar = false;
-        <? if ($ent != 2) { ?>
+        <?php if ($ent != 2) { ?>
             document.formulario.Submit1.disabled = deshabilitar;
-        <? } ?>
+        <?php } ?>
         document.formulario.Submit2.disabled = deshabilitar;
     }
 
@@ -412,7 +412,7 @@ function refrescar_pagina(origen,cod_impresion)
 
     function cancelar()
 {
-        <? if ($nurad) $var_envio = "window.location='$ruta_raiz/verradicado.php?verrad=$nurad&menu_ver=3&irVerRad=1&tipo_ventana=popup';";
+        <?php if ($nurad) $var_envio = "window.location='$ruta_raiz/verradicado.php?verrad=$nurad&menu_ver=3&irVerRad=1&tipo_ventana=popup';";
            else $var_envio = "history.back();";
         echo $var_envio;
         ?>
@@ -465,10 +465,10 @@ function pestanas(valor)
         document.getElementById('etiqueta1_R').style.display = "";
         document.getElementById('etiqueta2').style.display = "";
         document.getElementById('etiqueta2_R').style.display = "none";
-         <?if($ent!= 2){?>
+         <?php if($ent!= 2){?>
             document.getElementById('etiqueta3').style.display = "";
             document.getElementById('etiqueta3_R').style.display = "none";
-        <?}?>
+        <?php }?>
 
         document.getElementById('cuerpo_documento').style.display = "";
         document.getElementById('cuerpo_anexos').style.display = "none";
@@ -481,10 +481,10 @@ function pestanas(valor)
         document.getElementById('etiqueta1_R').style.display = "none";
         document.getElementById('etiqueta2').style.display = "none";
         document.getElementById('etiqueta2_R').style.display = "";
-        <?if($ent!= 2){?>
+        <?php if($ent!= 2){?>
             document.getElementById('etiqueta3').style.display = "";
             document.getElementById('etiqueta3_R').style.display = "none";
-        <?}?>
+        <?php }?>
         document.getElementById('cuerpo_documento').style.display = "none";
         document.getElementById('cuerpo_anexos').style.display = "";
         document.getElementById('cuerpo_anexos2').style.display = "";
@@ -1217,7 +1217,7 @@ $var_envio="ent=$ent&nurad=$nurad&textrad=$textrad&accion=$accion&carpeta=$carpe
         <?php if ($ent != 2) { ?>
             <input type='button' onClick='grabar_doc(1)' name='Submit1' value='Vista Previa' class='botones' title="Graba el documento y genera una vista previa del mismo">&nbsp;&nbsp;
             
-        <? } ?>
+        <?php } ?>
         <input type='button' onClick='grabar_doc(2)' name='Submit2' value='Aceptar' class="botones" title="Graba el documento y pasa a la página de consulta del documento">&nbsp;&nbsp;
         <input type='button' onClick='cancelar()' name='Submit3' value='Cancelar' class="botones" title="Sale de la creación de documentos sin grabar">
 
@@ -1538,8 +1538,8 @@ $var_envio="ent=$ent&nurad=$nurad&textrad=$textrad&accion=$accion&carpeta=$carpe
         <?php if ($ent!=2) {?>
         <table width=100% border="0" >
         <tr>
-                <td align="left" class="listado1_ver" <? if ($_SESSION["tipo_usuario"]==2) echo "style='display:none'" ?>>Tipo de Impresi&oacute;n: </td>
-                <td colspan="1" <? if ($_SESSION["tipo_usuario"]==2) echo "style='display:none'" ?>>
+                <td align="left" class="listado1_ver" <?php if ($_SESSION["tipo_usuario"]==2) echo "style='display:none'" ?>>Tipo de Impresi&oacute;n: </td>
+                <td colspan="1" <?php if ($_SESSION["tipo_usuario"]==2) echo "style='display:none'" ?>>
                     <select name="radi_tipo_impresion" id="radi_tipo_impresion" class='select' style="width:490px"  onchange="cambiar(); histop('n',this,<?="'".$radi_tipo_impresion."'"?>);" onclick="limpiardiv()">
                         <option value="1" <?php if($radi_tipo_impresion=="1") echo "selected"; ?> onclick="buscarDatosDestinatario(1);">
                             <?php 
@@ -1605,7 +1605,7 @@ $var_envio="ent=$ent&nurad=$nurad&textrad=$textrad&accion=$accion&carpeta=$carpe
             </tr>
             
         </table>
-        <?}?>
+        <?php }?>
 
         <div id="div_estilo_impresion" style="display: none"></div>
          <div id="div_modificar_op"></div>

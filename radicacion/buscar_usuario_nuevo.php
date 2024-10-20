@@ -418,7 +418,7 @@ function mostrar_div_usuarios() {
 <input type="hidden" name="radi_lista_dest" id="radi_lista_dest" value="<?=$radi_lista_dest?>">
 <input type="hidden" name="tipo_lista" id="tipo_lista" value="">
 <input type="hidden" name="txt_nombre_texto_error" id="txt_nombre_texto_error" class="tex_area" value=""/>
-<? if (isset($_GET['listado_listas'])){
+<?php if (isset($_GET['listado_listas'])){
     $lista_modificada = 0 + $_GET['lista_modificada'];
 }
 echo '<input type="hidden" name="hidden_lista_modificada" id="hidden_lista_modificada" class="tex_area" value="'.$lista_modificada.'"/>';
@@ -440,7 +440,7 @@ echo '<input type="hidden" name="hidden_lista_modificada" id="hidden_lista_modif
         <tr>
             <td width="30%" align="right"><span class="listado5">Tipo de Usuario: </span></td>
             <td width="70%">
-                <select name='buscar_tipo' id='buscar_tipo' class='select' onChange='buscar_ciudadano()' <? if ($_SESSION["inst_codi"] == 1) echo "disabled"?>>
+                <select name='buscar_tipo' id='buscar_tipo' class='select' onChange='buscar_ciudadano()' <?php if ($_SESSION["inst_codi"] == 1) echo "disabled"?>>
                 <option value="0" <?php if ($buscar_tipo==0) echo "selected"?>>Todos los usuarios</option>
                 <option value="1" <?php if ($buscar_tipo==1) echo "selected"?>>Servidor P&uacute;blico</option>
                 <option value="2" <?php if ($buscar_tipo==2) echo "selected"?>>Ciudadano</option>
@@ -495,7 +495,7 @@ echo '<input type="hidden" name="hidden_lista_modificada" id="hidden_lista_modif
                 </ul>
             </td>
         </tr>
-<? } ?>
+<?php } ?>
       </table>
     </td>
     <td width="12%" align="center" class="listado5" >

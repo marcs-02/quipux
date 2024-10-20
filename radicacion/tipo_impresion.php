@@ -71,7 +71,7 @@ if (!$lista_usr) $lista_usr="0";
 <link rel="StyleSheet" href="../js/nornix-treemenu-2.2.0/example/style/menu.css" type="text/css" media="screen" />
 <script type="text/javascript" src="../js/nornix-treemenu-2.2.0/treemenu/nornix-treemenu.js"></script>
 <!--<script type="text/javascript" src="../js/nornix-treemenu-2.2.0/example/script/nornix-treemenu.js"></script>-->
-<? require_once "$ruta_raiz/js/ajax.js";?>
+<?php require_once "$ruta_raiz/js/ajax.js";?>
 <script LANGUAGE="JavaScript">
 
 documento=new Array();
@@ -95,7 +95,7 @@ function pasar_datos()
 </script>
 </head>
 <body bgcolor="#FFFFFF">
-<?$varenvio = "tipo_impresion.php";?>
+<?php $varenvio = "tipo_impresion.php";?>
 <form method="post" name="formuImp" id="formuImp" action="<?=$varenvio?>" >
     <table class="borde_tab" align="center" width="100%">
         <tr valign="center">

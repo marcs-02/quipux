@@ -57,9 +57,9 @@ $usuarios_lista = "";
         <td width="10%" class="titulos5">&Aacute;rea</td>
         <td width="8%"  class="titulos5">E-mail</td>
         <td width="5%"  class="titulos5">Uso</td> <!--VJ-->
-        <?if ($lista_usr=="0") {?><td colspan="5" class="titulos5">Colocar como</td><? } ?>
+        <?php if ($lista_usr=="0") {?><td colspan="5" class="titulos5">Colocar como</td><?php } ?>
     </tr>
-<?
+<?php
 $buscar_nom = trim(limpiar_sql($buscar_nom));
 $buscar_car = trim(limpiar_sql($buscar_car));
 $sql="";
@@ -125,7 +125,7 @@ if ($sql!="") {
             $sigla_institucion = "";
 ?>
     <tr onmouseover="this.style.background='#e3e8ec'" onmouseout="this.style.background='white', this.style.color='black'">
-        <td><font size=1><? if ($rs->fields["TIPO_USUARIO"]==1) echo "<i>(Serv.)</i>"; else echo "<i>(Ciu.)</i>"; ?></font></td>
+        <td><font size=1><?php if ($rs->fields["TIPO_USUARIO"]==1) echo "<i>(Serv.)</i>"; else echo "<i>(Ciu.)</i>"; ?></font></td>
         <td><font size=1><?=substr($rs->fields["USUA_NOMBRE"],0,120).$sigla_institucion ?></font></td>
         <td><font size=1><?=substr($rs->fields["INST_NOMBRE"],0,100) ?></font></td>
         <td><font size=1><?=substr($rs->fields["USUA_TITULO"],0,70) ?></font></td>
@@ -133,7 +133,7 @@ if ($sql!="") {
         <td><font size=1><?=$rs->fields["DEPE_NOMB"] ?></font></td>
         <td><font size=1><?=$rs->fields["USUA_EMAIL"] ?></font></td>
         <td align="center" valign="middle"><font size=1><?=$img_imagen ?></font></td>
-<?
+<?php
         if ($lista_usr=="0") {?>
             <td width="6%" align="center" valign="middle" ><font size=1>
                 <?php                
@@ -146,15 +146,15 @@ if ($sql!="") {
                <?php //} ?>
             </td>
             <td width="6%" align="center" valign="middle" ><font size=1>
-            <? if (($ent!=1 or $tipous==1) and $_SESSION["tipo_usuario"]!=2)
+            <?php if (($ent!=1 or $tipous==1) and $_SESSION["tipo_usuario"]!=2)
                echo "<input class='botones_azul' title='De' type='button' value='De' onClick=\"pasar('$codigo','2');\">";?></font>
             </td>
             <td width="7%" align="center" valign="middle" ><font size=1>
                 <input class='botones_azul' title='Copia' type='button' value='Copia' onClick="pasar('<?=$codigo?>','3');"></font>
             </td>
-        <? } ?>
+        <?php } ?>
     </tr>
-  <?
+  <?php
         $i++;
         $rs->MoveNext();
     }

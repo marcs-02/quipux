@@ -92,7 +92,7 @@ function pasar(indice,tipo,sbmit)
 	if(tipo==2)	{
 	    str = document.formu1.documento_us2.value;
 	    if (str.indexOf(cadena) < 0) {
-		str = <?if ($ent==2) echo "str + ";?> cadena;	
+		str = <?php if ($ent==2) echo "str + ";?> cadena;	
 	    }
 	    document.formu1.documento_us2.value = str;
 	}
@@ -164,7 +164,7 @@ function buscar_ciudadano()
 </script>
 
 <body bgcolor="#FFFFFF">
-<?$varenvio="buscar_usuario.php?krd=$krd&ent=$ent";?>
+<?php $varenvio="buscar_usuario.php?krd=$krd&ent=$ent";?>
 <form method="post" name="formu1" id="formu1" action="<?=$varenvio?>" >
 
 <table border=0 width="100%" class="borde_tab" cellpadding="0" cellspacing="5">
@@ -177,8 +177,8 @@ function buscar_ciudadano()
 		<td width="30%"><span class="listado5">Tipo de Usuario</span></td>
 		<td width="70%"> 
 		    <select name='buscar_tipo' id='buscar_tipo' class='select' onChange='buscar_ciudadano()'>
-			<option value="1" <?if ($buscar_tipo==1) echo "selected"?>>Funcionario P&uacute;blico</option>
-			<option value="2" <?if ($buscar_tipo==2) echo "selected"?>>Ciudadano</option>
+			<option value="1" <?php if ($buscar_tipo==1) echo "selected"?>>Funcionario P&uacute;blico</option>
+			<option value="2" <?php if ($buscar_tipo==2) echo "selected"?>>Ciudadano</option>
 		    </select>
  	      	</td>
 	      </tr>
@@ -190,9 +190,9 @@ function buscar_ciudadano()
 		<td><span class="listado5"><?=$_SESSION["descCargo"] ?> </span> </td>
 		<td><input type=text name="buscar_car" value="<?=$buscar_car?>" class="tex_area"></td>
  	      </tr>
- 	      <tr name="tr_institucion" id="tr_institucion" <?if ($buscar_tipo==2) echo "style='display:none'"?>>
+ 	      <tr name="tr_institucion" id="tr_institucion" <?php if ($buscar_tipo==2) echo "style='display:none'"?>>
 		<td><span class="listado5"><?=$_SESSION["descEmpresa"] ?></span></td><td> 
-<?		//$_SESSION["inst_codi"]
+<?php		//$_SESSION["inst_codi"]
 		$sql = "select distinct inst_nombre, inst_codi from institucion where inst_estado=1 order by 1";
 
 		$rs=$db->conn->query($sql);
@@ -215,7 +215,7 @@ function buscar_ciudadano()
 	    <table>
  	      <tr>
 		<td><span class="listado5">Nombre de la lista</span></td><td> 
-<?
+<?php
 		$sql="select lista_nombre, lista_codi from lista where (usua_codi=0 and inst_codi=".$_SESSION["inst_codi"].") or usua_codi=".$_SESSION["usua_codi"]." and lista_estado = 1 order by 1 asc";
 		$rs=$db->conn->query($sql);
 		if($rs) print $rs->GetMenu2("lista_usr", $lista_usr, "0:&lt;&lt; Seleccione &gt;&gt;", false,"","class='select' onChange='submit()'" );
@@ -224,19 +224,19 @@ function buscar_ciudadano()
 	    </table>
 	</td>
 	<td align="center" class="listado5" >
-	    <?if ($lista_usr!="0") {?>
+	    <?php if ($lista_usr!="0") {?>
 	    <table width="70%">
 		<tr><td width="50%" align="center"><font size=1><a href="#" onClick="pasar_lista('1');"class=vinculos >Para</a></font></td>
 		    <td width="50%" align="center"><font size=1><a href="#" onClick="pasar_lista('3');" class=vinculos>Copia</a></font></td></tr>
 	    </table>
-	    <? } ?>
+	    <?php } ?>
 	</td>
     </tr>
 </table>
 <br/>
 <table class=borde_tab width="100%" cellpadding="0" cellspacing="4">
     <tr class=listado2>	<td colspan="10" CLASS="titulos5">
-	<center><?if ($lista_usr=="0") echo "Resultado de la Búsqueda"; else echo "Personas de la Lista";?></center>
+	<center><?php if ($lista_usr=="0") echo "Resultado de la Búsqueda"; else echo "Personas de la Lista";?></center>
     </td></tr>
     <tr class="grisCCCCCC" align="center"> 
 	<td width="15%" CLASS="titulos5" >Nombres</td>
@@ -244,9 +244,9 @@ function buscar_ciudadano()
 	<td width="15%" CLASS="titulos5" ><?=($_SESSION["descCargo"])?></td>
 	<td width="15%" CLASS="titulos5"><?=($_SESSION["descEmpresa"])?></td>
 	<td width="8%" CLASS="titulos5" >email</td>
-	<?if ($lista_usr=="0") {?><td colspan="3" CLASS="titulos5" >Colocar como </td><? } ?>
+	<?php if ($lista_usr=="0") {?><td colspan="3" CLASS="titulos5" >Colocar como </td><?php } ?>
     </tr> 
-<?
+<?php
 $buscar_nom = trim(strtoupper($buscar_nom));
 $buscar_car = trim(strtoupper($buscar_car));
 $sql="";
@@ -291,22 +291,22 @@ if ($sql!="") {
 		<td ><font size=1><?=$rs->fields["USUA_CARGO"] ?> </font></td>
 		<td ><font size=1><?=$rs->fields["INST_NOMBRE"] ?></font></td>
 		<td ><font size=1><?=$rs->fields["USUA_EMAIL"] ?></font></td>
-		<?if ($lista_usr=="0") {?>
+		<?php if ($lista_usr=="0") {?>
 		    <td width="6%" align="center" valign="top" ><font size=1>
-			<?/* if ($ent!=2 or $tipous==1)*/ echo "<a href='#' onClick=\"pasar('$i','1','S')\"; class=\"grid\" >Para</a>" ?></font>
+			<?php/* if ($ent!=2 or $tipous==1)*/ echo "<a href='#' onClick=\"pasar('$i','1','S')\"; class=\"grid\" >Para</a>" ?></font>
 		    </td>
 		    <td width="6%" align="center" valign="top" ><font size=1>
-			<? if ($ent!=1 or $tipous==1) echo "<a href='#' onClick=\"pasar('$i','2','S');\" class=\"grid\"  >De</a>" ?></font>
+			<?php if ($ent!=1 or $tipous==1) echo "<a href='#' onClick=\"pasar('$i','2','S');\" class=\"grid\"  >De</a>" ?></font>
 		    </td>
 		    <td width="7%" align="center" valign="top" ><font size=1>
 			<a href="#" class="grid"  onClick="pasar('<?=$i?>','3','S');" >Copia</a></font>
 		    </td>
-		<? } ?>
+		<?php } ?>
 	    </tr>
 		<script>
 			documento[<?=$i?>]= "<?=$codigo?>";
 		</script>
-  <?
+  <?php
 	    $i++;
 	    $rs->MoveNext();
 	}
@@ -333,7 +333,7 @@ if ($sql!="") {
 <input type="hidden" name="documento_us1" value="<?=$documento_us1?>" >
 <input type="hidden" name="documento_us2" value="<?=$documento_us2?>" >
 <input type="hidden" name="concopiaa" value="<?=$concopiaa?>">
-<?
+<?php
     $flag=0;
     for($j=0;$j<3;$j++) {
       	if ($j==0) { 	$cca = explode("-",$documento_us1);	$nom="Para";	$tip="D";	}
@@ -366,9 +366,9 @@ if ($sql!="") {
 <br/>
 <table  width=100% border="0" align="center" name='tbl_botones' id='tbl_botones' cellspacing="1" cellpadding="4">
     <tr>
-	<? if ($_SESSION["usua_perm_ciudadano"]==1) { ?>
-	    <td id="td_btn_ciudadano" <?if ($buscar_tipo!="2") echo "style='display:none'"?> ><center><input type='button' value="Crear Ciudadano" class="botones_largo" onclick='crear_ciudadano()'></center></td>
-	<? } ?>
+	<?php if ($_SESSION["usua_perm_ciudadano"]==1) { ?>
+	    <td id="td_btn_ciudadano" <?php if ($buscar_tipo!="2") echo "style='display:none'"?> ><center><input type='button' value="Crear Ciudadano" class="botones_largo" onclick='crear_ciudadano()'></center></td>
+	<?php } ?>
 	<td><center><input type='button' value='Aceptar' class="botones" onclick='pasar_datos()'></center></td>
 	<td><center><input type='button' value='Regresar' class="botones" onclick='window.close()'></center></td>
     </tr>

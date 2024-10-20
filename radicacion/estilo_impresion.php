@@ -537,11 +537,11 @@ echo "<html>".html_head();
             <tr>
                 <td width="13%" class="listado1_ver">Frase despedida:</td>
                  <td width="25%">
-                    <? $long2=(strlen($opcFrasedespedida)); ?>
+                    <?php $long2=(strlen($opcFrasedespedida)); ?>
                    <input type="text" id="txt_frasedespedida" name="txt_frasedespedida" class="text_transparente" size="<?=$long2?>" value="<?=$frasedespedida?>" readonly/>
                 </td>
                 <td colspan="2">
-                    <?
+                    <?php
                     if($opcFrasedespedida=="")                        
                         $sinFrase = 1;                    
                     $long2=(strlen($opcFrasedespedida));
