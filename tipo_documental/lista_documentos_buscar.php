@@ -75,7 +75,7 @@
                         <input type='button' value='Buscar Documentos' name='btn_buscar' class='botones_largo' onClick='buscar_documentos(0)'>
                     </td>
                     <td class="listado2" align='left' width="25%" colspan="3">
-                          <? if (isset ($version_light) && $version_light==false) //Si hay problemas con la BDD
+                          <?php if (isset ($version_light) && $version_light==false) //Si hay problemas con la BDD
                                 echo '<input type="button" name="btn_buscar" class="botones_largo" value="Generar Reporte" onclick="buscar_documentos(1);" >';
                           ?>
                     </td>

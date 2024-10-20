@@ -68,7 +68,7 @@ echo "<html>".html_head();
 	</tr>
 	<tr><td  colspan="3">
 	    <table width="100%">
-		<?
+		<?php
                     $lista = ConsultarCarpetaVirtual($db, $_SESSION["depe_codi"], 1);
                     ArmarArbolCarpetaVirtual($lista, 0, "..","S", "", "Seleccionar");
                ?>
@@ -76,7 +76,7 @@ echo "<html>".html_head();
 	</tr>
     </table>
     <br>
-<?
+<?php
     $sql = "select t.trd_codi, d.depe_nomb from trd_radicado t, dependencia d where d.depe_codi=t.depe_codi and t.radi_nume_radi=$verrad";
     $rs=$db->conn->query($sql);
     $anterior = "";
@@ -109,7 +109,7 @@ echo "<html>".html_head();
     </table>
     <br>
 
-<?
+<?php
 ////////////////////////	BOTONES 	/////////////////////////
 ?>
     <table class=borde_tab width="80%" cellspacing="5">

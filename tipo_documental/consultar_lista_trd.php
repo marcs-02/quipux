@@ -50,7 +50,7 @@ echo "<html>".html_head();
   <form method="post" name="formulario" action="">
     <center>
     <br>
-<?
+<?php
 ////////////////////////	COMBO DE AREAS  	/////////////////////////
 if ($flag_botones) {
 ?>
@@ -60,7 +60,7 @@ if ($flag_botones) {
     	<tr>
 	    <td width="25%" align="left" class="titulos2"><b>&nbsp;Seleccione el <?=$descDependencia?>:</b></td>
 	    <td width="75%" class="listado2">
-<?
+<?php
 	$sql = "select DEPE_NOMB, DEPE_CODI from dependencia where depe_estado=1 and inst_codi=".$_SESSION["inst_codi"]." order by depe_nomb";
 	$rs=$db->conn->query($sql);
 	echo $rs->GetMenu2("depe_actu", $depe_actu, "0:&lt;&lt seleccione &gt;&gt;", false,"","class='select' Onchange='document.formulario.submit()'");
@@ -70,12 +70,12 @@ if ($flag_botones) {
     </tr>
     </table>
     <br>
-<? } //Combo areas?>
+<?php } //Combo areas?>
     
     <table class="borde_tab" width="<?=$tamano_tabla?>">
-<?	if ($depe_actu==0) {?>
+<?php	if ($depe_actu==0) {?>
 	    <tr><td class="titulos2" colspan="4"><center>Seleccione el <?=$descDependencia?> antes de continuar</center></td></tr>
-<?	} else {  ?>
+<?php	} else {  ?>
 	    	<!--tr><td class="titulos2" colspan="4"><?=$titulo?></td></tr-->
 	    	<tr><td class="titulos2" width="60%">Nombre de Carpeta</td>
 		    <td class="titulos2" width="15%" align="center">Estado</td>
@@ -83,20 +83,20 @@ if ($flag_botones) {
 	    	</tr>
 	    	<tr><td  colspan="4">
 		    <table width="100%">
-			<?                            
+			<?php                            
                             $lista = ConsultarCarpetaVirtual($db, $depe_actu, 1);
                             ArmarArbolCarpetaVirtual($lista, 0, "..","S", "", "Consultar");
                         ?>
 		    </table></td>
 	    	</tr>
-<?	   
+<?php	   
 	}
 ?>
 
     </table>
     <br>
 
-<?
+<?php
 ////////////////////////	BOTONES 	/////////////////////////
 if ($flag_botones) {
 ?>
@@ -110,7 +110,7 @@ if ($flag_botones) {
     	    </center></td>
 	</tr>
     </table>
-<? } ?>
+<?php } ?>
     <script type="text/javascript">
     function MostrarFila(fila, ruta_raiz){
         var elemento=document.getElementsByName(fila);

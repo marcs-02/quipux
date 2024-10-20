@@ -89,7 +89,7 @@ include_once "$ruta_raiz/js/ajax.js";
 	    	</tr>
 	    	<tr><td  colspan="4">
 		    <table width="100%">
-			<?
+			<?php
                             $lista = ConsultarCarpetaVirtual($db, $_SESSION["depe_codi"], 0);
                             ArmarArbolCarpetaVirtual($lista, 0, "..","S", "", "SeleccionarDoc");
                             if(!$lista)

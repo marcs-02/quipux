@@ -46,7 +46,7 @@ $paginador = new ADODB_Pager_Ajax($ruta_raiz, "div_lista_documentos", "$ruta_rai
 <body bgcolor="#FFFFFF" topmargin="0">
     <center>
 
-<?
+<?php
     $boton = "";
 //    if (!isset($trd_codi)) {
         if ($nivel_seguridad_documento > 3)
@@ -63,7 +63,7 @@ $paginador = new ADODB_Pager_Ajax($ruta_raiz, "div_lista_documentos", "$ruta_rai
             <tr>
                 <th><?=$descDependencia?></th><th><?=$descTRD?></th>
             </tr>
-<?
+<?php
         $codexp = 0;
         $nombre_completo = "Este documento no ha sido incluido en ninguna $descTRD.";
         while ($rs && !$rs->EOF) {
@@ -81,7 +81,7 @@ $paginador = new ADODB_Pager_Ajax($ruta_raiz, "div_lista_documentos", "$ruta_rai
 ?>
         </table>
 
-<?
+<?php
  
     if ($codexp != 0) {
 ?>
@@ -90,7 +90,7 @@ $paginador = new ADODB_Pager_Ajax($ruta_raiz, "div_lista_documentos", "$ruta_rai
     <input type="hidden" id="trd_nombre_completo" value="<?=$nombre_completo?>">
     <div id="div_lista_documentos"></div>
     <script type="text/javascript">paginador_reload_div();</script>
-<?
+<?php
     }
     echo "<br><center>$boton</center><br>";
 

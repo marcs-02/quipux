@@ -47,7 +47,7 @@ function llamaCuerpo(parametros){
     <tr>
 	<td class=titulos4 align="center" >Administraci&oacute;n de <?=$descTRDpl?></td>
     </tr>
-<? if ($_SESSION["usua_perm_trd"]==1) { ?>    
+<?php if ($_SESSION["usua_perm_trd"]==1) { ?>    
     <tr>
 	<td class="listado2">
             <?php
@@ -78,7 +78,7 @@ function llamaCuerpo(parametros){
                 <b>3. Copiar estructura de <?=$descTRDpl?> a otras &aacute;reas</b></a>
 	</td>
     </tr>
-<?  }  ?>
+<?php  }  ?>
 </table>
 <?php } ?>
 </center>

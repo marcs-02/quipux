@@ -55,7 +55,7 @@ echo "<html>".html_head();
     	<tr>
 	    <td width="25%" align="left" class="titulos2"><b>&nbsp;Seleccione el <?=$descDependencia?>:</b></td>
 	    <td width="75%" class="listado2">
-<?
+<?php
 	$sql = "select DEPE_NOMB, DEPE_CODI from dependencia where depe_estado=1 and inst_codi=".$_SESSION["inst_codi"]." order by depe_nomb";
 	$rs=$db->conn->query($sql);
 	echo $rs->GetMenu2("depe_actu", $depe_actu, "0:&lt;&lt seleccione &gt;&gt;", false,"","class='select' Onchange='document.formulario.submit()'");
@@ -105,9 +105,9 @@ echo "<html>".html_head();
     <br>
 
     <table class="borde_tab" width="80%">
-<?	if ($depe_actu==0) {?>
+<?php	if ($depe_actu==0) {?>
 	    <tr><td class="titulos2" colspan="4"><center>Seleccione el <?=$descDependencia?> antes de continuar</center></td></tr>
-<?	} else { ?>
+<?php	} else { ?>
 	    	<!--tr><td class="titulos2" colspan="4"><?=$titulo?></td></tr-->
 	    	<tr><td class="titulos2" width="60%"><center>Nombre de Carpeta</center></td>
 		    <td class="titulos2" width="15%"><center>Estado</center></td>
@@ -119,20 +119,20 @@ echo "<html>".html_head();
                             <td class="listado5" colspan="4" width="85%">&nbsp;</td>
 			    <td class="listado5" colspan="2" align="center" width="15%"><a href="#" class="vinculos" onClick="CrearItem(0,-1,'')">Crear</a></td>
 		    	</tr>
-			<?                        
+			<?php                        
                         $lista = ConsultarCarpetaVirtual($db, $depe_actu, 0);
                         ArmarArbolCarpetaVirtual($lista, 0, "..","S", "", "Editar");
                         ?>
 		    </table></td>
 	    	</tr>
-<?	    
+<?php	    
 	}
 ?>
 
     </table>
     <br>
 
-<?
+<?php
 ////////////////////////	BOTONES 	/////////////////////////
 ?>
     <table  width="80%" cellspacing="5">
