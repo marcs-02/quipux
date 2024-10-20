@@ -79,28 +79,114 @@ if ($activar_bloqueo_sistema and $txt_administrador != 1) {
     $mensaje .= "<br><br>Para ir a la pantalla de ingreso, haga click&nbsp<a href=\"$ruta_raiz/login.php\" target=\"_parent\" class=\"aqui\">&quot;AQUI&quot;</a>";
 //    die (html_error($mensaje));
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
     <?php echo html_head(); /*Imprime el head definido para el sistema*/?>
-    <style type="text/css"> a:link, a:visited, a:hover {color: blue;} </style>
-
-    <script type="text/javascript" src="<?php=$ruta_raiz?>/js/md5.js"></script>
-    <? include_once "$ruta_raiz/js/ajax.js"; ?>
+    <style type="text/css">
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+        #wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        #mainbody {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 400px;
+            transition: all 0.3s ease;
+        }
+        .login-container:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .botones {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .botones:hover {
+            background-color: #45a049;
+        }
+        .forgot-password {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .forgot-password a {
+            color: #1877f2;
+            text-decoration: none;
+        }
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script type="text/javascript" src="<?=$ruta_raiz?>/js/md5.js"></script>
+    <?php include_once "$ruta_raiz/js/ajax.js"; ?>
     <script language="JavaScript" type="text/JavaScript">
-    <!--
+        //<!--
         var intento_login = true;
         var timerID;
-
         function trim(s) {
             return s = s.replace(/^\s+|\s+$/gi, '');
         }
-
         function login_olvido_contraseña() {
             windowprops = "top=50,left=50,location=no,status=no, menubar=no,scrollbars=yes, resizable=yes,width=750,height=550";
             url = '<?=$ruta_raiz?>/Administracion/usuarios/cambiar_password_olvido.php';
             ventana = window.open(url , "cambiar_password_quipux", windowprops);
             ventana.focus();
         }
-
        function validar_login () {
             if (!intento_login) {
                 // Si ya se hizo submit bloquea el submit para que no se haga varias veces (teniendo presionada la tecla enter)
@@ -125,12 +211,10 @@ if ($activar_bloqueo_sistema and $txt_administrador != 1) {
                 document.getElementById("drd").value = MD5(document.getElementById("drd").value);
                 document.form_login.submit();
             } else {
-                
                 alert('Asegúrese de ingresar su usuario y contraseña.'); //\nSi es la primera vez que ingresa al sistema, su contraseña es "123"');
             }
             return flag;
         }
-
         function activar_intento_login() {
             clearTimeout(timerID);
             intento_login = true;
@@ -147,112 +231,42 @@ if ($activar_bloqueo_sistema and $txt_administrador != 1) {
                     return 0;
             }
         }
-        
         window.focus();
-        
         if (window.menubar.visible || window.toolbar.visible) { // si estan activas las barras llame a index para que se bloqueen
           if (detectarPhone()==0)
             window.location="index.php";
         }
-
         // -->
-
-
-        
     </script>
-
-
-    <body class="f-default light_slate" onLoad='document.getElementById("krd").focus();'>
-        <div id="wrapper">
+</head>
+<body class="f-default light_slate" onLoad='document.getElementById("krd").focus();'>
+    <div id="wrapper">
         <?php echo html_encabezado(); /*Imprime el encabezado del sistema*/ ?>
         <div id="mainbody">
-            <div class="shad-1">
-                <div class="shad-2">
-                    <div class="shad-3">
-                        <div class="shad-4">
-                            <div class="shad-5">
-<table align="center" width="100%" cellpadding="0" cellspacing="0"><!-- class="mainbody"-->
-
- <tr valign="top" align="center">
-	<td class="left"  align="center" width="100%">
-	<div class="moduletable">
-        <h1>Ingreso de Usuarios al sistema</h1>
-        <hr />
-        <table cellspacing="3" cellpadding="0" border="0" align="center" width="100%">
-        <tbody>
-            <tr>
-                <td align="center" width="100%">
-                    <?php echo html_validar_browser(); /*Valida el browser*/ ?>
-                </td>
-            </tr>
-            <tr >
-                <td width="100%" align="center">                    
-        <form name="form_login" action="" method="post" onSubmit="return validar_login();">
-            <table width="350" cellpadding="0" cellspacing="7">
-                <tr>
-                    <td align="center" colspan="2"><h2> Por favor Ingrese su n&uacute;mero de C&eacute;dula y contraseña </h2></td>
-                </tr>
-                <tr>
-                    <td align="center" colspan="2"> </td>
-                </tr>
-                <tr>
-                    <td align="right" width="30%">C&eacute;dula:</td>
-<!--                    <td width="70%"><input type="text" id='krd' name="krd" size="20" maxlength="15" class="tex_area" onchange="login_buscar_tipo_usuario()"></td>-->
-                    <td width="70%"><input type="text" id='krd' name="krd" size="20" maxlength="50" class="tex_area"></td>
-            	</tr>
-                <tr>
-                    <td align="right">Contrase&ntilde;a:</td>
-                    <td><input type=password name="drd" id="drd" size="20" class="tex_area"></td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <div id="div_tipo_usuario"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center">
-                        <a href="javascript:login_olvido_contraseña()">¿Olvid&oacute; su contrase&ntilde;a?</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center">
-                        <br>
+            <div class="login-container">
+                <h1>Ingreso de Usuarios al Sistema</h1>
+                <?php echo html_validar_browser(); /*Valida el browser*/ ?>
+                <form name="form_login" action="" method="post" onSubmit="return validar_login();">
+                    <div class="form-group">
+                        <label for="krd">Cédula:</label>
+                        <input type="text" id='krd' name="krd" maxlength="50" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="drd">Contraseña:</label>
+                        <input type="password" name="drd" id="drd" required>
+                    </div>
+                    <div id="div_tipo_usuario"></div>
+                    <div class="button-group">
                         <input name="Submit" type="submit" class="botones" value="Ingresar">
-                        &nbsp;&nbsp;
                         <input type="reset" value="Borrar" class="botones" name="reset">
-                    </td>
-                </tr>
-            </table>
-        </form>
-                     </td>
-                 </tr>
-            </tbody>
-            </table>
-        </div>
-        </td>
-    </tr>
-</table>
-
-
-                        </div>
-                     </div>
+                    </div>
+                </form>
+                <div class="forgot-password">
+                    <a href="javascript:login_olvido_contraseña()">¿Olvidó su contraseña?</a>
                 </div>
-             </div>
-         </div>
-      </div>
-<br><br>
-
-        <?php echo html_pie_pagina(); /*Imprime el pie de pagina del sistema*/ ?>
+            </div>
         </div>
- 
-    <script type="text/javascript">
-//        if (trim(document.getElementById("krd").value) != "") {
-//            login_buscar_tipo_usuario();
-//        }
-    </script>
+        <?php echo html_pie_pagina(); /*Imprime el pie de pagina del sistema*/ ?>
+    </div>
 </body>
 </html>
-<?php
-echo html_head();
-include_once "$ruta_raiz/js/ajax.js";
-?>
