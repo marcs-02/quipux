@@ -31,6 +31,6 @@ $tarea_codi = 0 + limpiar_numero($_POST["txt_tarea_codi"]);
 <center>
     <br>
     <div style="width: 98%">
-        <? echo dibujar_detalle_tarea($db, $tarea_codi, "", $ruta_raiz, ""); ?>
+        <?php echo dibujar_detalle_tarea($db, $tarea_codi, "", $ruta_raiz, ""); ?>
     </div>
 </center>

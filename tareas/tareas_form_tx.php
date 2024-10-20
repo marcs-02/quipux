@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -340,7 +340,7 @@ require_once "$ruta_raiz/js/ajax.js";
 
 
 
-<?      if ($codTx==30) {        //Muestra la fecha maxima de tarea para reasignar documentos y firmar y enviar ?>
+<?php      if ($codTx==30) {        //Muestra la fecha maxima de tarea para reasignar documentos y firmar y enviar ?>
             <tr>
                 <td  colspan="3" align='center'>
                     <input type='hidden' name='fecha_maxima_tarea' id='fecha_maxima_tarea' value='<?=$fechaMaximaTarea?>'>
@@ -350,7 +350,7 @@ require_once "$ruta_raiz/js/ajax.js";
                     <br>
                 </td>
             </tr>
-<?  }  ?>
+<?php  }  ?>
             <tr align="center">
                 <td width='30%' align='right' valign='middle'><br/>
                     <span><b>Comentario: &nbsp;</b></span>
@@ -364,10 +364,10 @@ require_once "$ruta_raiz/js/ajax.js";
             </tr>
             <tr>
                 <td  colspan="3" align='center'>
-                <? if ($whereFiltro !=="0") { ?>
+                <?php if ($whereFiltro !=="0") { ?>
                     <input type="button" name="btn_aceptar" id="btn_aceptar" class='botones' value='Aceptar' onClick="aceptar_tarea();" >
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <? } ?>
+                <?php } ?>
                     <input type='button' value='Regresar' onClick='history.back();' name='enviardoc' class='botones' id='Cancelar'>
                     
                 </td>
@@ -389,7 +389,7 @@ require_once "$ruta_raiz/js/ajax.js";
                 document.getElementById('div_pr').innerHTML = document.getElementById('div_pr').innerHTML.replace('</table>','<tr><td>hola</td><td>1</td></tr></table>');
             }
         </script>
-<?
+<?php
 	/*  GENERACION LISTADO DE RADICADOS
 	 *  Aqui utilizamos la clase adodb para generar el listado de los radicados
          *  Esta clase cuenta con una adaptacion a las clases utiilzadas de orfeo.
