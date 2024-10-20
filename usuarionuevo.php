@@ -22,7 +22,7 @@
 
 ?>
 <html>
-    <?echo html_head(true,true); /*Imprime el head definido para el sistema*/?>
+    <?php echo html_head(true,true); /*Imprime el head definido para el sistema*/?>
 
     <script language="JavaScript" type="text/JavaScript">
         function popup_main()
@@ -38,8 +38,8 @@
 
     <body class="f-default light_slate" onLoad='focus();'>
         <div id="wrapper">
-        <? echo html_encabezado(); /*Imprime el encabezado del sistema*/ ?>
-        <? echo html_validar_browser(); /*Valida el browser*/ ?>
+        <?php echo html_encabezado(); /*Imprime el encabezado del sistema*/ ?>
+        <?php echo html_validar_browser(); /*Valida el browser*/ ?>
         <div id="mainbody"><div class="shad-1"><div class="shad-2"><div class="shad-3"><div class="shad-4"><div class="shad-5">
         <br /><br /><br />
         <table align="center" width="100%" cellpadding="0" cellspacing="0" class="mainbody">
@@ -54,7 +54,7 @@
         <br /><br /><br />
 
         </div></div></div></div></div></div>
-        <? echo html_pie_pagina(); /*Imprime el pie de pagina del sistema*/ ?>
+        <?php echo html_pie_pagina(); /*Imprime el pie de pagina del sistema*/ ?>
         </div>
     </body>
 </html>
