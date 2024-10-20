@@ -91,7 +91,7 @@ include_once "$ruta_raiz/js/ajax.js";
     }
 </script>
 
-<?
+<?php
 
 echo "<body><center><br><h3>N&uacute;mero de usuarios conectados al Sistema &quot;Quipux&quot;</h3><h5>Fecha: $fecha</h5><br>";
 echo "<table border='1' width='65%'><tr><th>&nbsp;</th><th>Instituci&oacute;n</th><th>N&uacute;mero de Usuarios</th></tr>";
