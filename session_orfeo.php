@@ -367,7 +367,7 @@ if ($flag) {
         <script type="text/javascript" language="javascript">
             alert('Usuario o Contraseña incorrectos, Por favor intente de nuevo');
         </script>
-<?
+<?php
 
     }
 }
