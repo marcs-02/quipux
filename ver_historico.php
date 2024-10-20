@@ -63,7 +63,7 @@ if (isset ($replicacion) && $replicacion && $config_db_replica_info_ver_historic
         <td width=20% class="titulos2"><?=$descDependencia?> actual:</td>
         <td width=30% class="listado1"><?=$usr_actual["dependencia"]?></td>
     </tr>
-<?
+<?php
     if (ObtenerCampoRadicado("radi_leido",$verrad,$db) == 0)
         echo '<tr><td class="listado2" colspan="4"><b>El documento a&uacute;n no ha sido revisado por el destinatario.</b></td></tr>';
 ?>
@@ -81,7 +81,7 @@ if (isset ($replicacion) && $replicacion && $config_db_replica_info_ver_historic
                     <?/*if ($nivel_seguridad_documento>=2) echo "<th>Comentario</th>"; */?>
                     <th>Comentario</th>
                 </tr>
-  <?
+  <?php
     $where = "";
     // Ocultar recorrido de los documentos
     if ($datosrad["ocultar_recorrido"]=="1" and ($datosrad["estado"]=="0" or $datosrad["estado"]=="3" or $datosrad["estado"]=="6")) {
@@ -132,13 +132,13 @@ if (isset ($replicacion) && $replicacion && $config_db_replica_info_ver_historic
                 <td><?=$rs->fields["DEPE_NOMB"]?></td>
                 <td><?=$rs->fields["HIST_FECH1"]?></td>
                 <td><?=$rs->fields["SGD_TTR_DESCRIP"]?></td>
-                <td><?echo $usua_ori; //if ($autoReasignado == $condicionAR) echo $usua_dest; else echo $usua_ori;?></td>
-                <td><?if ($usua_ori != $usua_dest) echo $usua_dest?></td>
+                <td><?php echo $usua_ori; //if ($autoReasignado == $condicionAR) echo $usua_dest; else echo $usua_ori;?></td>
+                <td><?php if ($usua_ori != $usua_dest) echo $usua_dest?></td>
                 <td><?=$rs->fields["TOT_DIAS"]?></td>
-                <?/* if ($nivel_seguridad_documento >= 2) echo "<td>$observacion</td>"; */?>
+                <?php /* if ($nivel_seguridad_documento >= 2) echo "<td>$observacion</td>"; */?>
                 <td><?=$observacion?></td>
             </tr>
-<?
+<?php
             ++$i;
         }
         $rs->MoveNext();
@@ -158,7 +158,7 @@ if (isset ($replicacion) && $replicacion && $config_db_replica_info_ver_historic
 </body>
 </html>
 
-<?
+<?php
 
 function ver_historico_obtener_observacion() {
     global $nivel_seguridad_documento;
