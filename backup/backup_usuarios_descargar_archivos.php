@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -116,7 +116,7 @@ function transformar_tamanio_archivo ($tamano) {
                 <th width="33%"><center>Tama&ntilde;o</center></th>
                 <th width="33%"><center>Acci&oacute;n</center></th>
             </tr>
-<?
+<?php
 if (file_exists($archivos[0])){
     for ($i=0; $i<count($archivos); ++$i) {
         $tamano = filesize($archivos[$i]);
@@ -147,7 +147,7 @@ if (file_exists($archivos[0])){
                         <br>
                     </td>                
                 </tr>
-            <? } else { ?>            
+            <?php } else { ?>            
                 <tr>
                     <td class="listado1" colspan="3">
                         <br>
@@ -155,7 +155,7 @@ if (file_exists($archivos[0])){
                         <br>
                     </td>                
                 </tr>                
-            <? }
+            <?php }
               }?>
         </table>
         <br><br>

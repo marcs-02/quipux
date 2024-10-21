@@ -153,33 +153,33 @@
         <input type="hidden" name="txt_tipo_lista" id="txt_tipo_lista" value="<?php echo $txt_tipo_lista; ?>">
         <input type="hidden" name="txt_resp_soli_codi" id="txt_resp_soli_codi" size="20" value="<?php echo $txt_resp_soli_codi; ?>">
         <input type="hidden" name="txt_codigo_respaldo" id="txt_codigo_respaldo" size="20" value="<?php echo $txt_codigo_respaldo; ?>">
-        <? if($txt_lista_soli_codi){
+        <?php if($txt_lista_soli_codi){
            foreach ($txt_lista_soli_codi as $idLista=>$valor) {  ?>
-                <input type="hidden" name="txt_lista_soli_codigos[]" id="txt_lista_soli_codi"  value=<? echo $idLista ?> />
-       <?  } }?>
+                <input type="hidden" name="txt_lista_soli_codigos[]" id="txt_lista_soli_codi"  value=<?php echo $idLista ?> />
+       <?php  } }?>
                     
         <table width="100%" border="1" align="center" class="t_bordeGris" id="usr_datos">
         <tr><td class="titulos2" colspan="4" align="center"><?php echo $titulo; $txt_resp_soli_codi; ?></td></tr>
        
-        <? //Rechazo de solicitud
+        <?php //Rechazo de solicitud
             if(($txt_accion == 4) and ($txt_lista_soli_codi or $txt_resp_soli_codi)) { ?>
                 <input type="hidden" name="txt_lista_soli_codi" id ="txt_lista_soli_codi" value="" />
                 <tr>
                     <td width="10%" class="titulos2">  Comentario:</td>
                     <td width="40%" class="listado2" colspan="3"><textarea name="txt_comentario_rechazo" id="txt_comentario_rechazo" cols="110" rows="2" class="ecajasfecha" <?php echo $read_C; ?>></textarea></td>
                 </tr>
-        <?}?>
+        <?php }?>
 
-       <? //Eliminación de solicitud
+       <?php //Eliminación de solicitud
             if($txt_accion == 6 and  $txt_resp_soli_codi) { ?>
                 <input type="hidden" name="txt_lista_soli_codi" id ="txt_lista_soli_codi" value="" />
                 <tr>
                     <td width="10%" class="titulos2">  Comentario:</td>
                     <td width="40%" class="listado2" colspan="3"><textarea name="txt_comentario_cancela" id="txt_comentario_cancela" cols="110" rows="2" class="ecajasfecha" <?php echo $read_C; ?>></textarea></td>
                 </tr>
-        <?}?>
+        <?php }?>
 
-        <? //Fecha de ejecución solicitud
+        <?php //Fecha de ejecución solicitud
             if($txt_tipo_lista == 11 and $txt_accion == 5 and ($txt_lista_soli_codi or $txt_resp_soli_codi)) { ?>
                 <input type="hidden" name="txt_lista_soli_codi" id ="txt_lista_soli_codi" value="" />
                 <tr>
@@ -191,35 +191,35 @@
                         </script>
                     </td>
                 </tr>
-        <?}?>     
+        <?php }?>     
 
-        <? //Mensaje de validación
+        <?php //Mensaje de validación
         if (($txt_tipo_lista == 2 or $txt_tipo_lista == 11) and (!$txt_lista_soli_codi and !$txt_resp_soli_codi)){ ?>
             <input type="hidden" name="txt_lista_soli_codi" id ="txt_lista_soli_codi" value="" />
-            <tr><td class="listado2" colspan="4" align="center"><? echo $mensaje; ?></td></tr>
-        <?  }  ?>
+            <tr><td class="listado2" colspan="4" align="center"><?php echo $mensaje; ?></td></tr>
+        <?php  }  ?>
         </table>
                 
-        <? //Rechazo de solicitud
+        <?php //Rechazo de solicitud
             if(($txt_accion == 4) and ($txt_lista_soli_codi or $txt_resp_soli_codi)) { ?>
                 <input type='button' name='btn_rechazar' value='Rechazar' class='botones' onClick='metodoGuardar(4);'>
-        <?}?>
+        <?php }?>
 
-        <? //Eliminación de solicitud
+        <?php //Eliminación de solicitud
             if($txt_accion == 6){
                 if($txt_resp_soli_codi && $txt_codigo_respaldo) { ?>
                     <input type='button' name='btn_fecha_sol' value='Eliminar' class='botones' onClick='metodoEliminar(6);'>                    
-        <?      }
+        <?php   }
                 else if($txt_resp_soli_codi){ ?>
                     <input type='button' name='btn_fecha_sol' value='Eliminar' class='botones' onClick='metodoGuardar(6);'>
-        <?      }
+        <?php   }
             }
         ?>
 
-        <? //Fecha de ejecución solicitud
+        <?php //Fecha de ejecución solicitud
             if($txt_tipo_lista == 11 and $txt_accion == 5 and ($txt_lista_soli_codi or $txt_resp_soli_codi)) { ?>
             <input type='button' name='btn_fecha_sol' value='Grabar' class='botones' onClick='metodoGuardar(5);'>
-        <?}?>
+        <?php }?>
         <input type='button' name='btn_cancelar' value='Regresar' class='botones' onClick='metodoCerrar();'>
         <div id='div_eliminar_respaldo'></div>
      </form>

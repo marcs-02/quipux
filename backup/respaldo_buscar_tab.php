@@ -84,7 +84,7 @@
   ?>
   <body>
     <br>
-<?
+<?php
  $isql = "select $check_seleccionar $acc_ejecutada_calendariza ru.resp_soli_codi AS \"SCR_Solic.\",
         'seleccionar_solicitud(\"'|| ru.resp_soli_codi ||'\", \"'|| $txt_tipo_lista ||'\");' as \"HID_FUNCION_SELECCIONAR\",        
         substr(ru.fecha_solicita::text,1,19) || '$descZonaHoraria'  AS \"Fecha Solic.\",

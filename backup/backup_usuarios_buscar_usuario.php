@@ -37,7 +37,7 @@ if($orden_cambio==1) {
 ?>
   <body>
     <br>
-<?
+<?php
 
     $isql = "select u.usua_nombre AS \"SCR_Nombre\"
             ,'seleccionar_usuario(\"'|| u.usua_codi ||'\");' as \"HID_FUNCION\"

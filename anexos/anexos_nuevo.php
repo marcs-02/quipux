@@ -33,7 +33,7 @@ $asocImgRad = (isset($_POST["asocImgRad"])) ? "<input type='hidden' name='asocIm
 <?php
     for ($i=0 ; $i<10 ; ++$i) {
 ?>
-        <tr id="tr_archivo_nuevo_<?=$i?>" <? if ($i>0) echo "style='display: none;'";?> class="listado<?=($i%2)+1?>">
+        <tr id="tr_archivo_nuevo_<?=$i?>" <?php if ($i>0) echo "style='display: none;'";?> class="listado<?=($i%2)+1?>">
             <td align="left" style="vertical-align: middle;">
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="file" name="fil_archivo_nuevo_<?=$i?>" id="fil_archivo_nuevo_<?=$i?>" onchange="anexos_validar_tipo_archivo('<?=$i?>')"/>
@@ -52,7 +52,7 @@ $asocImgRad = (isset($_POST["asocImgRad"])) ? "<input type='hidden' name='asocIm
                     <input type="checkbox" name="chk_asociar_imagen_<?=$i?>" id="chk_asociar_imagen_<?=$i?>" value="1" 
                            class="ebutton" onchange="fjs_anexos_validar_chk_asociar_imagen(<?=$i?>)">
                     <span class="leidos">¿Desea colocar este archivo como imagen del documento?</span><br/>
-                <? } ?>
+                <?php } ?>
             </td>
             <td>
                 <input type="radio" name="chk_medio_nuevo_<?=$i?>" value="0" checked>Electr&oacute;nico<br/>

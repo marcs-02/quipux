@@ -62,7 +62,7 @@ $txt_buscar = 0+$_POST["txt_buscar"];
 
 ?>
 <script language="JavaScript" type="text/javascript" >
-    <? include_once "$ruta_raiz/js/spiffyCal/spiffyCal_v2_1.js";?>
+    <?php include_once "$ruta_raiz/js/spiffyCal/spiffyCal_v2_1.js";?>
     
     var dateAvailable1 = new ctlSpiffyCalendarBox("dateAvailable1", "formulario", "txt_fecha_desde","btnDate1","<?=$txt_fecha_desde?>",scBTNMODE_CUSTOMBLUE);
     var dateAvailable2 = new ctlSpiffyCalendarBox("dateAvailable2", "formulario", "txt_fecha_hasta","btnDate2","<?=$txt_fecha_hasta?>",scBTNMODE_CUSTOMBLUE);

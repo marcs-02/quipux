@@ -122,7 +122,7 @@
         <input name="btn_accion" type="button" class="botones" value="Regresar" onClick="cerrar();">
       </form>
     </center>
-<? 
+<?php
   if ($txt_documento != "")
     echo "<script>buscar_documentos();</script>";
 ?>

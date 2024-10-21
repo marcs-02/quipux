@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -70,7 +70,7 @@ function llamaCuerpo(parametros){
 </center>
 <center>
     <table border=0 align='center' cellpadding="0" cellspacing="0" width="90%" >
-      <?
+      <?php
         $txt_resp_soli_codi = trim(limpiar_sql($_GET["txt_resp_soli_codi"]));
         $txt_tipo_lista= trim(limpiar_sql($_GET["txt_tipo_lista"]));
 	$datos1 = "";$datos2 = "";
@@ -105,7 +105,7 @@ function llamaCuerpo(parametros){
       <td height="149" rowspan="4" class=""><td>
       <tr>
         <td  bgcolor="" width="100%" height="100">
-        <?
+        <?php
             error_reporting(7);
 
             switch ($menu_ver) {

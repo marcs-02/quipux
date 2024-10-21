@@ -131,7 +131,7 @@ if(!$insertSQL) {
 <center>
 <table width="100%" align="center" border="0" cellpadding="0" cellspacing="3" class="borde_tab">
         <tr><td class="titulos2" align="center">Permiso para aprobar solicitudes de respaldos</td></tr>
-        <tr><td class="listado1" align="center"><? echo $mensaje . "<br> " . $mensaje_val ?></td></tr>
+        <tr><td class="listado1" align="center"><?php echo $mensaje . "<br> " . $mensaje_val ?></td></tr>
 </table>
 <br>
 <input type='button' name='btn_cancelar' value='Aceptar' class='botones' onClick='window.close()'>

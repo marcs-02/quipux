@@ -87,7 +87,7 @@ function llamaCuerpo(parametros){
 	</td>
     </tr>
 
-<? if ($_SESSION["usua_admin_archivo"]==1) { ?>
+<?php if ($_SESSION["usua_admin_archivo"]==1) { ?>
     <tr>
 	<td class="listado2">
              <?php
@@ -98,7 +98,7 @@ function llamaCuerpo(parametros){
 		<b>5. Organizaci&oacute;n F&iacute;sica del Archivo</b></a>  
 	</td>
     </tr>
-<?  }  ?>
+<?php }  ?>
 </table>
 <?php } ?>
 </center>

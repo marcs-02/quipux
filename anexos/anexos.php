@@ -65,7 +65,7 @@ include_once "$ruta_raiz/anexos/anexos_js.php";
 
 <script type="text/javascript">
     anexos_cargar_div_lista_anexos();
-    <? if ($nivel_seguridad_documento>=4 or ($_SESSION["usua_perm_digitalizar"]==1 and isset ($_POST["asocImgRad"])))
+    <?php if ($nivel_seguridad_documento>=4 or ($_SESSION["usua_perm_digitalizar"]==1 and isset ($_POST["asocImgRad"])))
         echo "anexos_cargar_div_nuevo_anexo();";
     ?>
 </script>

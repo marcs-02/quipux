@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -122,7 +122,7 @@ $fecha_fin_sol = date("Y-m-d");
             <tr>
                 <td width="10%" class="titulos2">Instituci&oacute;n:: </td>
                 <td width="40%" class="listado2">
-<?
+<?php
                 $sql="select inst_nombre, inst_codi from institucion where inst_codi<>0 order by 1 asc";
                 $rs=$db->conn->query($sql);
                 if($rs) print $rs->GetMenu2("cmb_institucion", 0, "0:&lt;&lt; Todas las instituciones &gt;&gt;", false,"","class='select' id='cmb_institucion'" );

@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -249,7 +249,7 @@ else {
 Buscar cualquier coincidencia: Busca cualquier coincidencia entre el n&uacute;mero del documento y el texto ingresado.">
                     <input type="radio" name="rad_nume_docu_exacto" id="rad_nume_docu_exacto" value="0" checked>B&uacute;squeda exacta (r&aacute;pido)
                     <br>
-                    <input type="radio" name="rad_nume_docu_exacto" id="rad_nume_docu_exacto" value="1" <?if ($rad_nume_docu_exacto==1) echo "checked";?>>Buscar cualquier coincidencia
+                    <input type="radio" name="rad_nume_docu_exacto" id="rad_nume_docu_exacto" value="1" <?php if ($rad_nume_docu_exacto==1) echo "checked";?>>Buscar cualquier coincidencia
                     <br><?php echo dibujarDiv($ruta_raiz,'div_txt_nume_documento',$numeroCaracteresTexto);?>
                 </td>
             </tr>
@@ -322,7 +322,7 @@ Buscar cualquier coincidencia: Busca cualquier coincidencia entre el n&uacute;me
             <tr>
                 <td class="titulos2">Tipo de Documento:</td>
                 <td class="listado2">
-<?
+<?php
                     $rs = $db->conn->Execute("select trad_descr, trad_codigo from tiporad where trad_inst_codi in (0,".$_SESSION["inst_codi"].") order by 2");
                     echo $rs->GetMenu2("txt_tipo_documento", "$txt_tipo_documento", "0:&lt;&lt Todos &gt;&gt;", false,"","class='select' id ='txt_tipo_documento'");
 ?>
@@ -388,7 +388,7 @@ Buscar cualquier coincidencia: Busca cualquier coincidencia entre el n&uacute;me
                 <td class="listado2">
                     <input type="radio" name="txt_tipo_fecha" id="txt_tipo_fecha" value="0" checked>Referencia
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="radio" name="txt_tipo_fecha" id="txt_tipo_fecha" value="1" <?if ($_POST["txt_tipo_fecha"]=="1") echo "checked";?>>Registro
+                    <input type="radio" name="txt_tipo_fecha" id="txt_tipo_fecha" value="1" <?php if ($_POST["txt_tipo_fecha"]=="1") echo "checked";?>>Registro
                 </td>
                 <td width="30%" class="listado2">&nbsp;
                 </td>
@@ -442,7 +442,7 @@ Buscar cualquier coincidencia: Busca cualquier coincidencia entre el n&uacute;me
         </table>
         <br>
         <input type="button" name="btn_buscar" id="btn_buscar" class="botones_largo" value="Buscar" onclick="busqueda_buscar_documento(0);">
-        <? if (isset ($version_light) && $version_light==false) //Si hay problemas con la BDD
+        <?php if (isset ($version_light) && $version_light==false) //Si hay problemas con la BDD
             echo '<input type="button" name="btn_buscar" class="botones_largo" value="Generar Reporte" onclick="busqueda_buscar_documento(1);" title="Soporta hasta 1000 Registros">';
         ?>
         <br><br>

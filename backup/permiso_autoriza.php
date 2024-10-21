@@ -63,7 +63,7 @@
             <a href="javascript:;" onClick="metodoSeleccionarTodo(0);" class="Ntooltip"><font color="black">Quitar Todo </font></a>
             </td>
         <tr><td class="listado1" >
-        <?while (!$rs->EOF) {
+        <?php while (!$rs->EOF) {
             $fecha = date('Y-m-d h:m:s', strtotime($rs->fields["FECHA"])) . " " . $descZonaHoraria;
             $depe_codi = $rs->fields["DEPE_CODI"];
             $depe_nomb = $rs->fields["DEPE_NOMB"];
@@ -72,9 +72,9 @@
             if($asignado != "")
                 $checked = "checked";
            ?>
-        <input type="checkbox" name="dependencia[]" value=<? echo $depe_codi ?>  <? echo $checked ?> /><? echo $depe_nomb ?>
+        <input type="checkbox" name="dependencia[]" value=<?php echo $depe_codi ?>  <?php echo $checked ?> /><?php echo $depe_nomb ?>
         <br>       
-        <? $rs->MoveNext();
+        <?php $rs->MoveNext();
          }
         ?>
         </td></tr>

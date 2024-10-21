@@ -68,7 +68,7 @@ echo "<html>".html_head();
 	</tr>
 	<tr><td  colspan="3">
 	    <table width="100%">
-		<?echo ArbolSeleccionarArchivo(0, 0 , $depe_archivo, "", $db, $ruta_raiz,"S","E",1);?>
+		<?php echo ArbolSeleccionarArchivo(0, 0 , $depe_archivo, "", $db, $ruta_raiz,"S","E",1);?>
 	    </table></td>
 	</tr>
     </table>
@@ -90,7 +90,7 @@ echo "<html>".html_head();
     </table>
     <br>
 
-<?
+<?php
 ////////////////////////	BOTONES 	/////////////////////////
 ?>
     <table width="80%" cellspacing="5">

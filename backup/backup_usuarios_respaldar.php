@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -203,8 +203,8 @@ include_once "$ruta_raiz/js/ajax.js";
 ?>
                     <tr height="30px">
                         <td>
-                            <b><? if (trim($rs->fields["RESP_SOLI_CODI"])!="") echo "Solicitud No. ".$rs->fields["RESP_SOLI_CODI"].". ";?>
-                                Respaldo No. <? echo $rs->fields["RESP_CODI"]; ?></b><br><?=$rs->fields["USR"]?>
+                            <b><?php if (trim($rs->fields["RESP_SOLI_CODI"])!="") echo "Solicitud No. ".$rs->fields["RESP_SOLI_CODI"].". ";?>
+                                Respaldo No. <?php echo $rs->fields["RESP_CODI"]; ?></b><br><?=$rs->fields["USR"]?>
                         </td>
                         <td align="center">
                             <div align='left' style='color: #FFFFFF; height: 20px; width: 206px; border: thin solid #999999; position: relative;'>

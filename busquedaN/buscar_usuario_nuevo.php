@@ -292,7 +292,7 @@ echo '<input type="hidden" name="hidden_lista_modificada" id="hidden_lista_modif
          <tr>
             <td width="30%" align="right"><span class="listado5">Tipo de Usuario: </span></td>
             <td width="70%">
-                <select name='buscar_tipo' id='buscar_tipo' class='select' onChange='buscar_ciudadano()' <? if ($_SESSION["inst_codi"] == 1) echo "disabled"?>>
+                <select name='buscar_tipo' id='buscar_tipo' class='select' onChange='buscar_ciudadano()' <?php if ($_SESSION["inst_codi"] == 1) echo "disabled"?>>
                 <!--<option value="0" <?php if ($buscar_tipo==0) echo "selected"?>>Todos los usuarios</option>-->
                 <option value="1" <?php if ($buscar_tipo==1) echo "selected"?>>Servidor P&uacute;blico</option>
                 <option value="2" <?php if ($buscar_tipo==2) echo "selected"?>>Ciudadano</option>

@@ -46,7 +46,7 @@ if($orden_cambio==1) {
 ?>
   <body>
     <br>
-<?
+<?php
 
     if ($txt_documento == "") die("<center>Por favor ingrese un n&uacute;mero de documento v&aacute;lido.</center>");
     include "asociar_documento_buscar_query.php";

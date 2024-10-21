@@ -175,7 +175,7 @@ $paginador = new ADODB_Pager_Ajax($ruta_raiz, "div_buscar_documentos", "asociar_
         <input type="button" name="btn_cancelar" value="Cancelar" class="botones" onClick="window.close();">
       </form>
     </center>
-<? 
+<?php
   echo "<script>cargar_lista_asociados();</script>";
   if ($txt_documento != "")
     echo "<script>buscar_documentos();</script>";

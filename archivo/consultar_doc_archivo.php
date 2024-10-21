@@ -101,7 +101,7 @@ echo "<html>".html_head();
 	    </td>
 	    <td class="listado2">
 		
-		    <? if ($txt_codigo != "") echo ObtenerUbicacionFisica($txt_codigo,$db); 
+		    <?php if ($txt_codigo != "") echo ObtenerUbicacionFisica($txt_codigo,$db); 
 			else echo "Todo el archivo"?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		    <a href="#" class="grid" onClick="document.getElementById('tbl_archivo').style.display='';">Cambiar</a>
 		
@@ -121,13 +121,13 @@ echo "<html>".html_head();
 	</tr>
 	<tr><td  colspan="3">
 	    <table width="100%">
-		<?echo ArbolSeleccionarArchivo(0, 0 , $depe_archivo, "", $db, $ruta_raiz,"S","T","E",1);?>
+		<?php echo ArbolSeleccionarArchivo(0, 0 , $depe_archivo, "", $db, $ruta_raiz,"S","T","E",1);?>
 	    </table></td>
 	</tr>
     </table>
     <br>
 
-<?
+<?php
 if ($buscar==1) {
     $sqlFecha = "substr(radi_fech_ofic::text,1,19)";
     $isql = "select --Archivo Fisico Consulta
@@ -164,7 +164,7 @@ if ($buscar==1) {
 	$pager->Render($rows_per_page=20,$linkPagina);
 ?>
     <br/>
-<?
+<?php
 } //Fin buscar
 
 ////////////////////////	BOTONES 	/////////////////////////

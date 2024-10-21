@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -85,10 +85,10 @@
    {
        tipo_ventana = document.getElementById("txt_tipo_ventana").value;
        ruta_raiz = document.getElementById("txt_ruta").value;
-       <? if($txt_resp_soli_codi=="") $txt_soli_codi="0";
+       <?php if($txt_resp_soli_codi=="") $txt_soli_codi="0";
           else $txt_soli_codi = $txt_resp_soli_codi; ?>;
-       codigo = <? echo $txt_soli_codi; ?>;
-       tipo_lista = <? echo $txt_tipo_lista; ?>;
+       codigo = <?php echo $txt_soli_codi; ?>;
+       tipo_lista = <?php echo $txt_tipo_lista; ?>;
        if(tipo_ventana == "popup")
             window.close();
        else
@@ -113,7 +113,7 @@
             <td class="titulos2" width="10%">Estado Resp.</td>
             <td class="titulos2" width="20%">Comentario</td>
         </tr>
-        <?
+        <?php
          if (!$rs) die("");
          $i = 0;
          while (!$rs->EOF) {
@@ -134,7 +134,7 @@
                 <td><?php echo $estado_resp; ?></td>
                 <td><?php echo $comentario; ?></td>
             </tr>
-          <?
+          <?php
             ++$i;
             $rs->MoveNext();
          } ?>

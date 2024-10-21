@@ -51,7 +51,7 @@ echo "<html>".html_head();
     	<tr>
 	    <td width="25%" align="left" class="titulos2"><b>&nbsp;Seleccione <?=$descDependencia?></b></td>
 	    <td width="75%" class="listado2">
-<?
+<?php
 	$sql = "select DEPE_NOMB, DEPE_CODI from dependencia where coalesce(dep_central, depe_codi)=depe_codi 
 		and depe_estado=1 and inst_codi=".$_SESSION["inst_codi"]." order by depe_nomb";
 	$rs=$db->conn->query($sql);
@@ -64,13 +64,13 @@ echo "<html>".html_head();
     <br>
 
     <table class="borde_tab" width="80%">
-<?	if ($depe_actu==0) {?>
+<?php	if ($depe_actu==0) {?>
 	    <tr><td class="titulos2" colspan="4"><center>Seleccione el <?=$descDependencia?> antes de continuar</center></td></tr>
-<?	} else { 
+<?php	} else { 
 	    if (trim($titulo)=="") { ?>
 	    	<tr><td class="titulos2" colspan="4"><center>
 		    Esta <?=$descDependencia?> no tiene definida la estructura del Archivo</center></td></tr>
-<?	    } else { ?>
+<?php	    } else { ?>
 	    	<tr><td class="titulos2" colspan="4"><?=$titulo?></td></tr>
 	    	<tr><td class="titulos2" width="70%">Nombre Item</td>
 		    <td class="titulos2" width="15%">Estado</td>
@@ -78,17 +78,17 @@ echo "<html>".html_head();
 	    	</tr>
 	    	<tr><td  colspan="4">
 		    <table width="100%">
-			<?echo ArbolSeleccionarArchivo(0, 0 , $depe_actu, "", $db, $ruta_raiz,"L","T",0,0,"N");?>
+			<?php echo ArbolSeleccionarArchivo(0, 0 , $depe_actu, "", $db, $ruta_raiz,"L","T",0,0,"N");?>
 		    </table></td>
 	    	</tr>
-<?	    } 
+<?php	    } 
 	}
 ?>
 
     </table>
     <br>
 
-<?
+<?php
 ////////////////////////	BOTONES 	/////////////////////////
 ?>
     <table width="80%" cellspacing="5">
@@ -115,6 +115,3 @@ echo "<html>".html_head();
   </form>
   </body>
 </html>
-
-
-

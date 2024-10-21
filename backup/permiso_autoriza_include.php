@@ -91,7 +91,7 @@ include_once "$ruta_raiz/Administracion/usuarios/mnuUsuariosH.php";
             <a href="javascript:;" onClick="metodoSeleccionarTodo(0);" class="Ntooltip"><font color="black">Quitar Todo </font></a>
             </td>
         <tr><td class="listado1" >
-        <?while (!$rs->EOF) {
+        <?php while (!$rs->EOF) {
             $fecha = date('Y-m-d h:m:s', strtotime($rs->fields["FECHA"])) . " " . $descZonaHoraria;
             $depe_codi = $rs->fields["DEPE_CODI"];
             $depe_nomb = $rs->fields["DEPE_NOMB"];
@@ -103,9 +103,9 @@ include_once "$ruta_raiz/Administracion/usuarios/mnuUsuariosH.php";
             }
             $htmlfunper="onclick='cargarPermiso(this,$depe_codi,\"txt_depe_guardar\",\"txt_depe_guardar_eli\");'";
            ?>
-        <input type="checkbox" id="dependencia" name="dependencia[]" value=<? echo $depe_codi ?>  <? echo $checked ?> <?=$htmlfunper?>/><? echo $depe_nomb ?>
+        <input type="checkbox" id="dependencia" name="dependencia[]" value=<?php echo $depe_codi ?>  <?php echo $checked ?> <?=$htmlfunper?>/><?php echo $depe_nomb ?>
         <br>       
-        <? $rs->MoveNext();
+        <?php $rs->MoveNext();
          }
         ?>
         </td></tr>

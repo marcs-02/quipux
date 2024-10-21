@@ -30,7 +30,7 @@
 ?>
   <body >
     <center>
-<?
+<?php
     include "$ruta_raiz/recursivas/funciones_recursivas.php";
     $lista = new FuncionesRecursivas($db);
     $lista->tabla = "radicado";

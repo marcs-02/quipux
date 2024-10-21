@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -75,15 +75,15 @@ echo "<html>".html_head();
 	<table width="40%"  class="borde_tab">
 	    <tr> 
 		<td width="100%" height="30" class="listado2"><center>
-		<? if ($ok==1) { ?>
+		<?php if ($ok==1) { ?>
 		   Se ha cambiado la ubicaci&oacute;n de los documentos <br/>&quot;<?=substr($mensaje,0,-2)?>&quot;
 			<br/>a la Ubicaci&oacute;n F&iacute;sica &quot;<?=$nombre_ubicacion?>&quot;
 		   
-		<? } else { ?>
+		<?php } else { ?>
 		  Se han colocado los documentos <br/>&quot;<?=substr($mensaje,0,-2)?>&quot;
 			<br/>en la Ubicaci&oacute;n F&iacute;sica &quot;<?=$nombre_ubicacion?>&quot;
 		   
-		<? } ?>
+		<?php } ?>
         </center>
 		</td> 
 	    </tr>

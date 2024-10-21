@@ -92,9 +92,9 @@ echo "<html>".html_head();
     <br>
 
     <table class="borde_tab" width="80%">
-<?	if (trim($titulo)=="") { ?>
+<?php	if (trim($titulo)=="") { ?>
 	    <tr><td class="titulos2" colspan="4">Defina la organizaci&oacute;n f&iacute;sica del Archivo antes de continuar</td></tr>
-<?	} else { ?>
+<?php	} else { ?>
 	    <tr><td class="titulos2" colspan="4"><?=$titulo?></td></tr>
 	    <tr><td class="titulos2" width="56%">Nombre Item</td>
 	    	<td class="titulos2" width="10%">Sigla</td>
@@ -106,14 +106,14 @@ echo "<html>".html_head();
 		    <tr><td class="listado2" colspan="5">&nbsp;</td>
 	    		<td class="listado2"><a class='grid' href="#" onClick="CrearItem(0,-1,'<?=$tmp?>','')">Crear <?=strtolower($tmp)?></a></td>
 		    </tr>
-			<?echo ArbolModificarArchivo(0, $niveles,0 , $depe_archivo, "", $db);?>
+			<?php echo ArbolModificarArchivo(0, $niveles,0 , $depe_archivo, "", $db);?>
 	    	</table></td>
 	    </tr>
-<?	} ?>
+<?php	} ?>
     </table>
     <br>
 
-<?
+<?php
 ////////////////////////	BOTONES 	/////////////////////////
 ?>
     <table  width="80%" cellspacing="5">

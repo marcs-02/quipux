@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -57,11 +57,11 @@ $paginador = new ADODB_Pager_Ajax($ruta_raiz, "div_buscar_usuarios", "respaldo_u
             <td width="20%" class="titulos5"><font class="tituloListado">Buscar usuario del sistema: </font></td>
             <td width="60%" class="listado5">
                 <table width="100%" border="0">
-                    <? if($_SESSION["usua_perm_backup"]==1 and $txt_tipo_lista == 8) { ?>
+                    <?php if($_SESSION["usua_perm_backup"]==1 and $txt_tipo_lista == 8) { ?>
                     <tr>
                         <td width="<?=$td1?>" class="listado5">Instituci&oacute;n:</td>
                         <td width="<?=$td2?>">
-                            <?
+                            <?php
                             $sql="select inst_nombre, inst_codi from institucion where inst_codi<>0 order by 1 asc";
                             $rs=$db->conn->query($sql);
                             $cmb_institucion = $_SESSION["inst_codi"];
@@ -69,7 +69,7 @@ $paginador = new ADODB_Pager_Ajax($ruta_raiz, "div_buscar_usuarios", "respaldo_u
                             ?>
                         </td>
                     </tr>
-                    <? } else echo "<input type=hidden id='cmb_institucion' name='cmb_institucion' value='0'>"; ?>
+                    <?php } else echo "<input type=hidden id='cmb_institucion' name='cmb_institucion' value='0'>"; ?>
                     <tr>
                         <td width="<?=$td1?>" class="listado5">Nombre / C.I. <br>Puesto / Correo</td>
                         <td width="<?=$td2?>"><input type=text id="txt_nombre" name="txt_nombre" value="" class="tex_area"></td>
@@ -101,14 +101,14 @@ $paginador = new ADODB_Pager_Ajax($ruta_raiz, "div_buscar_usuarios", "respaldo_u
                     </tr>
                     <tr>
                         <td width="<?=$td1?>" class="listado5">Estado</td>
-                        <? if($_SESSION["usua_admin_sistema"]==1 and $txt_tipo_lista == 5) {?>                            
+                        <?php if($_SESSION["usua_admin_sistema"]==1 and $txt_tipo_lista == 5) {?>                            
                             <td width="<?=$td2?>">
                                 <select name="txt_estado" id="txt_estado" class="select" >                                
                                 <option value='0' selected>Inactivos</option>                                
                                 </select>
                             </td>
-                        <? } ?>
-                        <? if($_SESSION["usua_perm_backup"]==1 and $txt_tipo_lista == 8) { ?>                            
+                        <?php } ?>
+                        <?php if($_SESSION["usua_perm_backup"]==1 and $txt_tipo_lista == 8) { ?>                            
                             <td width="<?=$td2?>">
                                 <select name="txt_estado" id="txt_estado" class="select" >
                                 <option value='1' selected>Activos</option>
@@ -116,7 +116,7 @@ $paginador = new ADODB_Pager_Ajax($ruta_raiz, "div_buscar_usuarios", "respaldo_u
                                 <option value='2'>Todos</option>
                                 </select>
                             </td>
-                        <? } ?>
+                        <?php } ?>
                     </tr>
                     <tr>
                         <td class="listado5" width="<?=$td1?>">Perfil</td>

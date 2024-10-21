@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -61,7 +61,7 @@ if (isset($_POST["txt_fecha_desde"])) {
 $txt_buscar = 0+$_POST["txt_buscar"];
 ?>
 <script language="JavaScript" type="text/javascript" >
-    <? include_once "$ruta_raiz/js/spiffyCal/spiffyCal_v2_1.js";?>
+    <?php include_once "$ruta_raiz/js/spiffyCal/spiffyCal_v2_1.js";?>
 
     var dateAvailable1 = new ctlSpiffyCalendarBox("dateAvailable1", "formulario", "txt_fecha_desde","btnDate1","<?=$txt_fecha_desde?>",scBTNMODE_CUSTOMBLUE);
     var dateAvailable2 = new ctlSpiffyCalendarBox("dateAvailable2", "formulario", "txt_fecha_hasta","btnDate2","<?=$txt_fecha_hasta?>",scBTNMODE_CUSTOMBLUE);
@@ -183,7 +183,7 @@ $txt_buscar = 0+$_POST["txt_buscar"];
             <tr>
                 <td class="titulos2">Instituci&oacute;n:</td>
                 <td class="listado2">
-                   <?
+                   <?php
                     $inst_actual = $_SESSION["inst_codi"];
                     $funcionjava="onchange=pasar_principal(this.value)";
                     echo $adsc->comboAnidadoInst($inst_actual,'DESC',$funcionjava, $cmb_institucion);

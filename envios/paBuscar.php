@@ -31,7 +31,7 @@ include_once "$ruta_raiz/funciones.php";
     <input name="busqRadicados" type="text" size="60" class="tex_area" value="<?=$busqRadicados?>">
     <input type=submit value='Buscar ' name=Buscar valign='middle' class='botones'>
 
-<?
+<?php
 
         if ($busqRadicados) {
             $busqRadicados = trim(limpiar_sql($busqRadicados));

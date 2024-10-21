@@ -245,11 +245,11 @@
         </table>
         <br>
         <table width="100%" align="center" class=borde_tab border="0">
-            <? if($_SESSION["usua_perm_backup"]==1 and ($txt_tipo_lista == 9 or $txt_tipo_lista == 10 or $txt_tipo_lista == 11)) { ?>
+            <?php if($_SESSION["usua_perm_backup"]==1 and ($txt_tipo_lista == 9 or $txt_tipo_lista == 10 or $txt_tipo_lista == 11)) { ?>
                 <tr>
                     <td width="10%" class="titulos2">Instituci&oacute;n:</td>
                     <td width="40%" class="listado2">
-                        <?
+                        <?php
                         $sql="select inst_nombre, inst_codi from institucion where inst_codi>0 order by 1 asc";
                         $rs=$db->conn->query($sql);
                         if($txt_tipo_lista == 11)
@@ -261,7 +261,7 @@
                     </td>
                      <td width="15%" class="titulos5" valign="middle"></td>
                 </tr>
-            <? } else echo "<input type=hidden id='cmb_institucion' name='cmb_institucion' value='0'>"; ?>
+            <?php } else echo "<input type=hidden id='cmb_institucion' name='cmb_institucion' value='0'>"; ?>
             <tr>
             <td width="10%" class="titulos2">Fecha Inicio: </td>
             <td width="40%" class="listado2">
@@ -289,11 +289,11 @@
                     <input name="txt_sol" id="txt_sol" type="text" size="17" class="tex_area" value="">
                 </td>
             </tr>
-            <?if ($txt_tipo_lista <> 2){ ?>
+            <?php if ($txt_tipo_lista <> 2){ ?>
             <tr>
                <td width="10%" class="titulos2"> Estado Solicitud: </td>
                 <td width="40%" class="listado2">
-                    <?
+                    <?php
                         $condicion = "";
                         if($txt_tipo_lista == 3)
                             $condicion=" and est_codi<>1";
@@ -304,33 +304,33 @@
                     ?>
                 </td>
             </tr>
-            <?}
+            <?php }
             else
                 echo "<input type='hidden' id='cmb_estado' name='cmb_estado' value='0'>";
             ?>
-            <?if ($txt_tipo_lista != 1){?>
+            <?php if ($txt_tipo_lista != 1){?>
               <tr>
                     <td width="10%" class="titulos2"> Nombre o C.I.: </td>
                     <td width="40%" class="listado2">
                         <input name="txt_nombre" id="txt_nombre" type="text" size="40" class="tex_area" value="">
                     </td>
                 </tr>
-            <?} else echo "<input type='hidden' id='txt_nombre' name='txt_nombre' value=''>";?>
+            <?php } else echo "<input type='hidden' id='txt_nombre' name='txt_nombre' value=''>";?>
         </table>
         <div id='div_seleccionar_solicitud'></div>
-        <?if ($txt_tipo_lista == 2 and $var_aprueba == 1){?>
+        <?php if ($txt_tipo_lista == 2 and $var_aprueba == 1){?>
             <br>
             <div id='div_seleccionar_masiva'></div>
             <input type="button" name="btn_aprobar" value="Aprobar" class="botones"onClick="aprobar_solicitud(3);">
             <input type="button" name="btn_rechazar" value="Rechazar" class="botones"onClick="aprobar_solicitud(4);">
-        <?}?>
-        <?if ($txt_tipo_lista == 11){?>
+        <?php }?>
+        <?php if ($txt_tipo_lista == 11){?>
             <br>
             <input type="button" name="btn_calendario" value="Calendarizar" class="botones"onClick="calendarizar(5);">
-        <?}?>
+        <?php }?>
         <div id='div_buscar_solicitudes'></div>
         <div id='div_eliminar_respaldo'></div>
-        <div id='div_mensaje'><? echo "<br> No se encontraron los datos buscados. <br>"; ?></div>
+        <div id='div_mensaje'><?php echo "<br> No se encontraron los datos buscados. <br>"; ?></div>
         <br>
         <input type='button' name='btn_cancelar' value='Regresar' class='botones' onClick='metodoCerrar();'>
       </form>

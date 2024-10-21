@@ -57,7 +57,7 @@ if($orden_cambio==1) {
 ?>
   <body>
     <br>
-<?
+<?php
    if ($cmb_institucion != "0") 
         $where .= " and u.inst_codi=$cmb_institucion ";
     

@@ -58,14 +58,14 @@ echo "<html>".html_head();
 <script language="Javascript">
     function validar_form()
     {	
-	<?if ($flag_nivel) {?> 
+	<?php if ($flag_nivel) {?> 
 	    for (i=0;i < <?=$max_nivel?>;i++) {
 		if (document.getElementById('nom_'+i).value.replace(/ /g, '')=='') {
 		    alert ('El nombre en los <?=$max_nivel?> items es obligatorio');
 		    return;
 		}
 	    }
-	<? } ?>
+	<?php } ?>
 	document.getElementById('txt_ok').value='1';
 	document.formulario.submit();
     }
@@ -97,7 +97,7 @@ echo "<html>".html_head();
     <tr>
 	<td width="25%" align="left" class="titulos2"><b>&nbsp;Seleccione <?=$descDependencia?></b></td>
 	<td width="75%" colspan="5" class="listado2">
-<?
+<?php
 	$sql = "select distinct a.DEPE_NOMB, a.DEPE_CODI from dependencia a, dependencia b where a.depe_codi=coalesce(b.dep_central,b.depe_codi) 
 		and a.depe_estado=1 and a.inst_codi=".$_SESSION["inst_codi"]." order by a.depe_nomb";
 	$rs=$db->conn->query($sql);
@@ -108,7 +108,7 @@ echo "<html>".html_head();
     </tr>
 </table>
 
-<?if ($depe_actu) {?>
+<?php if ($depe_actu) {?>
     <br>
     <table width="80%" class="borde_tab">
     	<tr>
@@ -116,7 +116,7 @@ echo "<html>".html_head();
 	    <td width="30%" align="center" class="titulos2"><b>Nombre Item</b></td>
 	    <td width="40%" align="center" class="titulos2"><b>Descripci&oacute;n Item</b></td>
     	</tr>
-<?
+<?php
 	$sql = "select * 
 		from archivo_nivel
 		where depe_codi=$depe_actu order by arch_codi ASC";
@@ -142,20 +142,20 @@ echo "<html>".html_head();
 		    <input type="text" name="desc_<?=$i?>" id="desc_<?=$i?>" class='ecajasfecha' size=60 maxlength=100 value="<?=${'desc_'.$i}?>">
 		</center></td>
 	    </tr>
-<?	}	?>
+<?php	}	?>
 
     </table>
-<?  if(!$flag_nivel) echo "<script>ocultar_datos();</script>";
+<?php  if(!$flag_nivel) echo "<script>ocultar_datos();</script>";
  } ?>
 
 <br>
 <table width="80%" cellpadding="0" cellspacing="0">
     <tr>
-	<?if ($depe_actu) {?>
+	<?php if ($depe_actu) {?>
 	    <td align="center">
 	    	<input name="btn_accion" type="button" class="botones" id="btn_accion" value="Aceptar" onClick="validar_form()">
 	    </td>
-	<? } ?>
+	<?php } ?>
 	<td align="center">
 	    <input name="btn_accion" type="button" class="botones" id="btn_accion" value="Regresar" onClick="window.location='<?=$ruta_raiz?>/archivo/menu_archivo.php';">
 	</td>
