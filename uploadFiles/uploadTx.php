@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -46,7 +46,7 @@ echo "<html>".html_head();
 
 <body>
     <br>
-<?
+<?php
     if (!isset($chk_fisico)) $chk_fisico=0;
 
     $nombarch = $_FILES['upload']['name'];

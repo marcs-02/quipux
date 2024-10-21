@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -89,7 +89,7 @@ if (trim($firma) != "")
         </table>
         <br>
 
-      <?
+      <?php
         $isql = "select -- revertir firma digital_confirmar
                 case when substr(radi_nume_radi::text,20,1)='0' then '' else '&nbsp;&nbsp;<b>&rarr;</b>&nbsp;' end || radi_nume_text as \"SCR_No. Documento\"
                 ,'ver_documento(\"'||radi_path||'\",\"'||radi_nume_text||'.pdf\");' as \"HID_F1\"

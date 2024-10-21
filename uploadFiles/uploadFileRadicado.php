@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -53,7 +53,7 @@ function mostrar_documento(numdoc, txtdoc,carpeta)
 </script>
 <BODY>
 <FORM ACTION="<?=$_SERVER['PHP_SELF']?>?imprimir=<?=$imprimir?>" method="POST">
-<?
+<?php
 /**
   *@param $varBuscada string Contiene el nombre del campo que buscara
   *@param $busq_radicados_tmp sting Almacena cadena de busqueda de radicados generada por pagina paBuscar.php
@@ -73,7 +73,7 @@ else
 </FORM>
 <FORM ACTION="<?=$accion?>" name='formulario' id='formulario' method="POST">
 <br>
-<?
+<?php
 if (trim($imprimir)=="si") {
     echo "<input type='hidden' name='tipo_comp' id='tipo_comp' value='' >";
     echo "<center><input type='button' value='Imprimir C&oacute;digo de Barras' name=asocImgRad class='botones_largo' onclick='document.formulario.tipo_comp.value=\"1\"; document.formulario.submit();'>

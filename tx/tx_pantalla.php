@@ -398,7 +398,7 @@ include_once "$ruta_raiz/obtenerdatos.php";
                         ?>
                     <b>Fecha M&aacute;xima de Tarea (aaaa-mm-dd): 
                     </b>
-                    <?  $fechavalida = str_replace("'", "", $fechaMaximaFinal);
+                    <?php  $fechavalida = str_replace("'", "", $fechaMaximaFinal);
 //                   
                     echo dibujar_calendario("tx_fecha_tramite", date('Y-m-d'), ".", "validar_fecha_maxima($fechaMaximaFinal);") ?>
                 </td>

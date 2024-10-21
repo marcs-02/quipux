@@ -33,7 +33,7 @@ echo "<html>".html_head();
         }
     </script>
 </head>
-<?
+<?php
 	/**Generamos el encabezado que envia las variable a la paginas siguientes.
 	* Por problemas en las sesiones enviamos el usuario.
 	* @$encabezado  Incluye las variables que deben enviarse a la singuiente pagina.
@@ -117,7 +117,7 @@ echo "<html>".html_head();
  }/**/
 ?>
 <body>
-<?
+<?php
 $txSql = "";
 //$db->conn->debug=true;
 $okTx = 0;
@@ -430,11 +430,11 @@ $radifi = "'".$radicadosSel[0]."'";
 
 <script>
 
-<?if($codTx==69){?>
+<?php if($codTx==69){?>
     //alert('../reportes/reporte_TraspasoDocFisico.php');
     window.open ("<?=$ruta_raiz?>/reportes/reporte_TraspasoDocFisico.php?verrad=<?=$radifi?>&responsable=<?=$usua_resp?>&comentario=<?=$observa?>");
 
-<?}?>
+<?php}?>
 </script>
 
 
