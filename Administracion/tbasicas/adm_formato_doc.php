@@ -172,7 +172,7 @@ function AnadirFormato(num, accion)
 <tr >
 	<td width="25%" align="left" class="titulos2"><b>&nbsp;Seleccione <?=$_SESSION["descDependencia"]?></b></td>
 	<td width="75%" colspan="5" class="listado2">
-<?
+<?php
 	//$sql = "select DEPE_NOMB, DEPE_CODI from dependencia where depe_estado=1 and inst_codi=".$_SESSION["inst_codi"]." order by depe_nomb";
 	//$rs=$db->conn->query($sql);
         $depe_codi_admin = obtenerAreasAdmin($_SESSION["usua_codi"],$_SESSION["inst_codi"],$_SESSION["usua_admin_sistema"],$db);
@@ -187,7 +187,7 @@ function AnadirFormato(num, accion)
 	</td>
 </tr>
 </table>
-<?if (!$depe_actu) die();?>
+<?php if (!$depe_actu) die();?>
 <br>
 <table width="100%"  class="borde_tab">
     <tr>
@@ -200,7 +200,7 @@ function AnadirFormato(num, accion)
 	<td width="8%" align="center" class="titulos2"><b>Nº. Digitos Secuencial</b></td>
 	<td width="8%" align="center" class="titulos2"><b>Secuencia Actual</b></td>
     </tr>
-<?
+<?php
     if($_SESSION['inst_codi']==$acceso_ciudadano_inst)
         $where_tipo_ciudadano = " and trad_codigo in ($tipo_doc_ciudadano)";
 

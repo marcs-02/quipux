@@ -21,33 +21,32 @@
 ** Permite administrar ciudades                                                     **
 **                                                                                  **
 ** Desarrollado por:                                                                **
-
- *      David Gamboa
+**      David Gamboa                                                                **
 *************************************************************************************/
 
-    $ruta_raiz = "../..";
-    session_start();
-    include_once "$ruta_raiz/rec_session.php";
-    require_once "$ruta_raiz/funciones.php"; //para traer funciones p_get y p_post
-    include_once "$ruta_raiz/funciones_interfaz.php";
+$ruta_raiz = "../..";
+session_start();
+include_once "$ruta_raiz/rec_session.php";
+require_once "$ruta_raiz/funciones.php"; //para traer funciones p_get y p_post
+include_once "$ruta_raiz/funciones_interfaz.php";
 
+$codigo = 0 + trim(limpiar_numero($_POST["codigo"]));
+$nombre = trim(limpiar_sql($_POST["nombre"]));
+
+//echo $txt_codigo_ciudad."-".$txt_codigo_ciudad_dep;
+if ($db->transaccion == 0) $db->conn->BeginTrans();
+if ($nombre != '') { //cuando es nueva ciudad
+    $sql = "select nombre from ciudad where (translate(upper(nombre),'ÁÉÍÓÚÀÈÌÒÙÄËÏÖÜÑ','AEIOUAEIOUAEIOUN')  like translate(upper('" . $nombre . "'),'ÁÉÍÓÚÀÈÌÒÙÄËÏÖÜÑ','AEIOUAEIOUAEIOUN'))";
     
-    $codigo = 0+trim(limpiar_numero($_POST["codigo"]));    
-    $nombre = trim(limpiar_sql($_POST["nombre"]));
-    
-    //echo $txt_codigo_ciudad."-".$txt_codigo_ciudad_dep;
-    if ($db->transaccion==0) $db->conn->BeginTrans();
-        if ($nombre!=''){//cuando es nueva ciudad
-            $sql = "select nombre from ciudad where (translate(upper(nombre),'ÁÉÍÓÚÀÈÌÒÙÄËÏÖÜÑ','AEIOUAEIOUAEIOUN')  like translate(upper('".$nombre."'),'ÁÉÍÓÚÀÈÌÒÙÄËÏÖÜÑ','AEIOUAEIOUAEIOUN'))";
-            
-            $sql = $sql;
-        }
-        
-    $nombreExiste="";
-    $rs = $db->conn->Execute($sql);
-    $nombre_consultado = $rs->fields["NOMBRE"];
-    if ($nombre_consultado!=''){
-        $nombreExiste= $nombre_consultado;
-        echo "<font color='blue' size='1'>Ya existe el nombre: $nombreExiste</font>";
-    }
-    
+    // $sql = $sql; // Esta línea parece innecesaria. Se puede eliminar.
+}
+
+$nombreExiste = "";
+$rs = $db->conn->Execute($sql);
+$nombre_consultado = $rs->fields["NOMBRE"];
+if ($nombre_consultado != '') {
+    $nombreExiste = $nombre_consultado;
+    echo "<font color='blue' size='1'>Ya existe el nombre: $nombreExiste</font>";
+}
+
+?>

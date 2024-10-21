@@ -192,7 +192,7 @@ function buscar_ciudadano()
  	      </tr>
  	      <tr name="tr_institucion" id="tr_institucion" <?if ($buscar_tipo==2) echo "style='display:none'"?>>
 		<td><span class="listado5"><?=$_SESSION["descEmpresa"] ?></span></td><td> 
-<?		//$_SESSION["inst_codi"]
+<?php		//$_SESSION["inst_codi"]
 		$sql = "select distinct inst_nombre, inst_codi from institucion where inst_estado=1 order by 1";
 
 		$rs=$db->conn->query($sql);
@@ -215,7 +215,7 @@ function buscar_ciudadano()
 	    <table>
  	      <tr>
 		<td><span class="listado5">Nombre de la lista</span></td><td> 
-<?
+<?php
 		$sql="select lista_nombre, lista_codi from lista where lista_estado = 1 and (usua_codi=0 and inst_codi=".$_SESSION["inst_codi"].") or usua_codi=".$_SESSION["usua_codi"]." order by 1 asc";
                //echo $sql;
 		$rs=$db->conn->query($sql);
@@ -247,7 +247,7 @@ function buscar_ciudadano()
 	<td width="8%" CLASS="titulos5" >email</td>
 	<?if ($lista_usr=="0") {?><td colspan="3" CLASS="titulos5" >Colocar como </td><? } ?>
     </tr> 
-<?
+<?php
 $buscar_nom = trim(strtoupper($buscar_nom));
 $buscar_car = trim(strtoupper($buscar_car));
 $sql="";
@@ -292,7 +292,7 @@ if ($sql!="") {
 		<td ><font size=1><?=$rs->fields["USUA_CARGO"] ?> </font></td>
 		<td ><font size=1><?=$rs->fields["INST_NOMBRE"] ?></font></td>
 		<td ><font size=1><?=$rs->fields["USUA_EMAIL"] ?></font></td>
-		<?if ($lista_usr=="0") {?>
+		<?php if ($lista_usr=="0") {?>
 		    <td width="6%" align="center" valign="top" ><font size=1>
 			<?/* if ($ent!=2 or $tipous==1)*/ echo "<a href='#' onClick=\"pasar('$i','1','S')\"; class=\"grid\" >Para</a>" ?></font>
 		    </td>
@@ -302,12 +302,12 @@ if ($sql!="") {
 		    <td width="7%" align="center" valign="top" ><font size=1>
 			<a href="#" class="grid"  onClick="pasar('<?=$i?>','3','S');" >Copia</a></font>
 		    </td>
-		<? } ?>
+		<?php } ?>
 	    </tr>
 		<script>
 			documento[<?=$i?>]= "<?=$codigo?>";
 		</script>
-  <?
+  <?php
 	    $i++;
 	    $rs->MoveNext();
 	}
@@ -334,7 +334,7 @@ if ($sql!="") {
 <input type="hidden" name="documento_us1" value="<?=$documento_us1?>" >
 <input type="hidden" name="documento_us2" value="<?=$documento_us2?>" >
 <input type="hidden" name="concopiaa" value="<?=$concopiaa?>">
-<?
+<?php
     $flag=0;
     for($j=0;$j<3;$j++) {
       	if ($j==0) { 	$cca = explode("-",$documento_us1);	$nom="Para";	$tip="D";	}
@@ -367,9 +367,9 @@ if ($sql!="") {
 <br/>
 <table  width=100% border="0" align="center" name='tbl_botones' id='tbl_botones' cellspacing="1" cellpadding="4">
     <tr>
-	<? if ($_SESSION["usua_perm_ciudadano"]==1) { ?>
+	<?php if ($_SESSION["usua_perm_ciudadano"]==1) { ?>
 	    <td id="td_btn_ciudadano" <?if ($buscar_tipo!="2") echo "style='display:none'"?> ><center><input type='button' value="Crear Ciudadano" class="botones_largo" onclick='crear_ciudadano()'></center></td>
-	<? } ?>
+	<?php } ?>
 	<td><center><input type='button' value='Aceptar' class="botones" onclick='pasar_datos()'></center></td>
 	<td><center><input type='button' value='Regresar' class="botones" onclick='window.close()'></center></td>
     </tr>

@@ -46,7 +46,7 @@ $usuarios_lista = "";
         <td width="10%" class="titulos5">Subrogado</td>
         <td width="5%" class="titulos5">Acción</td>
     </tr>
-<?
+<?php
 //$buscar_nom = trim(limpiar_sql($buscar_nom));
 $cedulaFinal = str_replace(" ", '', $buscar_nom);
 $buscar_nom = trim(limpiar_sql($buscar_nom));
@@ -152,7 +152,7 @@ if ($sql!="") {
         </td>
                  
     </tr>
-  <?
+  <?php
         $i++;
         $dependencia_color = trim($rs->fields["DEPE_CODI"]);
         $rs->MoveNext();

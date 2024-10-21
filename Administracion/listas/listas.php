@@ -242,7 +242,7 @@ else
                 <tr id="tr_institucion" style="display:none">
                     <td align="right"><span class="listado5"><?=$descEmpresa?>: </span></td>
                     <td colspan="3">
-        <?
+        <?php
                         $sql = "select distinct inst_nombre, inst_codi from institucion where inst_estado=1 and inst_codi>0 order by 1";
                         $rs=$db->conn->query($sql);
                         echo $rs->GetMenu2("txt_buscar_institucion", "0", "0:&lt;&lt; Todas las Instituciones &gt;&gt;", false,"","id='txt_buscar_institucion' class='select' onChange='buscar_depePadre()'" );

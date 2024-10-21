@@ -68,7 +68,7 @@ $ciu_nombre_verificar = $rsusua->fields["USUA_NOMB"]. " " .$rsusua->fields["USUA
 }
 ?>
 <html>
-<? echo html_head(); /*Imprime el head definido para el sistema*/?>
+<?php echo html_head(); /*Imprime el head definido para el sistema*/?>
 <body>
     
     <form name='formulario' action="adm_solicitud_actualizar.php" method="post">
@@ -93,7 +93,7 @@ $ciu_nombre_verificar = $rsusua->fields["USUA_NOMB"]. " " .$rsusua->fields["USUA
     <input type="hidden" id="ciudad_codi" name="ciudad_codi" value="<?=$ciudad_codi?>">
     <input type="hidden" id="sol_firma" name="sol_firma" value="<?=$sol_firma?>">
     
-<?
+<?php
     if($sol_accion == 1){
         ?>
       <center><table width="50%" border="1" class='t_bordeGris'>             

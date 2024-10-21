@@ -297,7 +297,7 @@ function ins_permisos_usr($db,$usr_subrogado,$usr_codigo,$recper){
 
 
 <html>
-    <?echo html_head(); //Imprime el head definido para el sistema?>
+    <?php echo html_head(); //Imprime el head definido para el sistema?>
 <body>
     <form name="frmConfirmaCreacion" action="../usuarios/mnuUsuarios.php" method="post">
     <center>

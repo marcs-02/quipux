@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -88,10 +88,10 @@ $ok2 = $db->conn->Replace("solicitud_firma_ciudadano", $recordsolicitud, $whereS
 ?>
 
 <html>
-<? echo html_head(); /*Imprime el head definido para el sistema*/?>
+<?php echo html_head(); /*Imprime el head definido para el sistema*/?>
 <body>
     <div id='wrapper'>
-    <? if (!$flag_login) echo html_encabezado(); /*Imprime el encabezado del sistema*/ ?>
+    <?php if (!$flag_login) echo html_encabezado(); /*Imprime el encabezado del sistema*/ ?>
     <div id='mainbody'><div class='shad-1'><div class='shad-2'><div class='shad-3'><div class='shad-4'><div class='shad-5'>
     <form>
     <br /><br /><br />
@@ -99,8 +99,8 @@ $ok2 = $db->conn->Replace("solicitud_firma_ciudadano", $recordsolicitud, $whereS
         <tr valign='top' align='center'>
             <td class='left'  align='center' width='100%'>
                 <h3>Sus datos fueron guardados exitosamente.</h3>
-                    <? if (!$flag_login) echo "<br /><br /><input type='button' value='Aceptar' class='botones' name='btn_aceptar' onClick=\"window.location='$ruta_raiz/login.php'\">"; ?>
-                    <? 
+                    <?php if (!$flag_login) echo "<br /><br /><input type='button' value='Aceptar' class='botones' name='btn_aceptar' onClick=\"window.location='$ruta_raiz/login.php'\">"; ?>
+                    <?php 
                             echo "<br /><br /><input type='button' value='Aceptar' class='botones' name='btn_aceptar' onClick=\"window.location='adm_solicitud.php'\">";
                        
                     ?>
@@ -110,7 +110,7 @@ $ok2 = $db->conn->Replace("solicitud_firma_ciudadano", $recordsolicitud, $whereS
     <br /><br /><br />
     </form>
     </div></div></div></div></div></div>
-    <? if (!$flag_login) echo html_pie_pagina(); /*Imprime el pie de pagina del sistema*/ ?>
+    <?php if (!$flag_login) echo html_pie_pagina(); /*Imprime el pie de pagina del sistema*/ ?>
     </div>
 </body>
 </html>

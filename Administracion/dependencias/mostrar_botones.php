@@ -1,4 +1,4 @@
-<?
+<?php
 /*	
 * Modificado por		Iniciales		Fecha (dd/mm/aaaa)
 *	DAVID GAMBOA    	SC			12/11/2011

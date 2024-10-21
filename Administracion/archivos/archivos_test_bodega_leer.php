@@ -1,5 +1,5 @@
-<?
-/**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
+<?php
+/**  Programa para el manejo de gestion documental, oficios, memorandos, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
 *------------------------------------------------------------------------------
@@ -15,16 +15,7 @@
 *    You should have received a copy of the GNU Affero General Public License
 *    along with this program.  If not, see http://www.gnu.org/licenses.
 *------------------------------------------------------------------------------
-
-**************************************************************************************
-** Respalda uno por uno los documentos de los usuarios                              **
-** Busca los documentos que se deberán respaldar y los respalda uno por uno         **
-** llamando a backup_usuarios_respaldar_documentos.php utilizando Ajax              **
-**                                                                                  **
-** Desarrollado por:                                                                **
-**      Mauricio Haro A. - mauricioharo21@gmail.com                                 **
-*************************************************************************************/
-
+**/
 $ruta_raiz = "../..";
 session_start();
 if($_SESSION["perm_actualizar_sistema"]!=1) die("ERROR: Usted no tiene permisos suficientes para acceder a esta p&aacute;gina.");
@@ -60,7 +51,7 @@ include_once "$ruta_raiz/js/ajax.js";
 
     function fjs_ejecutar_copia() {
         if (ejecutar == false) return;
-        nuevoAjax('div_ejecutar_copia', 'POST', 'archivos_test_bodega_leer_ejecutar.php', '', 'fjs_ejecutar_copia()');
+        nuevoAjax('div_ejecutar_copia', 'POST', 'archivos_test_bodega_grabar_ejecutar.php', '', 'fjs_ejecutar_copia()');
         document.getElementById('spn_estado').innerHTML = 'Leidos: '+offset+' archivos';
         ++offset;
         return;
@@ -111,6 +102,5 @@ include_once "$ruta_raiz/js/ajax.js";
 
 </body>
 </html>
-<?
-
+<?php
 ?>

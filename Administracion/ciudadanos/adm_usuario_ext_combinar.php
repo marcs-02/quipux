@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -228,7 +228,7 @@ require_once "$ruta_raiz/js/ajax.js";
         <?php $ciud->cajaHidden('tipo_query', 3);//tipo busqueda
         ?>
             <input type=hidden name="ver_resultado" id="ver_resultado" size="30" value=""/>
-        <?  
+        <?php  
             //Creamos algunos campos ocultos en los que se pasaran los datos que se modificaran
             $ciud->cajaHidden('ciu_codigo', $ciu_codigo);
             $ciud->cajaHidden('ciu_cedula', $ciu_cedula);

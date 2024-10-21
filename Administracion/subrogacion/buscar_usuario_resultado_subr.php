@@ -58,7 +58,7 @@ $usuarios_lista = "";
         <td width="8%"  class="titulos5">E-mail</td>
         <td colspan="5" class="titulos5">Definir como</td>
     </tr>
-<?
+<?php
 $buscar_nom = trim(limpiar_sql($buscar_nom));
 $buscar_car = trim(limpiar_sql($buscar_car));
 $sql="";
@@ -193,7 +193,7 @@ if ($sql!="") {
             }
            ?>
         </tr>
-  <?
+  <?php
        
         $i++;
         $dependencia_color = trim($rs->fields["DEPE_CODI"]);
