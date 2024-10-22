@@ -49,7 +49,7 @@ $db_bodega = "documental";
 
 // Indica si se manejan replicas o conexiones con otras BDD
 $replicacion = true;
-$config_db_replica_menu_correspondencia = "pgsql:host=192.168.0.101;port=5432;dbname=replica;user=postgres;password=postgres";
+$config_db_replica_menu_correspondencia = "pgsql:host=192.168.0.100;port=5432;dbname=transaccional;user=postgres;password=postgres";
 
 
 // Se definen las mismas variables que en la configuracion por defecto, seguidas por un guion bajo y un nombre que la distinga
