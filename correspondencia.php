@@ -21,6 +21,7 @@ session_start();
 $ruta_raiz = ".";
 include_once "$ruta_raiz/rec_session.php";
 
+
 if (isset($replicacion) && $replicacion && $config_db_replica_menu_correspondencia != "") {
     $db = new ConnectionHandler($ruta_raiz, $config_db_replica_menu_correspondencia);
 }
