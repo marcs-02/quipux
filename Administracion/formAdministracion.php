@@ -62,12 +62,12 @@ echo "<html>".html_head();
         </table>
     </form>
     <br>
-<?php } ?>
 
     <table width="50%" align="center" border="0" cellpadding="0" cellspacing="5" class="borde_tab">
         <tr>
             <td colspan="2" class="titulos4"><center><strong>M&oacute;dulo de Administraci&oacute;n</strong></center></td>
         </tr>
+</table>
 <?php
     $num_menu = 0;
     echo dibujar_opcion_menu("usuarios/cambiar_password.php","Cambio de contrase&ntilde;a","Opci&oacute;n para cambiar la contrase&ntilde;a del usuario actual");
@@ -122,7 +122,7 @@ echo "<html>".html_head();
                 }
             }
         </script>
-<?php } ?>
+
 
 
   </table>
