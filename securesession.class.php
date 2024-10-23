@@ -23,11 +23,14 @@ class SecureSession
 
     // Llamar a esto al iniciar sesión.
     public function open()
-    {
-        session_start();
-        $_SESSION['ss_fprint'] = $this->generateFingerprint();
-        $this->regenerateId();
+{
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start(); // Aseguramos que la sesión esté iniciada
     }
+    $_SESSION['ss_fprint'] = $this->generateFingerprint();
+    $this->regenerateId();
+}
+
 
     // Llamar a esto para verificar la sesión.
     public function check()
