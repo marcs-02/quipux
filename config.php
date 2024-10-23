@@ -38,13 +38,13 @@ $config_bloquear_acceso_ciudadano = false;
 // Configuracion de la conexion con la BDD
 $usuario = "postgres";
 $contrasena= "postgres"; 
-$servidor = "192.168.0.100:5432";
+$servidor = "127.0.0.1:5432";
 $driver = "postgres";
 $db = "transaccional";
 
 $usuario_bodega = "postgres";
 $contrasena_bodega = "postgres";
-$servidor_bodega = "192.168.0.100:5432";
+$servidor_bodega = "127.0.0.1:5432";
 $db_bodega = "documental";
 
 // Indica si se manejan replicas o conexiones con otras BDD
@@ -57,7 +57,7 @@ $config_db_replica_menu_correspondencia = "pgsql:host=192.168.0.100;port=5432;db
 // Si se desea se puede ocultar los datos de la conexion en variables del servidor, como en el caso anterior
 $usuario_busqueda = "postgres";
 $contrasena_busqueda = "postgres";
-$servidor_busqueda = "192.168.0.101:5432";
+$servidor_busqueda = "127.0.0.1:5432";
 $db_busqueda = "replica";
 
 
