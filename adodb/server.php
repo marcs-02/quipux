@@ -3,10 +3,10 @@
 /** 
  * @version V4.50 6 July 2004 (c) 2000-2004 John Lim (jlim@natsoft.com.my). All rights reserved.
  * Released under both BSD license and Lesser GPL library license. 
-  Whenever there is any discrepancy between the two licenses, 
-  the BSD license will take precedence. 
+ * Whenever there is any discrepancy between the two licenses, 
+ * the BSD license will take precedence. 
  */
- 
+
 /* Documentation on usage is at http://php.weblogs.com/adodb_csv
  *
  * Legal query string parameters:
@@ -21,7 +21,6 @@
  * http://localhost/php/server.php?select+*+from+table&nrows=10&offset=2
  */
 
-
 /* 
  * Define the IP address you want to accept requests from 
  * as a security measure. If blank we accept anyone promisciously!
@@ -33,9 +32,9 @@ $ACCEPTIP = '';
  */
 $driver = 'postgres';
 $host = 'localhost'; // DSN for odbc
-$uid = 'postgres';
-$pwd = 'postgres';
-$database = 'transaccional';
+$uid = 'postgres';    // Nombre de usuario
+$pwd = 'postgres';    // Contraseña
+$database = 'transaccional'; // Nombre de la base de datos
 
 /*============================ DO NOT MODIFY BELOW HERE =================================*/
 // $sep must match csv2rs() in adodb.inc.php
@@ -57,42 +56,49 @@ function undomq(&$m)
 		$m = str_replace('\\\\','\\',$m);
 		$m = str_replace('\"','"',$m);
 		$m = str_replace('\\\'','\'',$m);
-		
 	}
 	return $m;
 }
 
 ///////////////////////////////////////// DEFINITIONS
 
+$remote = $_SERVER["REMOTE_ADDR"]; // Cambié de $HTTP_SERVER_VARS a $_SERVER
 
-$remote = $HTTP_SERVER_VARS["REMOTE_ADDR"]; 
- 
-if (empty($HTTP_GET_VARS['sql'])) err('No SQL');
+if (empty($_GET['sql'])) err('No SQL');
 
-if (!empty($ACCEPTIP))
- if ($remote != '127.0.0.1' && $remote != $ACCEPTIP) 
- 	err("Unauthorised client: '$remote'");
+if (!empty($ACCEPTIP)) {
+    if ($remote != '127.0.0.1' && $remote != $ACCEPTIP) 
+    	err("Unauthorised client: '$remote'");
+}
 
-
+// Crear la conexión
 $conn = &ADONewConnection($driver);
 
-if (!$conn->Connect($host,$uid,$pwd,$database)) err($conn->ErrorNo(). $sep . $conn->ErrorMsg());
-$sql = undomq($HTTP_GET_VARS['sql']);
+// Conectar a la base de datos
+if (!$conn->Connect($host, $uid, $pwd, $database)) {
+    err($conn->ErrorNo() . $sep . $conn->ErrorMsg());
+}
 
-if (isset($HTTP_GET_VARS['fetch']))
-	$ADODB_FETCH_MODE = $HTTP_GET_VARS['fetch'];
+// Verificar los parámetros de entrada
+$sql = undomq($_GET['sql']);
+
+if (isset($_GET['fetch']))
+	$ADODB_FETCH_MODE = $_GET['fetch'];
 	
-if (isset($HTTP_GET_VARS['nrows'])) {
-	$nrows = $HTTP_GET_VARS['nrows'];
-	$offset = isset($HTTP_GET_VARS['offset']) ? $HTTP_GET_VARS['offset'] : -1;
-	$rs = $conn->SelectLimit($sql,$nrows,$offset);
-} else 
+if (isset($_GET['nrows'])) {
+	$nrows = $_GET['nrows'];
+	$offset = isset($_GET['offset']) ? $_GET['offset'] : -1;
+	$rs = $conn->SelectLimit($sql, $nrows, $offset);
+} else {
 	$rs = $conn->Execute($sql);
-if ($rs){ 
+}
+
+if ($rs) { 
 	//$rs->timeToLive = 1;
-	echo _rs2serialize($rs,$conn,$sql);
+	echo _rs2serialize($rs, $conn, $sql);
 	$rs->Close();
-} else
-	err($conn->ErrorNo(). $sep .$conn->ErrorMsg());
+} else {
+	err($conn->ErrorNo() . $sep . $conn->ErrorMsg());
+}
 
 ?>

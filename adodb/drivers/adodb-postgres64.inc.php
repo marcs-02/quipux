@@ -557,12 +557,12 @@ WHERE c2.relname=\'%s\' or c2.relname=lower(\'%s\')';
                 return $indexes;
         }
 
-	// Función que maneja la conexión a la base de datos
+// Función que maneja la conexión a la base de datos
 function _connect($host, $user = '', $pwd = '', $db = '', $ctype = 0)
 {
     // Verificar si la función pg_pconnect (conexión persistente) está disponible
     if (!function_exists('pg_pconnect')) {
-        return null;
+        return null; // La función no está disponible, devolver null
     }
 
     // Inicializar mensaje de error
@@ -577,8 +577,8 @@ function _connect($host, $user = '', $pwd = '', $db = '', $ctype = 0)
 
         // Si el host está en formato host:puerto, lo manejamos
         if ($host) {
-            $host_parts = explode(":", $host);
-            $conn_str = "host=" . adodb_addslashes($host_parts[0]);
+            $host_parts = explode(":", $host); // Separar host y puerto
+            $conn_str = "host=" . adodb_addslashes($host_parts[0]); // Añadir el host a la cadena
 
             // Si hay un puerto, lo añadimos a la cadena de conexión
             if (isset($host_parts[1])) {
@@ -596,33 +596,34 @@ function _connect($host, $user = '', $pwd = '', $db = '', $ctype = 0)
 
     // Si $ctype es 1, se usa pg_pconnect (conexión persistente)
     if ($ctype === 1) {
-        $this->_connectionID = pg_pconnect($conn_str);
+        $this->_connectionID = pg_pconnect($conn_str); // Conexión persistente
     } else {
         // Para conexiones normales
-        $this->_connectionID = pg_connect($conn_str);
+        $this->_connectionID = pg_connect($conn_str); // Conexión normal
     }
 
     // Verificar si la conexión ha fallado
     if ($this->_connectionID === false) {
-        return false;
+        return false; // Devolver false si la conexión falla
     }
 
     // Configurar el formato de la fecha en la sesión de PostgreSQL
     $this->Execute("SET datestyle TO 'ISO'");
-    return true;
+    return true; // Devolver true si la conexión es exitosa
 }
 
 // Conexión normal (sin persistencia)
 function _nconnect($host, $user, $pwd, $db)
 {
-    return $this->_connect($host, $user, $pwd, $db, 0);
+    return $this->_connect($host, $user, $pwd, $db, 0); // Llamar a _connect con tipo de conexión 0
 }
 
 // Conexión persistente
 function _pconnect($host, $user = '', $pwd = '', $db = '')
 {
-    return $this->_connect($host, $user, $pwd, $db, 1);
+    return $this->_connect($host, $user, $pwd, $db, 1); // Llamar a _connect con tipo de conexión 1
 }
+
 
 	
 
