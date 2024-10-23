@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -125,7 +125,7 @@ switch($_GET['de'])
 <!-- LIBRERIAS PARA GENERADOR DE ARBOL AJAX -->
 <link rel="StyleSheet" href="<?=$ruta_raiz?>/js/nornix-treemenu-2.2.0/example/style/menu_uno.css" type="text/css" media="screen" />
 <script type="text/javascript" src="<?=$ruta_raiz?>/js/nornix-treemenu-2.2.0/treemenu/nornix-treemenu.js"></script>
-<? require_once "$ruta_raiz/js/ajax.js";?>
+<?php require_once "$ruta_raiz/js/ajax.js";?>
 <link rel="stylesheet" href="<?=$ruta_raiz?>/estilos/orfeo.css">
 
 <script type='text/JavaScript'>

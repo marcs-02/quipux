@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -170,9 +170,9 @@ if (isset($_POST["old_codigo"])) {
                         <?php } ?>
                     </td>
                     <td class='titulos3'>
-                        <? if (substr($new_cedula,0,2)!="99" and $new_sincedula != 1) { ?>
+                        <?php if (substr($new_cedula,0,2)!="99" and $new_sincedula != 1) { ?>
                             <center><input type='button' name='btn_accion' class='botones_2' value='&gt;&gt;' onclick="mover_dato('cedula')"/></center></td>
-                        <? } ?>
+                        <?php } ?>
                     <td class='listado3'>
                         <input type="text" name="old_cedula" id="old_cedula" value="<?=$old_cedula?>" onblur='cambio_cedulajs(this,2)' size="20" maxlength="13"
 <?

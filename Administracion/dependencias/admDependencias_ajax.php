@@ -79,7 +79,7 @@ else
       </table>
            <div id="div_busqueda_area"></div>
 <form name="form2" id="form2" ENCTYPE="multipart/form-data" method="post" action="<?='adm_dependencias_grabar.php?accion='.$accion?>">
-<? if ($accion==1 or $slc_dependencia!=0) { ?>
+<?php if ($accion==1 or $slc_dependencia!=0) { ?>
 
   <input type="hidden" name="txt_ok" id="txt_ok" value="" >
   <input type="hidden" name="txt_estado" id="txt_estado" value="<?=$depe_estado?>"/>

@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -156,7 +156,7 @@ else
 ?>
 
 <html>
-<? echo html_head(); /*Imprime el head definido para el sistema*/
+<?php echo html_head(); /*Imprime el head definido para el sistema*/
 include_once "$ruta_raiz/js/ajax.js"
 ?>
 <script type="text/javascript" language="JavaScript" src="<?=$ruta_raiz?>/js/formchek.js"></script>
@@ -482,7 +482,7 @@ include_once "$ruta_raiz/js/ajax.js"
     <div id="div_datos_usuario_multiple" style="width: 100%;"></div>
     <input type='hidden' id="ciu_codigo" name='ciu_codigo' value="<?=$ciu_codigo?>">
     <table width="100%" class="borde_tab" border="1">
-<?
+<?php
         function dibujar_campo ($campo, $label, $tamano,$sol_estadod, $opciones="") {
             global $$campo;
             global $$sol_estadod;
@@ -564,7 +564,7 @@ include_once "$ruta_raiz/js/ajax.js"
                         <?php                         
                         echo combo_firma_ciudadano($sol_firma,$db);?>
                    </td>
-        <?
+        <?php
     	echo "</tr><tr>";
         echo "<tr>";
             dibujar_campo ("ciu_cedula", "* C&eacute;dula: ", 13,"sol_estado");
@@ -596,11 +596,11 @@ include_once "$ruta_raiz/js/ajax.js"
                 <div id='usr_ciu'><?=$usr_ciudad?></div>
             </td>
 
-         <?
+         <?php
 
     	echo "</tr>";
         ?>        
-        <?
+        <?php
          echo "</tr><tr>";
             dibujar_campoobs ("sol_observaciones", "Observaciones: ", 500,"sol_estado");
     	echo "</tr>";
@@ -618,11 +618,11 @@ include_once "$ruta_raiz/js/ajax.js"
                 ?>
             </td>
                 </tr>
-             <?if($sol_estado == 2) {?>
+             <?php if($sol_estado == 2) {?>
                    <script type="text/javascript">document.getElementById("sol_firma").disabled = true; </script>
-                   <?} else {?>
+                   <?php } else {?>
                    <script type="text/javascript">document.getElementById("sol_firma").disabled = false; </script>
-                   <?}?>
+                   <?php }?>
     </table>
 
 
@@ -634,7 +634,7 @@ include_once "$ruta_raiz/js/ajax.js"
 
 
   </form>
-  <? if (!$flag_login) echo html_pie_pagina(); /*Imprime el pie de pagina del sistema*/ ?>
+  <?php if (!$flag_login) echo html_pie_pagina(); /*Imprime el pie de pagina del sistema*/ ?>
   </div>
 
 <?php

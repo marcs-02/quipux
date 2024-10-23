@@ -16,51 +16,50 @@
 *    along with this program.  If not, see http://www.gnu.org/licenses.
 *------------------------------------------------------------------------------
 **/
-// Limpiamos el cache
-//header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
-//header("Last-Modified: " . gmdate("D, d M Y H:i") . " GMT");
-//header("Cache-Control: no-store, no-cache, must-revalidate");
-//header("Cache-Control: post-check=0, pre-check=0", false);
-//header("Pragma: no-cache");
 
 session_start();
 $ruta_raiz = ".";
 include_once "$ruta_raiz/rec_session.php";
-if (isset ($replicacion) && $replicacion && $config_db_replica_menu_correspondencia!="") $db = new ConnectionHandler($ruta_raiz,$config_db_replica_menu_correspondencia);
+
+
+if (isset($replicacion) && $replicacion && $config_db_replica_menu_correspondencia != "") {
+    $db = new ConnectionHandler($ruta_raiz, $config_db_replica_menu_correspondencia);
+}
+
 include_once "$ruta_raiz/funciones_interfaz.php";
-echo "<html>".html_head(false);
+echo "<html>" . html_head(false);
 include_once "$ruta_raiz/js/ajax.js";
 
 if (!$carpeta) $carpeta = 0;
-if ($_SESSION["tipo_usuario"]==2) $carpeta = 80;
+if ($_SESSION["tipo_usuario"] == 2) $carpeta = 80;
 $num = 1;
 
 function crear_grupo_bandeja($id, $nombre, $items) {
-    $grupo = '<tr onclick="mostrar_ocultar_grupo_carpetas(\'tr_menu_'.$id.'\')">
+    $grupo = '<tr onclick="mostrar_ocultar_grupo_carpetas(\'tr_menu_' . $id . '\')">
                 <td class="menu_titulo">
-                    <img id="tr_menu_'.$id.'_img_com" src="./iconos/bandeja_comprimida.png" alt="+" style="display: none">
-                    <img id="tr_menu_'.$id.'_img_exp" src="./iconos/bandeja_expandida.png" alt="-">
-                    '.$nombre.'
+                    <img id="tr_menu_' . $id . '_img_com" src="./iconos/bandeja_comprimida.png" alt="+" style="display: none">
+                    <img id="tr_menu_' . $id . '_img_exp" src="./iconos/bandeja_expandida.png" alt="-">
+                    ' . $nombre . '
                 </td>
             </tr>
-            <tr id="tr_menu_'.$id.'">
+            <tr id="tr_menu_' . $id . '">
                 <td width="100%">
-                    <table width="100%" border="0" cellpadding="0" cellspacing="3">'.$items.'</table>
+                    <table width="100%" border="0" cellpadding="0" cellspacing="3">' . $items . '</table>
                 </td>
             </tr>';
     return $grupo;
 }
 
-function crear_item_bandeja ($carpeta, $nombre, $descripcion, $destino="") {
+function crear_item_bandeja($carpeta, $nombre, $descripcion, $destino = "") {
     global $num;
     $descripcion = str_replace("*usuario*", $_SESSION["usua_nomb"], $descripcion);
 
     $script = "";
     ++$num;
-    if ($carpeta != 0) { //Si llama desde una bandeja
+    if ($carpeta != 0) { // Si llama desde una bandeja
         $destino = "cuerpo.php?carpeta=$carpeta&nomcarpeta=$nombre";
         $nombre .= " <spam id='spam_carpeta_$carpeta'></spam>";
-        $script = "<script type='text/javascript'>cambiar_contador('$carpeta','".cargar_contadores_bandejas($carpeta)."');</script>";
+        $script = "<script type='text/javascript'>cambiar_contador('$carpeta','" . cargar_contadores_bandejas($carpeta) . "');</script>";
     }
 
     $tr = "<tr class='menu_fondo1' name='menu_tr$num' id='menu_tr$num' onMouseOver='cambiar_fondo(this,1)' onMouseOut='cambiar_fondo(this,0)'>
@@ -70,22 +69,20 @@ function crear_item_bandeja ($carpeta, $nombre, $descripcion, $destino="") {
                 </a>
                 $script
             </td>
-        </tr>
-       ";
+        </tr>";
     return $tr;
 }
-
 ?>
 
 <script type="text/javascript" src="<?=$ruta_raiz?>/js/shortcut.js"></script>
 <script type="text/javascript">
     var carpeta = 2;
 
-    function bloquear_menu (accion) {
+    function bloquear_menu(accion) {
         try {
             if (accion == 1) {
                 document.getElementById('div_bloquear_menu').style.height = '100%';
-                timerID = setTimeout("bloquear_menu(0)", 2500);
+                timerID = setTimeout(bloquear_menu.bind(null, 0), 2500);
             } else {
                 document.getElementById('div_bloquear_menu').style.height = '0%';
                 clearTimeout(timerID);
@@ -94,77 +91,60 @@ function crear_item_bandeja ($carpeta, $nombre, $descripcion, $destino="") {
     }
 
     function cambioMenu(valor) {
-        
-        try {            
+        try {
             document.getElementById('menu_tr' + carpeta).style.cssText = 'background-color:#FFFFFF; font-size: 10px;';
             document.getElementById('menu_tr' + valor).style.cssText = 'background-color:#a8bac6; font-size: 10px;';
             bloquear_menu(1);
             carpeta = valor;
         } catch (e) {}
-	//document.location='correspondencia.php?carpeta='+valor;
     }
 
-    function cambiar_contador(bandeja, valor) {           
+    function cambiar_contador(bandeja, valor) {
         try {
-            if (valor.toString() == '-1' || trim(valor.toString())=='')
-                document.getElementById("spam_carpeta_"+bandeja).innerHTML = '';
-            else
-                document.getElementById("spam_carpeta_"+bandeja).innerHTML = '('+ valor +')';
+            document.getElementById("spam_carpeta_" + bandeja).innerHTML = (valor.toString() === '-1' || trim(valor.toString()) === '') ? '' : '(' + valor + ')';
             bloquear_menu(0);
-        } catch (e) { }
+        } catch (e) {}
     }
 
-    function cambiar_fondo(fila, fondo) {        
-        if (fila.id=='menu_tr'+carpeta) return;
-        color = "#e3e8ec";
-        if (fondo == 0)
-            color = "#ffffff";
-        fila.style.cssText = 'background-color:'+color;
+    function cambiar_fondo(fila, fondo) {
+        if (fila.id == 'menu_tr' + carpeta) return;
+        var color = fondo === 0 ? "#ffffff" : "#e3e8ec";
+        fila.style.backgroundColor = color;
     }
 
-    function llamaCuerpo(parametros){
+    function llamaCuerpo(parametros) {
         try {
-            top.frames['mainFrame'].location.href=parametros;
+            top.frames['mainFrame'].location.href = parametros;
         } catch (e) {
-            window.top.frames['mainFrame'].location.href=parametros;
+            window.top.frames['mainFrame'].location.href = parametros;
         }
     }
 
     var menuTimerId = 0;
     function recargar_estadisticas() {
         clearTimeout(menuTimerId);
-        if ('<?if (is_file('./bodega/estadisticas_menu.html')) echo "Si";?>' != 'Si') return;
+        if ('<?php echo is_file('./bodega/estadisticas_menu.html') ? "Si" : "No"; ?>' !== 'Si') return;
         nuevoAjax('div_estadisticas_menu', 'POST', './bodega/estadisticas_menu.html', '');
-        menuTimerId = setTimeout("recargar_estadisticas()", 300000);
+        menuTimerId = setTimeout(recargar_estadisticas, 300000);
     }
 
     function init_menu() {
-        // Pintar la bandeja de recibidos
-        if ('<?=$_SESSION["inst_codi"]?>'=='0') {
+        if ('<?=$_SESSION["inst_codi"]?>' == '0') {
             cambioMenu('3'); // Bandeja recibidos de ciudadanos
         } else {
             cambioMenu('4'); // Bandeja recibidos funcionarios y ciudadanos con firma
         }
-        // comprimir la bandeja "Otras Bandejas"
         mostrar_ocultar_grupo_carpetas("tr_menu_otras_bandejas");
     }
 
     function mostrar_ocultar_grupo_carpetas(id) {
         try {
             var grupo = document.getElementById(id);
-            if (grupo.style.display == 'none') {
-                grupo.style.display = '';
-                document.getElementById(id+'_img_exp').style.display = '';
-                document.getElementById(id+'_img_com').style.display = 'none';
-            } else {
-                grupo.style.display = 'none';
-                document.getElementById(id+'_img_exp').style.display = 'none';
-                document.getElementById(id+'_img_com').style.display = '';
-            }
-        } catch(e) {}
-        return;
+            grupo.style.display = (grupo.style.display == 'none') ? '' : 'none';
+            document.getElementById(id + '_img_exp').style.display = (grupo.style.display == 'none') ? 'none' : '';
+            document.getElementById(id + '_img_com').style.display = (grupo.style.display == 'none') ? '' : 'none';
+        } catch (e) {}
     }
-
 </script>
 
 <body onload="recargar_estadisticas(); init_menu();">
@@ -174,29 +154,30 @@ function crear_item_bandeja ($carpeta, $nombre, $descripcion, $destino="") {
     <table width="160px" border="0" cellpadding="0" cellspacing="3">
 
 <?php
-    if ($_SESSION["tipo_usuario"]==2) {
-        if ($_SESSION["inst_codi"] == 1) {
-            include "$ruta_raiz/menu/nuevo_salida.php";
-            include "$ruta_raiz/menu/ciudadano_firma.php";
-        } else {
-            include "$ruta_raiz/menu/ciudadano.php";
-        }
+if ($_SESSION["tipo_usuario"] == 2) {
+    if ($_SESSION["inst_codi"] == 1) {
+        include "$ruta_raiz/menu/nuevo_salida.php";
+        include "$ruta_raiz/menu/ciudadano_firma.php";
     } else {
-        if ($_SESSION["depe_codi"]!=0) { // Si no tiene un área no puede realizar ninguna accion porque genera errores de secuencias.            
-            include "$ruta_raiz/menu/nuevo_salida.php";
-            include "$ruta_raiz/menu/bandeja.php";
-            include "$ruta_raiz/menu/radicacion.php";
-        }
-        include "$ruta_raiz/menu/menuPrimero.php";
+        include "$ruta_raiz/menu/ciudadano.php";
     }
+} else {
+    if ($_SESSION["depe_codi"] != 0) { // Si no tiene un área no puede realizar ninguna acción porque genera errores de secuencias.
+        include "$ruta_raiz/menu/nuevo_salida.php";
+        include "$ruta_raiz/menu/bandeja.php";
+        include "$ruta_raiz/menu/radicacion.php";
+    }
+    include "$ruta_raiz/menu/menuPrimero.php";
+}
 ?>
     </table>
     <br>
     <div id="div_estadisticas_menu" style="width: 160px;"></div>
    
 <?php
-if (!$version_light)
+if (!$version_light) {
     include_once "$ruta_raiz/menu/alertas_documentos_vencidos.php";
+}
 ?>
 
 </center>

@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
  *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
  *    Quipux    www.gestiondocumental.gov.ec
@@ -169,13 +169,13 @@ echo "<html>".html_head();
             <table width="100%" border="1" align="center" class="borde_tab">
                 
                 <tr>          
-                <? 
+                <?php 
                     $ciud->dibujar_campo ("ciu_cedula", $ciu_cedula,"* C&eacute;dula: ", 13,"onBlur='validar_cambio_cedula()'",1);                
                     $ciud->dibujar_campo ("ciu_documento", $ciu_documento,"Otro Documento: ", 20,"",1);
                 ?>
                 </tr>
                 <tr>
-                <?
+                <?php
                     $label = "* Nombre: &nbsp;&nbsp;&nbsp;<img src=\"$ruta_raiz/iconos/copy.gif\" alt=\"copiar\" title=\"Copiar datos del Registro Civil\" onclick=\"copiar_datos_registro_civil('nombre', 'ciu_nombre')\">";                
                     $ciud->dibujar_campo ("ciu_nombre", $ciu_nombre,$label, 20,"",1);
                     $label = "* Apellido: &nbsp;&nbsp;&nbsp;<img src=\"$ruta_raiz/iconos/copy.gif\" alt=\"copiar\" title=\"Copiar datos del Registro Civil\" onclick=\"copiar_datos_registro_civil('nombre', 'ciu_apellido')\">";
@@ -183,12 +183,12 @@ echo "<html>".html_head();
                 ?>
                 </tr>
                 <tr>
-                <?
+                <?php
                     $ciud->dibujar_campo ("ciu_titulo", $ciu_titulo,"T&iacute;tulo: ", 20,"",1);                
                     $ciud->dibujar_campo ("ciu_abr_titulo", $ciu_abr_titulo,"Abr. T&iacute;tulo", 20,"",1);
                 ?>
                 </tr><tr>
-                <?
+                <?php
                     $ciud->dibujar_campo ("ciu_empresa", $ciu_empresa,"Instituci&oacute;n: ", 50,"",1);
                     $ciud->dibujar_campo ("ciu_cargo", $ciu_cargo,"Puesto: ",20,"",1);
                 ?>
@@ -197,7 +197,7 @@ echo "<html>".html_head();
                 
 
                 <tr>
-                <?
+                <?php
                     $ciud->dibujar_campo ("ciu_telefono", $ciu_telefono,"Tel&eacute;fono: ", 13,"",1);                
                     //$sqlCmbCiu = "select nombre, id from ciudad order by 1";
                     //$rsCmbCiu = $db->conn->Execute($sqlCmbCiu);

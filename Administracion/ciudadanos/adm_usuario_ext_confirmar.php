@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -69,7 +69,7 @@ $paginador = new ADODB_Pager_Ajax($ruta_raiz, "div_datos_confirmacion", "busqued
 ?>
 
 <html>
-<?
+<?php
     echo html_head(); /*Imprime el head definido para el sistema*/
     require_once "$ruta_raiz/js/ajax.js";
     $param_ajax = "new_cedula=$ciu_cedula&new_sincedula=$ciu_sincedula&new_documento=$ciu_documento&new_nombre=$ciu_nombre&new_apellido=$ciu_apellido&new_titulo=$ciu_titulo&new_abr_titulo=$ciu_abr_titulo&new_empresa=$ciu_empresa&new_cargo=$ciu_cargo&new_direccion=$ciu_direccion&new_email=$ciu_email&new_telefono=$ciu_telefono";

@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -113,7 +113,7 @@ else
 ?>
 
 <html>
-<? echo html_head(); /*Imprime el head definido para el sistema*/
+<?php echo html_head(); /*Imprime el head definido para el sistema*/
 include_once "$ruta_raiz/js/ajax.js"
 ?>
     <script type="text/javascript" language="JavaScript" src="<?=$ruta_raiz?>/js/formchek.js"></script>
@@ -411,7 +411,7 @@ include_once "$ruta_raiz/js/ajax.js"
 </head>
 <body>
   <div id="wrapper">
-  <? if (!$flag_login) echo html_encabezado(); /*Imprime el encabezado del sistema*/ ?>
+  <?php if (!$flag_login) echo html_encabezado(); /*Imprime el encabezado del sistema*/ ?>
   <form name='formulario' action="adm_solicitud_verificar_usuario.php" method="post">
     <table width="100%" border="1" align="center" class="t_bordeGris">
   	  <tr>
@@ -429,7 +429,7 @@ include_once "$ruta_raiz/js/ajax.js"
     <input type='hidden' name='sol_accion' id="sol_accion" value="0">
 
     <table width="100%" border="1" align="center" class="t_bordeGris">
-<?
+<?php
         function dibujar_campo ($campo, $label, $tamano,$sol_estadod, $opciones="") {
             global $$campo;
             global $$sol_estadod;
@@ -508,7 +508,7 @@ include_once "$ruta_raiz/js/ajax.js"
                    </select>-->
                         <?php echo combo_firma_ciudadano($sol_firma,$db);?>
                    </td>
-        <?
+        <?php
     	echo "</tr><tr>";
         echo "<tr>";
             dibujar_campo ("ciu_cedula", "* C&eacute;dula", 13,"sol_estado");
@@ -538,7 +538,7 @@ include_once "$ruta_raiz/js/ajax.js"
             <td class="listado3">
                 <div id='usr_ciu'><?=$usr_ciudad?></div>
             </td>
-         <?
+         <?php
 
     	echo "</tr>";
  echo "</tr><tr>";
@@ -559,7 +559,7 @@ include_once "$ruta_raiz/js/ajax.js"
 
 
   </form>
-  <? if (!$flag_login) echo html_pie_pagina(); /*Imprime el pie de pagina del sistema*/ ?>
+  <?php if (!$flag_login) echo html_pie_pagina(); /*Imprime el pie de pagina del sistema*/ ?>
   </div>
 
  <br/>

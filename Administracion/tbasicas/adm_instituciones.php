@@ -370,12 +370,12 @@ if ($_SESSION["admin_institucion"]==1) {
 	    <input type="hidden" name="txtExt" value="" id="txtExt">
 	</td>
         <td width="35%" class="listado2" colspan="2">
-	    <? if (trim($txtLogo)!="") {?>
+	    <?php if (trim($txtLogo)!="") {?>
 	    	<center><img src="<?=$ruta_raiz.$txtLogo?>" width="180" height="60" border=0 alt="Logo Instituci&oacute;n"></center>
-	    <? } ?>
+	    <?php } ?>
 	</td>
     </tr>
-<? if ($_SESSION["usua_codi"]==0) { ?>
+<?php if ($_SESSION["usua_codi"]==0) { ?>
     <tr style="display: none;">
         <!--td class="titulos2"><b>Activar / Desactivar la Instituci&oacute;n:</b></td>
 	<td width="35%" class="listado2">

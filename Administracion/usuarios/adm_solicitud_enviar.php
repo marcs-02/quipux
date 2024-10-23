@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -123,8 +123,8 @@ if($ok2)
             <td class='left'  align='center' width='100%'>
                 <h3>Sus datos fueron enviados exitosamente.<br />
                     Estos ser&aacute;n verificados por el administrador del sistema antes de aprobar la solicitud.</h3>
-                    <? if (!$flag_login) echo "<br /><br /><input type='button' value='Aceptar' class='botones' name='btn_aceptar' onClick=\"window.location='$ruta_raiz/login.php'\">"; ?>
-                    <? echo "<br /><br /><input type='button' value='Aceptar' class='botones' name='btn_aceptar' onClick=\"window.location='adm_solicitud.php'\">";                       
+                    <?php if (!$flag_login) echo "<br /><br /><input type='button' value='Aceptar' class='botones' name='btn_aceptar' onClick=\"window.location='$ruta_raiz/login.php'\">"; ?>
+                    <?php echo "<br /><br /><input type='button' value='Aceptar' class='botones' name='btn_aceptar' onClick=\"window.location='adm_solicitud.php'\">";                       
                     ?>
             </td>
         </tr>
@@ -132,7 +132,7 @@ if($ok2)
     <br /><br /><br />
     </form>
     </div></div></div></div></div></div>
-    <? if (!$flag_login) echo html_pie_pagina(); /*Imprime el pie de pagina del sistema*/ ?>
+    <?php if (!$flag_login) echo html_pie_pagina(); /*Imprime el pie de pagina del sistema*/ ?>
     </div>
 </body>
 </html>

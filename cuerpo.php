@@ -224,7 +224,7 @@ if($carpeta == 15 or $carpeta == 16) { //Tareas
                 <!--input name="busqRadicados" id="busqRadicados" type="text" size="40" class="tex_area" value="" onkeypress="pulsar(event)"-->
                 <?php echo cajaTextoValida('busqRadicados','',$numeroCaracteresTexto,"onkeypress=evento_ver(event,this,$numeroCaracteresTexto,'busqRadicados',1);pulsar(event);")?>
                 Asunto, N&uacute;mero de Documento, N&uacute;mero de Referencia
-                <div style="position: relative; top: 0; float: right; vertical-align: top; <?if ($mostrar_filtros!='') echo 'display: none;';?>">
+                <div style="position: relative; top: 0; float: right; vertical-align: top; <?php if ($mostrar_filtros!='') echo 'display: none;';?>">
                     Si desea ver todos los documentos, por favor modifique los filtros <blink><img src="<?=$ruta_raiz?>/iconos/img_alerta_2.gif" alt="&laquo;!&raquo;"></blink>
                 </div>
             </td>

@@ -19,20 +19,20 @@
 
 $ruta_raiz = "../..";
 session_start();
-if($_SESSION["perm_actualizar_sistema"]!=1) die("Usted no tiene permisos suficientes para acceder a esta p&aacute;gina.");
+if ($_SESSION["perm_actualizar_sistema"] != 1) {
+    die("Usted no tiene permisos suficientes para acceder a esta p&aacute;gina.");
+}
 require_once "$ruta_raiz/rec_session.php";
-$dba =  new ConnectionHandler($ruta_raiz, "bodega");
+$dba = new ConnectionHandler($ruta_raiz, "bodega");
 
-$sql = "select coalesce(max(indi_codi),0) as codigo from indice";
+$sql = "SELECT COALESCE(MAX(indi_codi), 0) AS codigo FROM indice";
 $rs = $dba->conn->query($sql);
-$repos_codigo = 1+$rs->fields["CODIGO"];
+$repos_codigo = 1 + $rs->fields["CODIGO"];
 $repos_tabla = "archivo_" . str_pad($repos_codigo, 4, "0", STR_PAD_LEFT);
 
-
-$rs = $dba->conn->query("SELECT spcname as nombre, spcname as codi FROM pg_tablespace where spcname != 'pg_global' order by spcname");
-$slc_repos_tablespace = $rs->GetMenu2("slc_repos_tablespace", "0", "0:&lt;&lt Seleccione un tablespace &gt;&gt;", false,"",
-        "id='slc_repos_tablespace' class='select'");
-
+$rs = $dba->conn->query("SELECT spcname AS nombre, spcname AS codi FROM pg_tablespace WHERE spcname != 'pg_global' ORDER BY spcname");
+$slc_repos_tablespace = $rs->GetMenu2("slc_repos_tablespace", "0", "0:&lt;&lt Seleccione un tablespace &gt;&gt;", false, "",
+    "id='slc_repos_tablespace' class='select'");
 
 ?>
 <table width="100%" cellpadding="0" cellspacing="3" border="0">
@@ -53,3 +53,4 @@ $slc_repos_tablespace = $rs->GetMenu2("slc_repos_tablespace", "0", "0:&lt;&lt Se
         <td><input name="txt_repos_tamanio" id="txt_repos_tamanio" type="text" class="tex_area" value="100" onkeypress="return fjs_validar_ingreso_numeros_enteros(event)" maxlength="5"></td>
     </tr>
 </table>
+

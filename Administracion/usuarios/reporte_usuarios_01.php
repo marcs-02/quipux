@@ -1,4 +1,4 @@
-<?
+<?php
 /**  Programa para el manejo de gestion documental, oficios, memorandus, circulares, acuerdos
 *    Desarrollado y en otros Modificado por la SubSecretaría de Informática del Ecuador
 *    Quipux    www.gestiondocumental.gov.ec
@@ -53,7 +53,7 @@
             <tr>
               <td><span class="listado5"><?=$descDependencia ?></span></td>
               <td>
-<?              $depe_codi_admin = obtenerAreasAdmin($_SESSION["usua_codi"],$_SESSION["inst_codi"],$_SESSION["usua_admin_sistema"],$db);
+<?php              $depe_codi_admin = obtenerAreasAdmin($_SESSION["usua_codi"],$_SESSION["inst_codi"],$_SESSION["usua_admin_sistema"],$db);
                 $sql="select depe_nomb, depe_codi from dependencia where inst_codi=".$_SESSION["inst_codi"];
                 if ($depe_codi_admin!=0)
                     $sql.=" and depe_codi in ($depe_codi_admin)";
