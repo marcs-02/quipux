@@ -557,68 +557,73 @@ WHERE c2.relname=\'%s\' or c2.relname=lower(\'%s\')';
                 return $indexes;
         }
 
-	// returns true or false
-	//
-	// examples:
-	// 	$db->Connect("host=host1 user=user1 password=secret port=4341");
-	// 	$db->Connect('host1','user1','secret');
-	function _connect($str,$user='',$pwd='',$db='',$ctype=0)
-	{
-		
-		if (!function_exists('pg_pconnect')) return null;
-		
-		$this->_errorMsg = false;
-		
-		if ($user || $pwd || $db) {
-			$user = adodb_addslashes($user);
-			$pwd = adodb_addslashes($pwd);
-			if (strlen($db) == 0) $db = 'template1';
-			$db = adodb_addslashes($db);
-		   	if ($str)  {
-			 	$host = explode(":", $str);
-				if ($host[0]) $str = "host=".adodb_addslashes($host[0]);
-				else $str = 'host=localhost';
-				if (isset($host[1])) $str .= " port=$host[1]";
-			}
-		   		if ($user) $str .= " user=".$user;
-		   		if ($pwd)  $str .= " password=".$pwd;
-				if ($db)   $str .= " dbname=".$db;
-		}
+	// Función que maneja la conexión a la base de datos
+function _connect($host, $user = '', $pwd = '', $db = '', $ctype = 0)
+{
+    // Verificar si la función pg_pconnect (conexión persistente) está disponible
+    if (!function_exists('pg_pconnect')) {
+        return null;
+    }
 
-		//if ($user) $linea = "user=$user host=$linea password=$pwd dbname=$db port=5432";
-		
-		if ($ctype === 1) { // persistent
-			$this->_connectionID = pg_pconnect($str);
-		} else {
-			if ($ctype === -1) { // nconnect, we trick pgsql ext by changing the connection str
-			static $ncnt;
-			
-				if (empty($ncnt)) $ncnt = 1;
-				else $ncnt += 1;
-				
-				$str .= str_repeat(' ',$ncnt);
-			}
-			$this->_connectionID = pg_connect($str);
-		}
-		if ($this->_connectionID === false) return false;
-		$this->Execute("set datestyle='ISO'");
-		return true;
-	}
-	
-	function _nconnect($argHostname, $argUsername, $argPassword, $argDatabaseName)
-	{
-	 	return $this->_connect($argHostname, $argUsername, $argPassword, $argDatabaseName,-1);
-	}
-	 
-	// returns true or false
-	//
-	// examples:
-	// 	$db->PConnect("host=host1 user=user1 password=secret port=4341");
-	// 	$db->PConnect('host1','user1','secret');
-	function _pconnect($str,$user='',$pwd='',$db='')
-	{
-		return $this->_connect($str,$user,$pwd,$db,1);
-	}
+    // Inicializar mensaje de error
+    $this->_errorMsg = false;
+
+    // Construcción de la cadena de conexión
+    $conn_str = '';
+
+    // Si se proporcionan host, usuario, contraseña o base de datos, los añadimos a la cadena de conexión
+    if ($user || $pwd || $db) {
+        if (strlen($db) == 0) $db = 'template1'; // Base de datos por defecto
+
+        // Si el host está en formato host:puerto, lo manejamos
+        if ($host) {
+            $host_parts = explode(":", $host);
+            $conn_str = "host=" . adodb_addslashes($host_parts[0]);
+
+            // Si hay un puerto, lo añadimos a la cadena de conexión
+            if (isset($host_parts[1])) {
+                $conn_str .= " port=" . adodb_addslashes($host_parts[1]);
+            }
+        } else {
+            $conn_str = 'host=localhost'; // Host por defecto
+        }
+
+        // Añadir usuario, contraseña y base de datos a la cadena de conexión
+        if ($user) $conn_str .= " user=" . adodb_addslashes($user);
+        if ($pwd) $conn_str .= " password=" . adodb_addslashes($pwd);
+        if ($db) $conn_str .= " dbname=" . adodb_addslashes($db);
+    }
+
+    // Si $ctype es 1, se usa pg_pconnect (conexión persistente)
+    if ($ctype === 1) {
+        $this->_connectionID = pg_pconnect($conn_str);
+    } else {
+        // Para conexiones normales
+        $this->_connectionID = pg_connect($conn_str);
+    }
+
+    // Verificar si la conexión ha fallado
+    if ($this->_connectionID === false) {
+        return false;
+    }
+
+    // Configurar el formato de la fecha en la sesión de PostgreSQL
+    $this->Execute("SET datestyle TO 'ISO'");
+    return true;
+}
+
+// Conexión normal (sin persistencia)
+function _nconnect($host, $user, $pwd, $db)
+{
+    return $this->_connect($host, $user, $pwd, $db, 0);
+}
+
+// Conexión persistente
+function _pconnect($host, $user = '', $pwd = '', $db = '')
+{
+    return $this->_connect($host, $user, $pwd, $db, 1);
+}
+
 	
 
 	// returns queryID or false
