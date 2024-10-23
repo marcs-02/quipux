@@ -31,11 +31,11 @@ $ACCEPTIP = '';
 /*
  * Connection parameters
  */
-$driver = 'mysql';
+$driver = 'postgres';
 $host = 'localhost'; // DSN for odbc
-$uid = 'root';
-$pwd = '';
-$database = 'test';
+$uid = 'postgres';
+$pwd = 'postgres';
+$database = 'transaccional';
 
 /*============================ DO NOT MODIFY BELOW HERE =================================*/
 // $sep must match csv2rs() in adodb.inc.php
